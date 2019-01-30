@@ -1,0 +1,12 @@
+<!--pages/help_detail/help_detail.wxml-->
+<view class='help-detail'>
+  <view class='help-detail-tit'>
+    道农家体验退款政策是什么？
+  </view>
+  <view class='help-detail-con'>
+  道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？道农家体验退款政策是什么？
+  </view>
+  <view class='help-detail-company'>
+  山西居善地文化传播有限公司
+  </view>
+</view>

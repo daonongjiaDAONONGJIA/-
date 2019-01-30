@@ -1,0 +1,30 @@
+<!--pages/contact/contact.wxml-->
+<view>
+  <view class='contact-item' wx:for="{{ contactLists }}" wx:key="{{index}}" data-id='{{item.id}}'>
+    <view class='contact-info'>
+      <view class='username'>
+        姓名：{{item.name}}
+      </view>
+      <view class='telphone'>
+        手机:{{item.phone}}
+      </view>
+      <view class='idCard'>
+       身份证号：{{item.idcard}}
+      </view>
+    </view>
+    <view class='contact-operate'>
+      <view class='operate-item' bindtap='operateContact' data-id="{{item.id}}" data-operate="default">
+        {{item.is_default==1?'默认':'设为默认'}}
+      </view>
+      <view  class='operate-item' bindtap='operateContact' data-id="{{item.id}}" data-operate="edit">
+        <image src='../../images/icon_edit.png'></image>编辑
+      </view>
+      <view  class='operate-item' bindtap='operateContact' data-id="{{item.id}}" data-operate="delete">
+        <image src='../../images/icon_delete.png'></image>删除
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <button type='button' bindtap='addContact'>添加地址</button>
+</view>

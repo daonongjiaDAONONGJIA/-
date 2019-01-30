@@ -1,0 +1,11 @@
+/* pages/help/help.wxss */
+.help-list{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.help-item{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  border-bottom:1px solid #f7f7f7;
+}

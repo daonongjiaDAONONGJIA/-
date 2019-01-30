@@ -1,0 +1,21 @@
+<!--pages/culture/culture.wxml-->
+<view class=''>
+  <view class='articel-cate'>
+    <view class="cate-item {{cid==''?'active':''}}" bindtap='changeArticle' data-id=''>
+      全部
+    </view>
+    <view class="cate-item {{cid==item.id?'active':''}}" wx:for="{{ articleCate }}" wx:key="{{index}}" bindtap='changeArticle' data-id='{{item.id}}'>
+      {{item.cate_name}}
+    </view>
+  </view>
+  <view class='article-list'>
+    <view class='article-item' wx:for="{{ articleList }}" wx:key="{{index}}" bindtap='articleDetail' data-id='{{item.id}}'>
+      <view class='article-img'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='article-info'>
+       {{item.title}}
+      </view>
+    </view>
+  </view>
+</view>

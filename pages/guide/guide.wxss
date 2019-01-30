@@ -1,0 +1,34 @@
+/* pages/guide/guide.wxss */
+page{
+  height: 100%
+}
+swiper{
+  height: 100%
+}
+swiper-item{
+  position: relative
+}
+.slide-image{
+  width: 100%
+}
+.guide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  color: #fff;
+}
+.guide-link{
+  margin-top: 140rpx;
+  width: 40%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border:1px solid #fff;
+  border-radius:30rpx;
+  text-align: center;
+  font-weight: blod;
+}

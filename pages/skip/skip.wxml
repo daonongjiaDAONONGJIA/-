@@ -1,0 +1,23 @@
+<!--pages/skip/skip.wxml-->
+<view class='skip'>
+  <view class='skip-info'>
+    <view class='info'>{{info}}</view>
+    <view class='desc'>{{desc}}</view>
+  </view>
+  <view class='skip-btn' wx:if="{{page=='comment'}}">
+    <view class='btn-item' bindtap='backIndex'>
+        返回首页
+    </view>
+    <view class='btn-item' bindtap='commentView'>
+        查看评论
+    </view>
+  </view>
+  <view class='skip-btn' wx:if="{{page=='order'}}">
+    <view class='btn-item' bindtap='backIndex'>
+        返回首页
+    </view>
+    <view class='btn-item' bindtap='orderView'>
+        查看订单
+    </view>
+  </view>
+</view>

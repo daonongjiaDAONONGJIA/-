@@ -1,0 +1,36 @@
+<!--pages/register/register.wxml-->
+<view class='register-item'>
+  <view class='register-tit'>
+  道家名称
+  </view>
+  <view class='register-input'>
+  <input placeholder="道家名称"/>
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  联系人
+  </view>
+  <view class='register-input'>
+  <input placeholder="联系人"/>
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  联系电话
+  </view>
+  <view class='register-input'>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击获取绑定手机号码</button> 
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  地址
+  </view>
+  <view class='register-input'>
+  <input placeholder="地址"/>
+  </view>
+</view>
+<view class='register-btn'>
+  <button size="default" type="warn" class="">立即注册</button>
+</view>

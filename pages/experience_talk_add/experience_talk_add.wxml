@@ -1,0 +1,29 @@
+<!--pages/experience_talk_add/experience_talk_add.wxml-->
+<view class='order-info'>
+    <view class='goods-img'>  
+        <image src="{{order.thumb}}"></image>
+      </view>
+    <view class='goods-info'>
+      <view class='goods-name'>
+      {{order.goods_name}}
+      </view>
+      <view class='goods-price'>
+        <view class='price'>￥{{order.shop_price}}/个</view>
+      </view>
+    </view>
+  </view>
+  <view class='order-total'>
+    <view>实付款</view>
+    <view><text>￥{{order.total_money}}</text></view>
+  </view>
+  <view class='order-comment'>
+    <view class='comment-tit'>
+      请输入您要评论的内容
+    </view>
+    <view>
+      <textarea auto-focus="true" bindinput='valueChange' placeholder='请输入您要评论的内容'/>
+    </view>
+    <view class='comment-btn'>
+      <button type="button" bindtap='commentAdd'>提交评论</button>
+    </view>
+  </view>

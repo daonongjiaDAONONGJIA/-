@@ -1,0 +1,89 @@
+<!-- 幻灯片 -->
+<view class='swiper-box'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[current]}}rpx;">
+      <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <view class='swiper-info'>
+            <view>爱彼迎新春特惠</view>
+            <view>缤纷礼包，尽兴旅行</view>
+          </view>
+          <image src="{{item.img}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}'/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots"> 
+      <block wx:for="{{imgUrls}}" wx:key="{{item.id}}"> 
+        <view class="dot{{index == current ? ' active' : ''}}"></view> 
+      </block> 
+    </view>
+</view>
+<!-- 幻灯片结束 -->
+<!-- 热门服务开始 -->
+ <view class="box pt-15 pb-15">
+    <view class="container">
+      <view class="tui-title">热卖专区
+       
+      </view>
+    </view>
+    <view class="gg-box">
+      <view class="my-row">
+        <block wx:for="{{hotList}}" wx:for-item="vo">
+          <view class="my-col-4">
+             <view  bindtap='showGoods' data-id='{{vo.id}}'>
+               <image class="gg-img" mode='widthFix' src="{{vo.thumb}}"></image>
+               <view class="gg-title">{{vo.goods_name}}</view>
+             </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+
+<!-- 热门服务结束 -->
+<!-- 特惠服务开始 -->
+ <view class="box pt-15 pb-15">
+    <view class="container">
+      <view class="tui-title">特惠专区
+       
+      </view>
+    </view>
+    <view class="gg-box">
+      <view class="my-row">
+        <block wx:for="{{tehuiList}}" wx:for-item="vo">
+          <view class="my-col-4">
+             <view  bindtap='showGoods' data-id='{{vo.id}}'>
+               <image class="gg-img" mode='widthFix' src="{{vo.thumb}}"></image>
+               <view class="gg-title">{{vo.goods_name}}</view>
+             </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+
+<!-- 特惠服务结束 -->
+<!-- 新品服务开始 -->
+ <view class="box pt-15 pb-15">
+    <view class="container">
+      <view class="tui-title">新品专区
+       
+      </view>
+    </view>
+    <view class="gg-box">
+      <view class="my-row">
+        <block wx:for="{{newList}}" wx:for-item="vo">
+          <view class="my-col-4">
+             <view  bindtap='showGoods' data-id='{{vo.id}}'>
+               <image class="gg-img" mode='widthFix' src="{{vo.thumb}}"></image>
+               <view class="gg-title">{{vo.goods_name}}</view>
+             </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+
+<!-- 新品服务结束 -->

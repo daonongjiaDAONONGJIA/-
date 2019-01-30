@@ -1,0 +1,15 @@
+<!--pages/help/help.wxml-->
+<view class='help-list'>
+  <view class='help-item'>
+    身份和验证
+  </view>
+  <view class='help-item'>
+    身份和验证
+  </view>
+  <view class='help-item'>
+    身份和验证
+  </view>
+  <view class='help-item'>
+    身份和验证
+  </view>
+</view>

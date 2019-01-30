@@ -1,0 +1,39 @@
+/* pages/experience/experience.wxss */
+.exper-item{
+  padding-bottom: 30rpx;
+  background: #fff;
+}
+.exper-img{
+  
+}
+.exper-img image{
+  width: 100%;
+}
+.exper-o{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+}
+.exper-o image{
+  width: 50rpx;
+  height: 40rpx;
+}
+.like-comment{
+  display: flex;
+  font-size:32rpx;
+  color: #bcbfc4
+}
+.like-comment .like,.like-comment .comment{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-right: 30rpx;
+}
+.like-comment .like text,.like-comment .comment text{
+  padding-left: 10rpx;
+}
+.exper-tit{
+  padding:0 30rpx;
+  font-size:32rpx;
+  color: #666666
+}

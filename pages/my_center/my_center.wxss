@@ -1,0 +1,50 @@
+/* pages/my_center/my_center.wxss */
+.userinfo{
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #00bcd5;
+  color: #fff;
+}
+.userinfo-avatar{
+  margin-bottom: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname{
+  font-size: 30rpx;
+  text-align: center;
+}
+.userinfo-telphone{
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.user-nav{
+  padding: 30rpx 0;
+  display: flex;
+  font-size:30rpx;
+  background: #fff;
+}
+.user-nav  .nav-item{
+  flex: 1 0;
+  text-align: center;
+}
+.user-nav  .nav-item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.user-nav-list{
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+  background: #fff
+}
+.user-nav-list .nav-item{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7
+}

@@ -1,0 +1,22 @@
+/* pages/add_contact/add_contact.wxss */
+.contact-item{
+  padding: 0 30rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  font-size:30rpx;
+  border-bottom:1px solid #f7f7f7
+}
+.contact-item .item-tit{
+  flex-shrink: 0;
+  width: 180rpx;
+}
+.item-btn{
+  padding:30rpx;
+}
+.item-btn button{
+  background: #ff9700;
+  color: #fff;
+  border:none
+}

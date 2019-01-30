@@ -1,0 +1,35 @@
+<!--pages/daoyou_info/daoyou_info.wxml-->
+<view class='register-item1'>
+  <view class='register-tit'>
+  头像
+  </view>
+  <view class='register-avatar'>
+   <image src='../../images/avatar.jpg'></image>
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  名称
+  </view>
+  <view class='register-input'>
+   小王
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  手机号
+  </view>
+  <view class='register-input'>
+  13452874521
+  </view>
+</view>
+<view class='register-item'>
+  <view class='register-tit'>
+  身份证号
+  </view>
+  <view class='register-input'>
+  13452874521
+  </view>
+</view>
+
+

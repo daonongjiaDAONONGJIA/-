@@ -1,0 +1,12 @@
+<!--pages/guide/guide.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	>
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <view class='guide' bindtap='getIndex'>
+        <view class='guide-link'>立即查看</view>
+      </view>
+      <image src="{{item.img}}" class="slide-image" mode='widthFix'  />
+    </swiper-item>
+  </block>
+</swiper>
+

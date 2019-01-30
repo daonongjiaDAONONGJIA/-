@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/guide/guide",
+    "pages/contact/contact",
+    "pages/confirm_order/confirm_order",
+    "pages/my_center/my_center",
+    "pages/register/register",
+    "pages/select_date/select_date",
+    "pages/my_footer/my_footer",
+    "pages/my_collect/my_collect",
+    "pages/experience/experience",
+    "pages/index/index",
+    "pages/daoyou_info/daoyou_info",
+    "pages/order/list/list",
+    "pages/help_detail/help_detail",
+    "pages/help/help",
+    "pages/search/search",
+    "pages/experience_talk/experience_talk",
+    "pages/experience_detail/experience_detail",
+    "pages/order/submit/submit",
+    "pages/order/details/details",
+    "pages/culture/culture",
+    "pages/add_contact/add_contact",
+    "pages/sel_contact/sel_contact",
+    "pages/change_date/change_date",
+    "pages/change_contact/change_contact",
+    "pages/culture_detail/cultrue_detail",
+    "pages/edit_contact/edit_contact",
+    "pages/experience_talk_add/experience_talk_add",
+    "pages/skip/skip"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#00bcd5",
+    "navigationBarTextStyle": "light",
+    "navigationBarTitleText": "道农家",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "enablePullDownRefresh": true,
+  "tabBar": {
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/experience/experience",
+        "text": "体验",
+        "color": "#000",
+        "selectedColor": "#f93a3c",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homex.png"
+      },
+      {
+        "pagePath": "pages/culture/culture",
+        "text": "文化",
+        "color": "#000",
+        "selectedColor": "#f93a3c",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homex.png"
+      },
+      {
+        "pagePath": "pages/my_center/my_center",
+        "text": "我的",
+        "color": "#333",
+        "selectedColor": "#f93a3c",
+        "iconPath": "images/w.png",
+        "selectedIconPath": "images/w1.png"
+      }
+    ]
+  }
+}

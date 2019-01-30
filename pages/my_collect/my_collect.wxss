@@ -1,0 +1,17 @@
+/* pages/my_collect/my_collect.wxss */
+.exper-item{
+  background: #fff;
+}
+.exper-img{
+  width: 100%;
+}
+.exper-img image{
+  width: 100%;
+}
+.exper-tit{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 30rpx;
+  font-size:32rpx;
+  color: #666666
+}

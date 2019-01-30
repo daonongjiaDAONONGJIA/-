@@ -1,0 +1,75 @@
+/* pages/order/details/details.wxss */
+page{
+  padding-bottom:140rpx;
+  font-size: 30rpx;
+}
+.order-pay{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 40rpx;
+  padding: 30rpx;
+  margin-top:20rpx;
+  background: #fff;
+}
+.order-pay view{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.order-total{
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+}
+.order-total text{
+  color: #f65c5e
+}
+.order-info{
+  padding:30rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  font-size:30rpx;
+  border-bottom:1px solid #f7f7f7
+}
+.goods-name{
+  padding-bottom: 12rpx;
+}
+.goods-img{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+.goods-img image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.goods-price{
+  flex-shrink: 0;
+}
+goods-price .price{
+  padding-bottom: 12rpx;
+}
+.goods-buy-info,.goods-price .price{
+  color: #f65c5e
+}
+.order-comment{
+  margin-top:30rpx;
+  background: #fff;
+  padding: 30rpx;
+}
+.order-comment .comment-tit{
+  padding-bottom: 20rpx;
+}
+.order-comment textarea{
+  width: 100%;
+  height: 200rpx;
+}
+
+
+
+

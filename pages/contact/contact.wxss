@@ -1,0 +1,53 @@
+/* pages/contact/contact.wxss */
+.contact-item{
+  margin-bottom: 20rpx;
+  background: #fff;
+  font-size:30rpx;
+  color: #666;
+}
+.contact-info{
+  padding:20rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom:1px solid #f7f7f7
+}
+.contact-info .username,.contact-info .telphone{
+  flex-shrink: 0;
+  width: 50%;
+  margin-bottom: 20rpx;
+}
+.contact-info .idCard{
+  width: 100%;
+  flex-shrink: 0;
+}
+.contact-operate{
+  display: flex;
+}
+.contact-operate .operate-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  flex:1 0;
+  text-align: center;
+  line-height: 80rpx;
+  color: #818282
+}
+.contact-operate .operate-item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.footer{
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  padding: 20rpx 30rpx;
+}
+.footer button{
+  width: 100%;
+  background: #ff9700;
+  color: #fff;
+  border:none;
+}

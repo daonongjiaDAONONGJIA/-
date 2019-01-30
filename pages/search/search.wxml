@@ -1,0 +1,27 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+    <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+    <image class="" src='/picture/search.png' bindtap='query'></image>
+</view>
+<view class='history-list'>
+    <view class='history-tit'>
+      历史使用
+    </view>
+    <view class='history-con'>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+    </view>
+</view>
+<view class='history-list'>
+    <view class='history-tit'>
+      最近热门
+    </view>
+    <view class='history-con'>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+      <view class='history-item'>品茶</view>
+    </view>
+</view>

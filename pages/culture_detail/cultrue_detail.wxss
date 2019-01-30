@@ -1,0 +1,22 @@
+/* pages/culture_detail/cultrue_detail.wxss */
+page{
+  background: #fff
+}
+.article-img  image{
+  width: 100%;
+}
+.article-tit{
+  font-size:32rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.article-date{
+  font-size:28rpx;
+  padding: 0 30rpx;
+  text-align: left;
+  padding-bottom: 30rpx;
+  color: #666
+}
+.article-con{
+  padding: 0 30rpx;
+}

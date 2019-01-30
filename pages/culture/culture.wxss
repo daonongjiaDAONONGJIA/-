@@ -1,0 +1,43 @@
+/* pages/culture/culture.wxss */
+.articel-cate{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  font-size:30rpx;
+  background: #fff;
+  border-bottom:1px solid #f7f7f7;
+}
+.articel-cate .cate-item{
+  width: 180rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.articel-cate .cate-item.active{
+  color: #ff9700
+}
+.article-list{
+  padding-top: 80rpx;
+}
+.article-item{
+  position: relative;
+  font-size: 30rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.article-item .article-img image{
+  width: 100%
+}
+.article-item .article-info{
+  padding: 0 30rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}

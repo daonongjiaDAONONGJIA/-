@@ -1,0 +1,19 @@
+/* pages/my_footer/my_footer.wxss */
+.exper-item{
+  background: #fff;
+  font-size: 30rpx;
+}
+.exper-img{
+  width: 100%;
+}
+.exper-img image{
+  width: 100%;
+}
+.exper-tit{
+  padding:20rpx 30rpx 10rpx 30rpx;
+  color: #666666
+}
+.exper-date{
+  padding:10rpx 30rpx 20rpx 30rpx;
+  color: #999
+}

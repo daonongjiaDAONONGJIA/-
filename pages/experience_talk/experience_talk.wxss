@@ -1,0 +1,36 @@
+/* pages/experience_talk/experience_talk.wxss */
+.comment-list{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.comment-item{
+  padding: 20rpx 0;
+  display: flex;
+}
+.comment-avatar{
+  flex-shrink: 0;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ccc
+}
+.comment-avatar image{
+  width: 66rpx;
+  height: 66rpx;
+}
+.comment-info{
+  width: 100%;
+}
+.comment-user{
+  padding-bottom: 10rpx;
+  font-size: 36rpx;
+  color: #1a1a1a
+}
+.comment-desc{
+  padding-bottom: 30rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7;
+  color: #4e4e4e
+}

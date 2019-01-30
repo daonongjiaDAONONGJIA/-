@@ -1,0 +1,15 @@
+<!--pages/culture_detail/cultrue_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='article-img'>
+  <image class='{{articleInfo.img}}'  mode="widthFix"></image>
+</view>
+<view class='article-tit'>
+  {{articleInfo.title}}
+</view>
+<view class='article-date'>
+   发布时间：{{articleInfo.time}}
+</view>
+<view class='article-con'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+

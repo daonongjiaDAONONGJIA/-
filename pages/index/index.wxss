@@ -1,0 +1,45 @@
+.swiper-box{
+  position: relative;
+  width: 100%;
+}
+.slide-image{
+  width: 100%;
+  height: auto;
+}
+.tui-title{
+  font-size: 15px;
+}
+swiper-item{
+  position: relative
+}
+.swiper-info{
+  padding: 0 50rpx;
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  width:100%;
+  color: #fff;
+  font-weight: bolder
+}
+.dots{ 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 20rpx; 
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  flex:1 0;
+  margin: 0 8rpx;  
+  height: 6rpx; 
+  background:rgba(255, 255, 255, 0.6); 
+  border-radius: 6rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  background:rgba(255, 255, 255, 1);
+}

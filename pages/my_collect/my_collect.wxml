@@ -1,0 +1,12 @@
+<!--pages/my_collect/my_collect.wxml-->
+<view>
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+    <view class='exper-img'>
+      <image src='{{item.img}}' mode="widthFix"></image>
+    </view>
+    <view class='exper-tit'>
+    {{item.goods_name}} 
+    </view>
+  </view>
+</view>
+

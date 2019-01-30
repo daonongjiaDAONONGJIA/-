@@ -1,0 +1,16 @@
+<!--pages/my_footer/my_footer.wxml-->
+<view>
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.goods_id}}'>
+    <view class='exper-img'>
+      <image src='{{item.img}}' mode="widthFix"></image>
+    </view>
+    <view class='exper-tit'>
+    {{item.goods_name}}
+    </view>
+    <view class='exper-date'>
+    {{item.time}}
+    </view>
+  </view>
+</view>
+
+

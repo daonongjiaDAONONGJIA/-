@@ -1,0 +1,28 @@
+/* pages/skip/skip.wxss */
+.skip{
+  padding:50rpx 30rpx;
+  background: #fe8d01;
+  color: #fff;
+  font-size:30rpx;
+  text-align: center
+}
+.skip-info .info{
+  font-size: 36rpx;
+  margin-bottom: 10rpx;
+}
+.skip-btn{
+  margin-top:30rpx;
+  display: flex;
+  justify-content: center
+}
+.skip-btn .btn-item{
+  padding: 0 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  border:1px solid #fff;
+  text-align: center
+}
+.skip-btn .btn-item:nth-of-type(1){
+  margin-right: 30rpx;
+}

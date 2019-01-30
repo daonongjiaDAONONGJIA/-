@@ -1,0 +1,43 @@
+<!--pages/select_date/select_date.wxml-->
+<view class="box">
+  <view class="box-flex week">
+    <view class="flex-item">
+      <view class="item-content">一</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">二</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">三</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">四</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">五</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">六</view>
+    </view>
+    <view class="flex-item">
+      <view class="item-content">日</view>
+    </view>
+  </view>
+  <view wx:for="{{currentDayList}}" wx:key="{{index}}" wx:for-item="dateList">
+    <view class='month'>{{dateList.month}}月</view>
+    <view class="box-flex">
+      <view class="flex-item" wx:for="{{dateList.data}}" wx:for-index='key' wx:for-item="vo" wx:key="{{key}}">
+          <view data-day="{{vo.num}}" bindtap='selectDay' data-index='{{key}}' data-m='{{vo.m}}' data-date='{{vo.date}}' class="item-content {{vo.isSelected?'selected1':''}} {{selectedCSS}}" wx:if="{{vo.selected == true}}">
+           {{vo.num}}
+          </view>
+          <view data-day="{{vo.num}}" class="item-content {{vo.num==''?'item-content1':''}}" wx:else>{{vo.num}}</view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+<view class='footer'>
+  <view class='view-date'>
+   <button size="default" type="warn" class="" bindtap='selDate'>下一步</button>
+  </view>
+</view>

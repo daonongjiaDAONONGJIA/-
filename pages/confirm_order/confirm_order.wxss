@@ -1,0 +1,109 @@
+/* pages/confirm_order/confirm_order.wxss */
+page{
+  font-size:30rpx;
+}
+.order-info{
+  margin-bottom: 20rpx;
+  padding:30rpx;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  font-size:30rpx;
+  border-bottom:1px solid #f7f7f7
+}
+.goods-name{
+  padding-bottom: 12rpx;
+}
+.goods-price{
+  flex-shrink: 0;
+}
+goods-price .price{
+  padding-bottom: 12rpx;
+}
+.goods-buy-info,.goods-price .price{
+  color: #f88e00
+}
+.order-date{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom:1px solid #f7f7f7
+}
+.order-date .date{
+  display: flex;
+}
+.order-date .date .tit{
+  padding-right: 20rpx;
+}
+.order-num{
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom:1px solid #f7f7f7
+}
+.order-num .add-num{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border:1px solid #f7f7f7;
+}
+.order-num .add-num .add-btn,.order-num .add-num .add-num1{
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.order-num .add-num .add-btn{
+  font-size:40rpx;
+}
+.order-num .add-num .add-btn.add{
+  background: #f88e00;
+  color: #fff;
+}
+.order-num .add-num .add-btn.reduce{
+  background: #f7f7f7;
+  color: #ccd1d5
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border:1px solid #f7f7f7;
+  background: #fff;
+}
+.user-info .tit{
+  width: 200rpx;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #f7f7f7;
+  box-sizing: border-box
+}
+.star image{
+  width: 60rpx;
+  height: 40rpx;
+}
+.price{
+  color: #f93a3c;
+  padding-bottom: 20rpx;
+}
+.changeContact{
+  width: 80rpx;
+  height: 80rpx;
+}
+.changeContact image{
+  width: 80rpx;
+  height: 80rpx;
+}

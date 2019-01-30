@@ -1,0 +1,38 @@
+/* pages/register/register.wxss */
+page{
+  background: #fff;
+}
+.register-item{
+  margin:0 30rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7;
+}
+.register-tit{
+  padding-top: 20rpx;
+  height: 70rpx;
+  line-height: 60rpx;
+}
+.register-input{
+   padding-bottom: 20rpx;
+   color: #999
+}
+
+.register-item1{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 30rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7;
+}
+.register-avatar {
+   width: 100rpx;
+   height: 100rpx;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.register-avatar image{
+  width: 100rpx;
+  height: 100rpx;
+}

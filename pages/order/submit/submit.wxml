@@ -1,0 +1,79 @@
+<!--pages/order/submit/submit.wxml-->
+<view class='parent'>
+  <view class='view-address' bindtap='addressSelect'>
+    <view class='view-addressleft'>
+      <image src='/images/addres.png'></image>
+      <view class='view-addressleft-info'>
+        <text class='text-name'>{{address.address}}</text>
+        <text class='text-address'>{{address.shr_name}} {{address.phone}}</text>
+      </view>
+    </view>
+    <view class='view-addressright'>
+      <text class='text-mobile'>{{address.mobile}}</text>
+      <image src='/images/white_hint.png'></image>
+    </view>
+  </view>
+  <view  class=' carts-list'>
+    <view wx:for='{{cartList}}' wx:key='{{item.id}}' class='carts-item'>
+      <!-- 缩略图 -->
+      <view>
+        <image class='carts-image' src='{{item.thumb}}' mode='aspectFill'></image>
+      </view>
+
+      <!-- 商品标题 -->
+      <view class='carts-text'>
+        <text class='carts-title'>{{item.goods_name}}</text>
+        <text class='text-price'>x{{item.goods_num}}</text>
+      </view>
+
+      <!-- 价格和数量 -->
+      <view class='carts-right'>
+        <text class='text-red'>￥{{item.shop_price}}</text>
+        
+      </view>
+    </view>
+  </view>
+  <view>
+  </view>
+  <view class='cash-sel' bindtap="showCash">
+    <view class='title'>
+      商家代金券
+    </view>
+    <view class='info'>
+     {{yhjnum}}
+    </view>
+  </view>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+    <view class='cash-tit'>商家代金券</view>
+    <view class='cash-list'>
+      <view class="cash-item {{item.id==yhjid_temp?'active':''}}" wx:for="{{cashList}}" wx:key="id" bindtap="cashSel" data-id="{{item.id}}" data-price="{{item.j_money}}">
+        <view class='cash-info'>
+          <view class='info'>
+          {{item.title}}
+          </view>
+          <view class='date'>
+          {{item.time}}
+          </view>
+        </view>
+        <view class="cash-price">
+         ￥{{item.j_money}}
+        </view>
+      </view>
+    </view>
+    <view class='cash-cz'>
+    <button bindtap="comfirmCash">确定</button>
+    <button bindtap="hideCash">取消</button>
+    </view>
+    
+</view>
+  <view class='view-price'>
+    <view class='view-price1'>
+      <text class='text-price1'>应付总额：</text>
+      <text class='text-red'>￥{{totalMoney}}元</text>
+    </view>
+  </view>
+
+  <text bindtap='submit' class='text-save'>提交订单</text>
+
+</view>

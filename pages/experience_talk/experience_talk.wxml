@@ -1,0 +1,16 @@
+<!--pages/experience_talk/experience_talk.wxml-->
+<view class='comment-list'>
+  <view class='comment-item' wx:for="{{comments}}" wx:key="item.id">
+      <view class='comment-avatar'>
+        <image src='{{item.head_src}}'></image>
+      </view>
+      <view class='comment-info'>
+        <view class='comment-user'>
+        {{item.nick_name}}
+        </view>
+        <view class='comment-desc'>
+        {{item.content}}
+        </view>
+      </view>
+    </view>
+</view>

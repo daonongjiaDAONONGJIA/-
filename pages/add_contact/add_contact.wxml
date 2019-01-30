@@ -1,0 +1,32 @@
+<!--pages/add_contact/add_contact.wxml-->
+<form bindsubmit="addContact">
+<view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    姓名
+    </view>
+    <view class='item-input'>
+      <input type="text" name="name" placeholder="请输入姓名"/>
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    手机号
+    </view>
+    <view class='item-input'>
+      <input type="digit" name="phone" placeholder="请输入手机号" />
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    身份证号
+    </view>
+    <view class='item-input'>
+      <input type="idcard" name="idcard" placeholder="请输入身份证号" />
+    </view>
+  </view>
+  <view class='item-btn'>
+    <button type='submit' form-type="submit">保存</button>
+  </view>
+</view>
+</form>

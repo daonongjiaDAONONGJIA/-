@@ -1,0 +1,71 @@
+<!--pages/confirm_order/confirm_order.wxml-->
+<view class='order-info'>
+  <view class='goods-info'>
+    <view class='goods-name'>
+    {{goodsInfo.goods_name}}
+    </view>
+    <view class='goods-buy-info'>
+    需要在游玩当天的09：00前预定
+    </view>
+  </view>
+  <view class='goods-price'>
+    <view class='price'>￥{{goodsInfo.shop_price}}/个</view>
+    <view>预定须知</view>
+  </view>
+</view>
+<view class='order-date'>
+  <view class='date'>
+    <view class='tit'>
+    游玩日期
+    </view>
+    <view class='num'>
+    {{date[0]}}等{{date.length}}天
+    </view>
+  </view>
+  <view class='' bindtap='changeDate'>
+   修改日期
+  </view>
+</view>
+<view class='order-num'>
+    <view>
+    同行人数
+    </view>
+    <view class='add-num'>
+      <view class='add-btn reduce' bindtap='changeNum' data-cz="reduce">-</view><view class='add-num1'>{{people_num}}</view><view  class='add-btn add' bindtap='changeNum' data-cz="add">+</view>
+    </view>
+</view>
+<view class='user-info'>
+    <view class='tit'>
+    姓名
+    </view>
+    <view>
+      <input type='text' placeholder='请填写姓名' value="{{contact.name}}"/>
+    </view>
+</view>
+<view class='user-info'>
+    <view  class='tit'>
+    手机号
+    </view>
+    <view>
+      <input type='text' placeholder='请填写手机号' value='{{contact.phone}}'/>
+    </view>
+    <view class='changeContact' bindtap='changeContact'>
+      <image src="../../images/w.png"></image>
+    </view>
+</view>
+<view class='user-info'>
+    <view  class='tit'>
+    身份证号
+    </view>
+    <view>
+      <input type='text' placeholder='请填写身份证号' value='{{contact.idcard}}'/>
+    </view>
+</view>
+<view class='footer'>
+  <view class='price-star'>
+    总价：<text class='price'>￥{{totalPrice}}</text>
+  </view>
+  <view class='view-date'>
+   <button size="default" type="warn" class="" bindtap='confirmOrder'>提交订单</button>
+  </view>
+</view>

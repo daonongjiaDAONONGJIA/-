@@ -1,0 +1,26 @@
+<!--pages/experience/experience.wxml-->
+<view>
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+    <view class='exper-img'>
+      <image src='{{ item.img }}' mode="widthFix"></image>
+    </view>
+    <view class='exper-o'>
+      <view class='like-comment'>
+        <view class='like'>
+          <image src='https://m.shanxijsd.com/static/images/heart.jpg'></image>
+          <text>{{item.shouchang}}</text>
+        </view>
+         <view class='comment'>
+            <image src='https://m.shanxijsd.com/static/images/comment.jpg'></image>
+            <text>{{item.pinlun}}</text>
+        </view>
+      </view>
+      <view>
+      <image src='https://m.shanxijsd.com/static/images/share.jpg'></image>
+      </view>
+    </view>
+    <view class='exper-tit'>
+    {{ item.goods_name }} {{ item.subtitle }}
+    </view>
+  </view>
+</view>

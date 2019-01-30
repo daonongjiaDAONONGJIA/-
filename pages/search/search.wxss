@@ -1,0 +1,51 @@
+/* pages/search/search.wxss */
+page{
+  background-color:#fff;
+}
+.search
+{
+  position: relative;
+  padding:30rpx;
+  width:100%;
+  background-color:#fff;
+  box-sizing: border-box
+}
+
+/* 搜索框提示文字样式 */
+.search input
+{
+  padding: 0 30rpx;
+  height: 80rpx;
+  box-shadow:#b3b3b3 0px 0px 10px;
+  font-size:27rpx;
+  border-radius: 10rpx;
+  box-sizing: border-box
+}
+
+/* 搜索框小图标 */
+.search image
+{ 
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:40rpx;
+  height:40rpx;
+  padding-right:20rpx;
+}
+
+.history-list{
+  padding:0 30rpx;
+}
+.history-list .history-tit{
+  padding:30rpx 0;
+  font-size: 30rpx;
+  color: #b3b3b3
+}
+.history-con .history-item{
+  margin-right: 20rpx;
+  padding: 10rpx 20rpx;
+  display: inline-block;
+  background: #fafafa;
+  font-size: 28rpx;
+  color: #929292
+}
