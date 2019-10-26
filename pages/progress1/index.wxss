@@ -1,0 +1,18 @@
+/* pages/progress/index.wxss */
+.user-nav-list{
+  margin: 30rpx 0;
+  padding: 0 30rpx;
+  background: #fff
+}
+.user-nav-list .nav-item{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7
+}
+.nav-hover{
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7
+}

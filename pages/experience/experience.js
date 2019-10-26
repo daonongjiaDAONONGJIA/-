@@ -8,27 +8,55 @@ Page({
    */
   data: {
     goodsList:"",
-    page:1
+    page:1,
+    cid:0,
+    keywords:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var version = app.getVersion();
+    this.setData({
+      version: version
+    })
+    var that = this;
+    var cid = options.cid;
+    var keywords = options.keywords;
+    this.setData({
+      cid: cid,
+      keywords: keywords
+    })
     wx.showToast({
       icon: 'loading',
       title: '数据加载中~'
     })
-    this.goodList();
+    if (app.globalData.login == false) {
+      app.userLogin().then((resArg) => {
+        that.goodList();
+      })
+    } else {
+      that.goodList();
+    }
   },
   goodList:function(){
-    var mainurl = app.globalData.mainurl;
-    var params = {
-      page:this.data.page
-    };
-    var url = mainurl + 'api/goods/getGoodsAll/';
+    if(this.data.cid!=0){
+      var params = {
+        page: this.data.page,
+        cid: this.data.cid,
+        keywords:this.data.keywords
+      };
+    }else{
+      var params = {
+        page: this.data.page,
+        status:'all',
+        keywords: this.data.keywords
+      };
+    }
+    console.log(params);
+    var url = this.data.version + 'api/goods/getGoodsAll/';
     util.wxRequest(url, params, data => {
-      console.log(data)
       wx.hideToast();
       this.setData({
         goodsList: data.goods.data
@@ -41,6 +69,24 @@ Page({
     wx.navigateTo({
       url: '/pages/experience_detail/experience_detail?id=' + id,
     })
+  },
+  search: function (e) {
+    console.log(e.detail.value);
+    this.setData({ keywords: e.detail.value })
+  },
+  getSearch: function () {
+    if (this.data.keywords.length > 0) {
+      this.setData({
+        page:1
+      })
+      this.goodList();
+    } else {
+      wx.showToast({
+        icon: "none",
+        title: '请输入您要搜索得关键字！'
+      })
+    }
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -94,11 +140,22 @@ Page({
     })
     // 页数+1
     var page = this.data.page + 1;
+    this.setData({
+      page:page
+    })
     var mainurl = app.globalData.mainurl;
-    var params = {
-      page: page
-    };
-    var url = mainurl + 'api/goods/getGoodsAll/';
+    if (this.data.cid != 0) {
+      var params = {
+        page: this.data.page,
+        cid: this.data.cid
+      };
+    } else {
+      var params = {
+        page: this.data.page,
+        status: 'all'
+      };
+    }
+    var url = this.data.version + 'api/goods/getGoodsAll/';
     util.wxRequest(url, params, data => {
       console.log(data);
       if (data.goods.data.length==0){
@@ -106,6 +163,8 @@ Page({
           title: '暂无更多数据~',
           icon:'none'
         })
+        // 隐藏加载框
+        wx.hideLoading();
       }else{
         var goodsList = this.data.goodsList;
         for (var i = 0; i < data.goods.data.length; i++) {
@@ -115,10 +174,9 @@ Page({
         this.setData({
           goodsList: goodsList
         })
+        // 隐藏加载框
+        wx.hideLoading();
       }
-      
-      // 隐藏加载框
-      wx.hideLoading();
     }, data => { }, data => { });
 
   },

@@ -1,0 +1,19 @@
+<!--pages/score_detail/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='goods-img'>
+  <image src='{{goodsInfo.thumb}}'  mode='widthFix'></image>
+</view>
+<view class='goods-info'>
+  <view class='goods-name'>
+    {{goodsInfo.goods_name}}
+  </view>
+  <view class='goods-price'>
+  {{goodsInfo.price}}积分
+  </view>
+</view>
+<view class='goods-desc'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />  
+</view>
+<view class='footer' bindtap='exchangeGoods'>
+  立即兑换
+</view>

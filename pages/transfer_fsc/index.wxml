@@ -1,0 +1,41 @@
+<!--pages/transfer_fsc/index.wxml-->
+<view class='voucher'>
+  <view class='user-info'>
+    转给卡号{{card_sn}}
+  </view>
+  <view class='voucher-default'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>福寿长{{voucherList[index].money}}元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+    </view>
+    <view bindtap='showModal' class='voucher-change'>
+      更换
+    </view>
+  </view>
+  <view class='btn' bindtap='transferFsc'>确认赠送</view>
+</view>
+<view class="modals modals-bottom-dialog" wx:if="{{value}}">
+  <view class="modals-cancel"  bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='order-date-tit'>福寿长代金券</view>
+    <view class='voucher-list'>
+       <view class='voucher-item' wx:for="{{ voucherList }}" wx:key="{{index}}" bindtap="selVoucher" data-vid="{{item.id}}" data-index="{{index}}">
+          <view class='voucher-price'>
+            <image src='../../images/card-bg.png' mode='widthFix'>
+            </image>
+            <view class='price'>
+              ￥{{item.money}}
+            </view>
+          </view>
+          <view class='voucher-info'>
+            <view class='voucher-name'>{{item.time}}</view>
+            <view class='voucher-use'>单次可用一张</view>
+          </view>
+          <view class='voucher-sel'>
+            <image src='../../images/check2.png' wx:if="{{vid==item.id}}"></image>
+            <image src='../../images/check1.png' wx:if="{{vid!=item.id}}"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

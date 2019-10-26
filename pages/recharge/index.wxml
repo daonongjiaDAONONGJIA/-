@@ -1,0 +1,11 @@
+<!--pages/recharge/index.wxml-->
+<view class='recharge'>
+  <view class='tit'>充值金额</view>
+  <view class='price'>
+    <view class='price-tit'>￥</view>
+    <view class='price-input'>
+      <input type='digit' bindinput='money'></input>
+    </view>
+  </view>
+  <view class='btn' bindtap='getMoney'>充值</view>
+</view>

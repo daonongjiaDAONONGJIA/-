@@ -1,0 +1,23 @@
+<!--pages/experience_index_son4/index.wxml-->
+<view>
+   <view class="banner" bindtap="getVoucher">
+      <image src='http://m.shanxijsd.com/uploads/default/20190919135447.jpg'mode='widthFix'></image>
+   </view>
+   <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+    <view class='exper-img'>
+      <image src='{{ item.file_url }}' mode="widthFix"></image>
+    </view>
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.package_name }}
+      </view>
+      <view class='exper-tabs'>
+        <text class="tag-item" wx:for="{{item.tabs}}" wx:for-item="tab" wx:key="{{key}}">{{tab}}</text>
+      </view>
+      <view class='exper-price'>
+        <view class='price'>￥{{ item.price }}</view>
+        <view class='roll-price' wx:if="{{item.roll==1}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
+    </view>
+  </view>
+</view>

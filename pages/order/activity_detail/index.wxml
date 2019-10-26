@@ -1,0 +1,106 @@
+<!--pages/activity_confirm/index.wxml-->
+<view class='goods'>
+  <view class='info'>
+    <view class='img'>
+      <image src='{{thumb}}'></image>
+    </view>
+    <view class='con'>
+      <view class='name'>{{order.goods_name}}</view>
+      <!-- <view class='prop'>{{goodsInfo.address}}</view> -->
+      <view class='price'>￥{{order.shop_price}}</view>
+      <view class='num'>人数：{{order_activity.number}}</view>
+      <view class='num'>日期：{{order_activity.time}}</view>
+    </view>
+  </view>
+  <view class='code'  wx:if="{{order.order_status ==1 || order.order_status ==2}}">
+    {{order_activity.order_code}}
+  </view>
+</view>
+<view class='contact'>
+  <view class='tit'>
+    <view>联系人</view>
+  </view>
+  <view class='info'>
+    <view class='name-tel'>
+      <view class='name'>
+        {{order_activity.name}}
+      </view>
+      <view class='tel'>
+      {{order_activity.phone}}
+      </view>
+    </view>
+    <view class='idcard'>
+    {{order_activity.idcard}}
+    </view>
+  </view>
+</view>
+<view class='discount' wx:if="{{parseFloat(order.roll)>0 || parseFloat(order.card_money)>0 || parseFloat(order.score_price)>0 || parseFloat(order.fsc_money)>0}}">
+  <view class='discount-item' wx:if="{{parseFloat(order.roll)>0}}">
+    <view class='tit'>
+      金猪通用代金券 使用￥{{order.roll}}
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{parseFloat(order.fsc_money)>0}}">
+    <view class='tit'>
+      福寿长代金券 使用￥{{order.fsc_money}}
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{order.vid!=0}}">
+    <view class='tit'>
+      和顺發代金券 使用￥{{order.vouchers_money}}
+    </view>
+  </view>
+</view>
+<view class='fee'>
+  <view class='tit'>
+    定单信息
+  </view>
+  <view class='fee-list'>
+    <view class='fee-item'>
+      <view class='f-tit'>
+        定单编号
+      </view>
+      <view class='f-detail'>
+        {{order.order_sn}}
+      </view>
+    </view>
+    <view class='fee-item'>
+      <view class='f-tit'>
+        下单时间
+      </view>
+      <view class='f-detail'>
+        {{order.submit_time}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view>
+    总计：<text class='price'>￥{{order.total_money}}</text>
+  </view>
+  <view class='buy-btn'>
+    <block class='order-btn' wx:if='{{order.order_status == 0}}'>
+      <text bindtap='cancel' data-id='{{order.id}}' class='btn-cancel'>取消定单</text>
+      <text bindtap='getOrder' data-id='{{order.id}}' class='btn-pay'>立即付款</text>
+    </block>
+    <block wx:elif='{{order.order_status == 1}}' class='order-footer'>
+      
+    </block>
+    <block class='order-btn' wx:if='{{order.order_status == 2}}'>
+      <text bindtap='getRefund' data-id='{{order.id}}' class='btn-pay'>退款</text>
+      <text bindtap='getComplete' data-id='{{order.id}}' class='btn-pay'>完成定单</text>
+    </block>
+    <block wx:elif='{{order.order_status == 3}}' class='order-footer'>
+      
+    </block>
+    <block class='order-btn' wx:if='{{order.order_status == 4}}'>
+      <text bindtap='getRefund' data-id='{{order.id}}' class='btn-pay'>退款</text>
+    </block>
+    <block wx:elif='{{order.order_status == 5}}' class='order-footer'>
+      <text>退款中</text>
+    </block>
+    <block wx:elif='{{order.order_status == 6}}' class='order-footer'>
+      <text class='btn-cancel'>退款成功</text>
+    </block>
+  </view>
+</view>

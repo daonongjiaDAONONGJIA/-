@@ -1,0 +1,31 @@
+<!--pages/my_discount/index.wxml-->
+<view class='user-nav'>
+  <view class='nav-item' bindtap='getVoucherIntro'>
+    <view class='nav-icon'><image src='../../images/card5.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>和顺發代金券</view>
+       <view class='desc'>专享优惠折扣</view>
+    </view>
+  </view>
+  <view class='nav-item' bindtap='getVoucherIntro1'>
+    <view class='nav-icon'><image src='../../images/card5.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>福寿长代金券</view>
+       <view class='desc'>专享优惠折扣</view>
+    </view>
+  </view>
+  <!--<view class='nav-item' bindtap='getPay'>
+    <view class='nav-icon'><image src='../../images/card5.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>鸿运发代金券</view>
+       <view class='desc'>专享优惠折扣</view>
+    </view>
+  </view>-->
+  <view class='nav-item' bindtap='getVoucherIntro2'>
+    <view class='nav-icon'><image src='../../images/card5.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>金猪通用代金券</view>
+       <view class='desc'>专享优惠折扣</view>
+    </view>
+  </view>
+</view>

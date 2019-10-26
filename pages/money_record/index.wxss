@@ -1,0 +1,87 @@
+/* pages/money_record/index.wxss */
+page{
+  padding-top: 100rpx;
+}
+.order-tab{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  box-shadow: 0 0 30px #dedede;
+}
+.order-tab .tab-item{
+  position: relative;
+  padding:0 30rpx;
+  font-size:30rpx;
+}
+.order-tab .tab-item.active{
+  color: #e3ce9d;
+}
+.order-tab .tab-item.active::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom:0;
+  width: 80%;
+  height: 4rpx;
+  margin-left: -40%;
+  background:#e3ce9d;
+}
+.order-item{
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.order-sn-status{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #dedede;
+  font-size: 28rpx;
+  color: #666
+}
+.order-type{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  border-bottom: 1px solid #dedede;
+}
+.order-img-name{
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+}
+.order-img{
+  margin-right: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: #e3ce9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-img image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.order-date-price{
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.order-date{
+  color: #666;
+}
+.order-price text{
+  font-size: 32rpx;
+}

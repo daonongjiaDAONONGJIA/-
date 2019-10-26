@@ -1,0 +1,48 @@
+/* pages/score_detail/index.wxss */
+page{
+  padding-bottom: 90rpx;
+}
+.goods-img image{
+  width: 100%;
+}
+.goods-info{
+  padding: 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.goods-info .goods-name{
+  margin-bottom: 20rpx;
+}
+.goods-info .goods-price{
+  color:#f93a3c;
+}
+.goods-desc{
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.goods-desc .wxParse-p{
+   padding-bottom: 30rpx;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden
+}
+.goods-desc .wxParse-p image{
+  width: 100%;
+}
+.wxParse-inline {
+  line-height: 1.8
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 40px;
+  background: #f93a3c;
+  color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+}

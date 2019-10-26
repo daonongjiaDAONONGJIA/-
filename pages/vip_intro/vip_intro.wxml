@@ -1,0 +1,50 @@
+<!--pages/vip_intro/vip_intro.wxml-->
+<view class='vip-card'>
+   <image src='../../images/vip-card1.png' class='card' mode='widthFix' wx:if="{{status.data.level==1}}"></image>
+   <image src='../../images/vip-card.png' class='card' mode='widthFix' wx:if="{{status.data.level==2}}"></image>
+   <view class='card-info'>
+      <view>
+        <view class='card-tit' wx:if="{{status.data.level==1}}">道农家银卡会员</view>
+        <view class='card-tit' wx:if="{{status.data.level==2}}">道农家金卡会员</view>
+        <view wx:if="{{status.code==400 && status.data.level==2}}">您的会员卡已经过期，请及时续费</view>
+        <view wx:if="{{status.code==200 && status.data.level==2}}">您已经是黄金会员</view>
+      </view>
+      <view class='card-btn' bindtap='getVip' wx:if="{{status.data.level==1}}">
+        立即开通金卡会员
+      </view>
+      <view class='card-btn' bindtap='getVip' wx:if="{{status.code==400 && status.data.level==2}}">
+        立即续费
+      </view>
+      <view class='card-btn' bindtap='getVip' wx:if="{{status.code==200 && status.data.level==2}}">
+        立即续费
+      </view>
+   </view>
+</view>
+<view class='intro'>
+  <view class='intro-tit'>
+    开通金卡可享受以下优惠
+  </view>
+  <view class='intro-list'>
+    <view class='intro-item'>
+      <view class='icon'><image src='../../images/vip-icon1.png'></image></view>
+      <view class='tit'>全网折扣</view>
+      <view class='desc'>高达10%</view>
+    </view>
+    <view class='intro-item'>
+      <view class='icon'><image src='../../images/vip-icon2.png'></image></view>
+      <view class='tit'>有奖活动</view>
+      <view class='desc'>年度评选</view>
+    </view>
+    <view class='intro-item'>
+      <view class='icon'><image src='../../images/vip-icon3.png'></image></view>
+      <view class='tit'>即时消费</view>
+      <view class='desc'>线下付</view>
+    </view>
+    <view class='intro-item'>
+      <view class='icon'><image src='../../images/vip-icon4.png'></image></view>
+      <view class='tit'>积分领取</view>
+      <view class='desc'>平台赠送积分</view>
+    </view>
+  </view>
+  
+</view>

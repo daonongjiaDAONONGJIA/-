@@ -1,0 +1,45 @@
+<!--pages/experience_index_son2/index.wxml-->
+<view class='index-section'>
+  <view class='title'>近期活动</view>
+  <view>
+    <scroll-view class='goods-commend' scroll-x>
+      <view class='commend-item' wx:for="{{recommentList}}" wx:key="{{item.id}}" bindtap='showGoods' data-id="{{item.id}}">
+        <view class='commend-img'>
+          <image src='{{item.file_url}}'></image>
+        </view>
+        <view class='commend-tit'>
+          {{item.subtitle}}
+        </view>
+        <view class='commend-price'>
+           <view class='price'>￥{{item.price}}</view>
+           <view class='roll-price' wx:if="{{item.roll==1}}"><image src='../../images/roll-icon.png'></image></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='index-section'>
+  <view class='title'>更多活动</view>
+  <view class='exper-item' wx:for="{{ list }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+    <view class='exper-img'>
+      <image src='{{ item.thumb }}'></image>
+    </view>
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.title }}
+      </view>
+      <view class='exper-sub-tit'>
+      {{ item.address }}
+      </view>
+       <view class='exper-sub-tit'>
+      {{ item.time }}
+      </view>
+      <view class='exper-price'>
+        <view class='price'>￥{{item.price}}</view>
+        <view class='roll-price' wx:if="{{item.roll==1}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+

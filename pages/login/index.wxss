@@ -1,0 +1,64 @@
+/* pages/login/index.wxss */
+page{
+  height: 100%;
+  background: #fff
+}
+.login{
+  padding-top: 240rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login image{
+  margin-bottom: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.login button{
+  width: 400rpx;
+  background: #07c764;
+  color: #fff;
+}
+
+.phone{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.phone-content{
+  margin:200rpx auto 0 auto;
+  width: 90%;
+  border-radius: 20rpx;
+  background: #fff;
+  text-align: center;
+  overflow: hidden
+}
+.phone-content .tit{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.phone-content .tit1{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.phone-content image{
+  width:100rpx;
+  height: 100rpx;
+}
+.phone-content .change{
+  border-top:1px solid #ccc;
+  display: flex;
+}
+.phone-content button{
+  width:50%;
+  border-radius: 0;
+  background: #fff;
+  border:none;
+}
+.phone-content button::after{
+  border:none;
+}

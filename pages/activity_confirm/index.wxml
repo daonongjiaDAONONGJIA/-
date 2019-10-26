@@ -1,0 +1,95 @@
+<!--pages/activity_confirm/index.wxml-->
+<view class='goods'>
+  <view class='info'>
+    <view class='img'>
+      <image src='{{imgUrls[0].file_url_md}}'></image>
+    </view>
+    <view class='con'>
+      <view class='name'>{{goodsInfo.title}}</view>
+      <view class='prop'>{{goodsInfo.address}}</view>
+      <view class='price'>￥{{goodsInfo.price}}</view>
+      <view class='num'>报名人数：{{number}}</view>
+      <view class='num'>报名日期：{{goodsInfoType.time}}</view>
+    </view>
+  </view>
+</view>
+<view class='contact'>
+  <view class='tit'>
+    <view>联系人</view>
+    <view bindtap='selContact' wx:if="{{is_default==1}}">
+     修改
+    </view>
+    <view bindtap='selContact' wx:if="{{is_default==0}}">
+     新增
+    </view>
+  </view>
+  <view class='info'>
+    <view class='name-tel'>
+      <view class='name'>
+        {{contactDefault.name}}
+      </view>
+      <view class='tel'>
+      {{contactDefault.phone}}
+      </view>
+    </view>
+    <view class='idcard'>
+    {{contactDefault.idcard}}
+    </view>
+  </view>
+</view>
+<view class='discount'>
+    <view class='discount-item1' data-type="roll" bindtap='getDiscount'>
+      <view class='tit'>
+        金猪通用代金券 共￥{{cardInfo.roll}}
+      </view>
+      <view class='con'>
+        <text wx:if="{{goodsInfo.roll==0}}">不可用</text>
+        <text wx:if="{{goodsInfo.roll==1 && roll==0}}">不可用</text>
+        <text wx:if="{{goodsInfo.roll==1 && roll>0}}">可用金额￥{{cardInfo.roll}}</text>
+        <image src='../../images/check_box.png' wx:if="{{use_roll==0 && goodsInfo.roll==1 && roll>0}}"></image>
+        <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==0}}"></image>
+        <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==1 && roll==0}}"></image>
+        <image src="../../images/checkboxlist.png" wx:if="{{use_roll==1 && goodsInfo.roll==1 && roll>0}}"></image>
+      </view>
+    </view>
+    <view class='discount-item1' data-type="fsc" bindtap='getDiscount'>
+      <view class='tit'>
+        福寿长代金券 共￥{{cardInfo.fsc_money}}
+      </view>
+      <view class='con'>
+        <text wx:if="{{goods_fsc==0}}">不可用</text>
+        <text wx:if="{{goods_fsc>0 && fsc_money==0}}">不可用</text>
+        <text wx:if="{{goods_fsc>0 && fsc_money>0}}">可用金额￥{{goods_fsc>fsc_money?fsc_money:goods_fsc}}</text>
+        <image src='../../images/check_box.png' wx:if="{{use_fsc==0 && goods_fsc>0 && fsc_money>0}}"></image>
+        <image src='../../images/check-none.png' wx:if="{{goods_fsc==0}}"></image>
+        <image src='../../images/check-none.png' wx:if="{{goods_fsc>0 && fsc_money==0}}"></image>
+        <image src="../../images/checkboxlist.png" wx:if="{{use_fsc==1 && goods_fsc>0 && fsc_money>0}}"></image>
+      </view>
+    </view>
+    <view class='discount-item1' bindtap='useHsf' wx:if="{{voucherList.length>0}}">
+      <view class='tit'>
+        和顺發代金券
+      </view>
+      <view class='con'>
+        可用金额￥{{voucherNum}}<text wx:if="{{useHsf>0}}">，已抵用{{useHsf}}</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <view class='discount-item1' wx:if="{{voucherList.length==0}}">
+      <view class='tit'>
+        和顺發代金券
+      </view>
+      <view class='con'>
+        <text>不可用</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+</view>
+<view class='footer'>
+  <view>
+    总计：<text>￥{{totalPrice}}</text>
+  </view>
+  <view class='buy-btn' bindtap="confirmOrder">
+    提交定单
+  </view>
+</view>

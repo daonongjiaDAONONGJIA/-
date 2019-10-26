@@ -1,0 +1,113 @@
+<!--pages/shop/shop.wxml-->
+ <view class='index-section'>
+    <view class='shop'>
+      <view class='shop-info'>
+        <view class='info'>
+          <view class='shop-logo'>
+            <image src='../../images/logo.jpg'></image>
+          </view>
+          <view>
+            <view class='shop-name'>
+            三只松鼠
+            </view>
+            <view class='shop-desc'>
+              本店提供新鲜的坚果，各种农副业产品，欢迎品鉴！
+            </view>
+          </view>
+        </view>
+        <view class='shop-btn'>
+          进店
+        </view>
+      </view>
+      <scroll-view class='goods-commend' scroll-x>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+      </scroll-view>
+    </view>
+     <view class='shop'>
+      <view class='shop-info'>
+        <view class='info'>
+          <view class='shop-logo'>
+            <image src='../../images/logo.jpg'></image>
+          </view>
+          <view>
+            <view class='shop-name'>
+            三只松鼠
+            </view>
+            <view class='shop-desc'>
+              本店提供新鲜的坚果，各种农副业产品，欢迎品鉴！
+            </view>
+          </view>
+        </view>
+        <view class='shop-btn' bindtap='shopDetail'>
+          进店
+        </view>
+      </view>
+      <scroll-view class='goods-commend' scroll-x>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+          <view class='commend-item'>
+            <view class='commend-img'>
+              <image src='https://m.shanxijsd.com/uploads/20190201/94d1d4b9e0dccf0a784a92c47ac8bd1d.png'></image>
+            </view>
+            <view class='commend-tit'>
+            老王的茶叶店
+            </view>
+            <view class='commend-price'>
+              <text>￥100</text>元起
+            </view>
+          </view>
+      </scroll-view>
+    </view>
+  </view>

@@ -1,0 +1,30 @@
+<!--pages/score_shop/index.wxml-->
+<view  class='score'>
+  <view>
+    <view>可用积分</view>
+    <view class='num'>{{cardInfo.score}}</view>
+  </view>
+  <view class='' bindtap='orderList'>
+    兑换记录
+  </view>
+</view>
+<view class='goods-list'>
+  <view class='goods-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+    <view class='img'>
+      <image src='{{item.thumb}}'></image>
+    </view>
+    <view class='info'>
+      <view class='name'>
+        {{item.goods_name}}
+      </view>
+      <view class='con'>
+        <view class='num'>
+        {{item.price}}积分
+        </view>
+        <view class='btn'>
+          马上兑
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

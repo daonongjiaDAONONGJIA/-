@@ -1,0 +1,24 @@
+<!--pages/reward/index.wxml-->
+<view class='reward'>
+  <view class='tit'>购买打赏码</view>
+  <view class='reward-list'>
+    <view class='reward-item {{reward==100?"active":""}}' data-reward="100" bindtap='getReward'>
+      100打赏码
+    </view>
+    <view class='reward-item {{reward==500?"active":""}}' data-reward="500" bindtap='getReward'>
+      500打赏码
+    </view>
+    <view class='reward-item {{reward==1000?"active":""}}' data-reward="1000"  bindtap='getReward'>
+      1000打赏码
+    </view>
+    <view class='reward-item' bindtap='getOther' wx:if="{{isOther==0}}">
+      其他数据
+    </view>
+    <view class='reward-item' wx:if="{{isOther==1}}">
+      <input type='number' bindinput='getOtherReward'></input>
+    </view>
+  </view>
+  <view class='reward-btn'>
+    <view class='btn' bindtap='rewardBuy'>立即购买</view>
+  </view>
+</view>

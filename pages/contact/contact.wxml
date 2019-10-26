@@ -26,5 +26,5 @@
   </view>
 </view>
 <view class='footer'>
-  <button type='button' bindtap='addContact'>添加地址</button>
+  <view class='btn' bindtap='addContact'>添加出行人</view>
 </view>

@@ -1,0 +1,363 @@
+/* pages/package_detail/index.wxss */
+/* pages/experience_detail1/index.wxss */
+.swiper-box{
+  position: relative;
+  width: 100%;
+  overflow: hidden
+}
+.slide-image{
+  width: 100%;
+  height: auto;
+}
+.tui-title{
+  font-size: 15px;
+}
+swiper-item{
+  position: relative
+}
+.swiper-info{
+  padding: 0 50rpx;
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  width:100%;
+  color: #fff;
+  font-weight: bolder
+}
+.goods-info,.goods-comment{
+  margin-top:20rpx;
+  background: #fff;
+  padding: 30rpx;
+}
+.goods-info{
+  padding: 30rpx;
+  background: #fff
+}
+.goods-info .goods-tag{
+  margin-bottom: 30rpx;
+}
+.goods-info .goods-tag .tag-item{
+  margin-right: 16rpx;
+  background: #f8f8f8;
+  padding: 8rpx 12rpx;
+  font-size: 24rpx;
+  color: #000;
+}
+.goods-info .goods-tag .tag-item:nth-of-type(1){
+  color:#fb9c02;
+  background: #fff3d3;
+}
+.goods-info .goods-tag .tag-item:nth-of-type(2){
+  color:#685ee1;
+  background: #f1effd;
+}
+.goods-info .goods-name{
+  font-size:40rpx;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+.goods-desc1{
+  font-size:28rpx;
+  line-height: 2;
+}
+.goods-desc{
+  margin-top: 12rpx;
+  background: #fff;
+  padding: 30rpx 30rpx 100rpx 30rpx;
+  font-size:28rpx;
+  line-height: 2;
+  overflow: hidden
+}
+.goods-desc .wxParse-p{
+   padding-bottom: 30rpx;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden
+}
+.goods-desc image{
+  width: 100%;
+}
+.goods-intro{
+  margin-top:28rpx;
+}
+.goods-intro .intro-item{
+  margin-bottom: 14rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.goods-intro .intro-item .tit{
+  padding-right: 30rpx;
+  font-size: 32rpx;
+  font-weight: bold
+}
+.goods-type{
+  padding: 0 30rpx;
+}
+.goods-price{
+  margin-top: 12rpx;
+}
+.goods-price text{
+  margin-left: 10rpx;
+  color: #ccc;
+  text-decoration: line-through;
+  font-weight: normal;
+  font-size:30rpx;
+}
+.roll-price{
+  margin-top: 12rpx;
+  font-size:30rpx;
+}
+.roll-price text{
+  padding-left: 10rpx;
+  color: #f93a3c;
+  font-weight: bold;
+}
+
+.goods-comment{
+   margin-bottom:160rpx;
+}
+.goods-comment .comment-none{
+  padding: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.goods-comment .comment-item{
+  padding: 20rpx 0;
+  display: flex;
+}
+.goods-comment .comment-avatar{
+  flex-shrink: 0;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ccc
+}
+.goods-comment .comment-avatar image{
+  width: 66rpx;
+  height: 66rpx;
+}
+.goods-comment .comment-info{
+  width: 100%;
+}
+.goods-comment .comment-user{
+  padding-bottom: 10rpx;
+  font-size: 36rpx;
+  color: #1a1a1a
+}
+.goods-comment .comment-desc{
+  padding-bottom: 30rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #f7f7f7;
+  color: #4e4e4e
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #dedede;
+  box-sizing: border-box
+}
+.goods-buy{
+  padding:8rpx 34rpx;
+  font-size:30rpx;
+  background:#07c764;
+  color:#fff;
+  border-radius:30rpx;
+
+}
+.voucher-buy1{
+  background:#C8C8C8;
+}
+.buy-goods{
+  position: relative;
+  margin-top:-120rpx;
+  padding: 150rpx 30rpx 0 30rpx;
+  height: 900rpx;
+  background: #fff;
+  overflow-y: scroll;
+  font-size: 30rpx;
+  background: #fff;
+}
+.buy-img{
+  position: absolute;
+  display: flex;
+  padding-left: 30rpx;
+  padding-top:30rpx;
+  height: 180rpx;
+  z-index:100;
+  width: 100%;
+  background: #fff;
+  top:30rpx;
+  box-sizing: border-box
+}
+.buy-img .price{
+  padding-left: 30rpx;
+  padding-top: 28rpx;
+  font-size: 30rpx;
+}
+.buy-img .img{
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
+}
+.buy-img image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.prop-tit{
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+.prop-list{
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-wrap: wrap
+}
+.prop-list .prop-item{
+  margin-bottom: 10rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  background: #eee;
+  padding: 0 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border:1px solid #eee;
+}
+.prop-list .prop-item.active{
+  border:1px solid #07c764;
+  background:#e0fdee
+}
+.order-footer{
+  box-sizing: border-box;
+  padding-left:30rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  font-size: 30rpx;
+}
+.order-footer .price text{
+  color: #f93a3c;
+}
+.order-footer .buy-btn{
+  width: 30%; 
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #07c764;
+  color: #fff;
+}
+.discount{
+  padding:0;
+  padding-bottom: 100rpx;
+}
+.sel-dates{
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+}
+.sel-date{
+  padding-right: 30rpx;
+  position: relative;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+}
+.sel-date::after{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 60%;
+  top:20%;
+  right: 0;
+  background: #ededed;
+}
+.sel-date .num{
+  margin-top: 20rpx;
+  color: #07c764; 
+  font-size: 34rpx;
+}
+.sel-dates .days{
+  font-size: 30rpx;
+}
+.sel-dates .days text{
+  padding: 0 30rpx;
+  font-size: 34rpx;
+  color: #07c764;
+}
+
+.contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  background: #fff;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ededed;
+}
+.contact .info{
+  display: flex;
+  align-items: center;
+}
+.contact .info .c-btn{
+  background: #07c764; 
+  border-radius: 10rpx;
+  padding: 8rpx 30rpx;
+  color: #fff;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+}
+.contact .info .tel{
+  color: #838383
+}
+
+.people-num{
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ededed;
+}
+.people-num .con{
+  display: flex;
+}
+.people-num .con .change-btn{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ededed;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 38rpx;
+}
+.people-num .con .num{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ededed;
+  text-align: center;
+  line-height: 60rpx;
+  border-left:none;
+  border-right: none;
+  color: #07c764; 
+}
+.order-con{
+  padding-top: 200rpx;
+  max-height: 900rpx;
+  overflow-y:scroll;
+}/* pages/recommend_detail/index.wxss */

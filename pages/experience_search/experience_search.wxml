@@ -1,0 +1,30 @@
+<!--pages/experience/experience.wxml-->
+<view>
+  <view wx:if="{{ page==1 && goodsList.length==0 }}" class="empty">
+    <view><image src="../../images/empty.png"></image></view>
+    <view>没有找到您要搜索得内容~</view>
+  </view>
+  <view wx:else>
+    <view>
+      <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+        <view class='exper-img'>
+          <image src='{{ item.thumb }}' mode="widthFix"></image>
+        </view>
+        <view class='exper-info'>
+          <view class='exper-tit'>
+          {{ item.goods_name }}
+          </view>
+          <view class='exper-sub-tit'>
+          {{ item.subtitle }}
+          </view>
+          <view class='exper-price'>
+            <view class='price'>￥{{item.price}}</view>
+            <view class='roll-price'>￥{{item.roll}}<image src='../../images/roll-icon.png'></image></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+

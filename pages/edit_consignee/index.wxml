@@ -1,0 +1,32 @@
+<!--pages/add_contact/add_contact.wxml-->
+<form bindsubmit="editConsignee">
+<view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    姓名
+    </view>
+    <view class='item-input'>
+      <input type="text" name="name" placeholder="请输入姓名" value='{{contact.name}}'/>
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    手机号
+    </view>
+    <view class='item-input'>
+      <input type="digit" name="phone" placeholder="请输入手机号" value='{{contact.phone}}'/>
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    身份证号
+    </view>
+    <view class='item-input'>
+      <input type="text" name="address" placeholder="请输入收货地址" value='{{contact.address}}'/>
+    </view>
+  </view>
+  <view class='item-btn'>
+    <button type='submit' form-type="submit">保存</button>
+  </view>
+</view>
+</form>

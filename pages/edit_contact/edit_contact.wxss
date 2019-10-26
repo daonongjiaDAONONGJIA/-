@@ -16,7 +16,12 @@
   padding:30rpx;
 }
 .item-btn button{
-  background: #ff9700;
+  width: 100%;
+  height: 80rpx;
+  background: #f93a3c;
   color: #fff;
-  border:none
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border: none
 }

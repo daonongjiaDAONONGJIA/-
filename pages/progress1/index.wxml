@@ -1,0 +1,9 @@
+<!--pages/progress/index.wxml-->
+<view class='user-nav-list'>
+  <navigator url="/pages/progress_detail/index?id=1" class='nav-item' hover-class="nav-hover">
+    道农家小程序简介
+  </navigator>
+  <navigator url="/pages/progress_detail/index?id=2" class='nav-item' hover-class="nav-hover">
+    下单流程步骤
+  </navigator>
+</view>

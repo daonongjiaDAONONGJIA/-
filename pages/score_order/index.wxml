@@ -1,0 +1,18 @@
+<!--pages/score_order/index.wxml-->
+<view class='goods-list'>
+  <view class='goods-item' wx:for="{{ orderList }}" wx:key="{{index}}" bindtap='getOrderDetail' data-id='{{item.id}}'>
+    <view class='img'>
+      <image src='{{item.thumb}}'></image>
+    </view>
+    <view class='info'>
+      <view class='name'>
+        {{item.goods_name}}
+      </view>
+      <view class='con'>
+        <view class='num'>
+        使用积分{{item.price}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

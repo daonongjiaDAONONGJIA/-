@@ -1,0 +1,42 @@
+<!--pages/goods_confirm/index.wxml-->
+<view class='consignee' wx:if="{{is_default==1}}" bindtap='addConsignee'>
+  <view class='c-left'>
+    <view class='info'>
+      <view class='name'>{{contactDefault.name}}</view>
+      <view class='tel'>{{contactDefault.phone}}</view>
+    </view>
+    <view class='address'>
+      {{contactDefault.address}}
+    </view>
+  </view>
+  <view class='c-right'>
+    <image src='../../images/next.png'></image>
+  </view>
+</view>
+<view class='consignee' wx:if="{{is_default==0}}" bindtap='addConsignee'>
+  <view class='c-left'>
+    添加收货人
+  </view>
+  <view class='c-right'>
+    <image src='../../images/next.png'></image>
+  </view>
+</view>
+<view class='goods'>
+  <view class='info'>
+    <view class='img'>
+      <image src='{{goodsInfo.thumb}}'></image>
+    </view>
+    <view class='con'>
+      <view class='name'>{{goodsInfo.goods_name}}</view>
+      <view class='price'>{{goodsInfo.price}}积分</view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view>
+    总计：<text>{{goodsInfo.price}}积分</text>
+  </view>
+  <view class='buy-btn' bindtap='confirmOrder'>
+    提交定单
+  </view>
+</view>

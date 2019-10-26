@@ -1,0 +1,25 @@
+/* pages/style/index.wxss */
+page{
+  background: #fff;
+}
+.style{
+  padding: 0 30rpx;
+}
+.style .tit{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx
+}
+.img{
+  margin-bottom: 30rpx;
+}
+image{
+  width: 100%;
+}
+.style-none{
+  height: 300rpx;
+  line-height: 300rpx;
+  color: #666;
+  font-size: 30rpx;
+  text-align: center;
+}

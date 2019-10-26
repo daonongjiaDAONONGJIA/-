@@ -1,0 +1,40 @@
+/* pages/recharge/index.wxss */
+.recharge{
+  padding: 30rpx;
+  margin:30rpx;
+  background: #fff;
+}
+.recharge .tit{
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+}
+.recharge .btn{
+  margin-top: 30rpx;
+  background: #f93a3c;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #fff;
+}
+.recharge .price{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom:1px solid #dedede
+}
+.recharge .price-tit{
+  flex-shrink: 0;
+  font-size:50rpx;
+  font-weight: bold
+}
+.recharge .price-input{
+  width: 100%;
+}
+.recharge .price input{
+  padding: 0 18rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100rpx;
+  font-size: 38rpx;
+}

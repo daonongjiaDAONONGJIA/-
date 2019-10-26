@@ -1,0 +1,4 @@
+/* pages/progress/index.wxss */
+image{
+  width: 100%;
+}

@@ -1,0 +1,55 @@
+<!--pages/experience_index_son3/index.wxml-->
+<scroll-view class="cate-nav" scroll-x>
+  <view class="nav-item {{cate_id==0?'active':''}}">
+    首页
+  </view>
+  <view class="nav-item {{cate_id==item.id?'active':''}}" wx:for="{{cateList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-name="{{item.cate_name}}" bindtap='getCateOne'>
+    {{item.cate_name}}
+  </view>
+</scroll-view>
+<view class='swiper-box'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee" bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" data-current="{{index}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <image src="{{version}}uploads/{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}' bindtap='getDetail' data-id="{{item.shop_goods_id}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='hot'>
+  <view class='h-tit'>热卖单品</view>
+  <view class='hot-goods' bindtap='getDetail' data-id='{{goodsTop.id}}'>
+    <view class='goods-img'>
+      <image src='{{goodsTop.thumb}}'  mode='widthFix'></image>
+    </view>
+    <view class='goods-info'>
+      <view class='date'>
+        <text>{{days}}</text>
+      </view>
+      <view class='name'>
+        {{goodsTop.goods_name}}
+      </view>
+      <view class='hot-price'>
+        <view class='price'>￥{{goodsTop.min_price}}</view>
+        <view class='roll-price' wx:if="{{goodsTop.roll!=0}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='hot'>
+  <view class='h-tit'>热卖专区</view>
+  <view class='goods-list'>
+    <view class='goods-item' wx:for="{{hotList}}" wx:key="{{item.id}}" bindtap='getDetail' data-id="{{item.id}}">
+      <view class='img'>
+        <image src='{{item.thumb}}'  mode='widthFix'></image>
+      </view>
+      <view class='name'>
+        {{item.goods_name}}
+      </view>
+      <view class='hot-price'>
+        <view class='price'>￥{{item.price}}</view>
+        <view class='roll-price' wx:if="{{item.roll!=0}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
+    </view>
+  </view>
+</view>

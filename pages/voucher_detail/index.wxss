@@ -1,0 +1,77 @@
+/* pages/voucher_detail/index.wxss */
+page{
+  padding-bottom: 150rpx;
+  background: #fff;
+}
+.voucher-item{
+  margin:30rpx;
+  padding: 30rpx;
+  background: #fef9f3;
+  border: 1px solid #f1e8cb;
+}
+.voucher-item .voucher-name{
+  margin-bottom: 10rpx;
+  font-size:38rpx;
+}
+.voucher-item .voucher-use{
+  padding: 8rpx 0;
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-rule{
+  padding: 0 30rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-explain{
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.voucher-explain view{
+  margin-bottom: 20rpx;
+}
+.explain-item{
+  margin-bottom: 30rpx;
+}
+.explain-item .tit{
+  margin-bottom: 16rpx;
+  font-size: 38rpx;
+}
+.explain-item .con{
+  font-size: 30rpx;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #ccc;
+  box-sizing: border-box
+}
+.voucher-price{
+  display: flex;
+  flex-direction: column;
+  font-size:30rpx;
+}
+.voucher-price .price{ 
+  color:#f93a3c;
+  font-size: 36rpx;
+}
+.voucher-price .org-price{
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-buy{
+  padding:8rpx 34rpx;
+  font-size:30rpx;
+  background:#f93a3c;
+  color:#fff;
+  border-radius:30rpx;
+
+}

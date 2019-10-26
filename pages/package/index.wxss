@@ -1,0 +1,82 @@
+/* pages/package/index.wxss */
+/* pages/experience/experience.wxss */
+page{
+  padding: 0 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.exper-item{
+  padding: 30rpx 0;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #dedede
+}
+.exper-img{
+  margin-right: 20rpx;
+  width: 200rpx;
+  flex-shrink: 0;
+}
+.exper-img image{
+  width: 100%;
+  border-radius: 10px;
+}
+.exper-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.exper-tit{
+  font-size:32rpx;
+  margin-bottom: 6rpx;
+}
+.exper-sub-tit{
+  height: 78rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+   color: #666666;
+}
+.exper-yh text{
+  display: inline-block;
+  padding: 4rpx;
+  font-size: 24rpx;
+  color:#f93a3c;
+  border:1px solid #f93a3c;
+  border-radius: 5px;
+}
+.exper-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+}
+.exper-price .price{
+  margin-right: 20rpx;
+  color:#f93a3c;
+}
+.exper-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.exper-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.exper-tabs{
+  margin-bottom: 30rpx;
+}
+.exper-tabs .tag-item{
+  margin-right: 16rpx;
+  background: #f8f8f8;
+  padding: 8rpx 12rpx;
+  font-size: 24rpx;
+  color: #000;
+}
+.exper-tabs .tag-item:nth-of-type(1){
+  color:#fb9c02;
+  background: #fff3d3;
+}
+.exper-tabs .tag-item:nth-of-type(2){
+  color:#685ee1;
+  background: #f1effd;
+}

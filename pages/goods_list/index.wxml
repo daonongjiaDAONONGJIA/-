@@ -1,0 +1,26 @@
+<!--pages/goods_list/index.wxml-->
+<scroll-view class="cate-nav" scroll-x>
+  <view class="nav-item {{cate_id==0?'active':''}}" bindtap='getCateOne' data-id="0">
+    首页
+  </view>
+  <view class="nav-item {{cate_id==item.id?'active':''}}" wx:for="{{cateList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-name="{{item.cate_name}}" bindtap='getCateOne'>
+    {{item.cate_name}}
+  </view>
+</scroll-view>
+<view class='hot'>
+  <view class='h-tit'>{{cate_name}}</view>
+  <view class='goods-list'>
+    <view class='goods-item' wx:for="{{goodsList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='getDetail'>
+      <view class='img'>
+        <image src='{{item.thumb}}'  mode='widthFix'></image>
+      </view>
+      <view class='name'>
+        {{item.goods_name}}
+      </view>
+      <view class='hot-price'>
+        <text class='price'>￥{{item.price}}</text>
+        <view class='roll-price' wx:if="{{item.roll==1}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
+    </view>
+  </view>
+</view>

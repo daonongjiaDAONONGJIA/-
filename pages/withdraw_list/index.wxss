@@ -1,0 +1,24 @@
+/* pages/withdraw_list/index.wxss */
+page{
+  background: #fff;
+}
+.record-list{
+  padding: 0 30rpx;
+}
+.record-list .record-item{
+  border-bottom:solid #dedede 1px;
+  padding:30rpx 0;
+  font-size: 30rpx;
+}
+.record-list .record-item .bank-money{
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between
+}
+.record-list .record-item .money{
+  color: #f93a3c;
+  font-size: 34rpx;
+}
+.record-list .record-item .date{
+  color: #666
+}

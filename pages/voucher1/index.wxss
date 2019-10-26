@@ -1,0 +1,36 @@
+/* pages/reward/index.wxss */
+.reward{
+  background: #fff;
+}
+.reward .tit{
+  border-bottom:1px solid #eee;
+  padding: 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 38rpx;
+}
+.reward-list{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between
+}
+.reward-list input{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border:none;
+  background: none;
+  font-size: 28rpx;
+}
+.reward-btn{
+  padding:0 30rpx 30rpx 30rpx;
+ 
+}
+.reward-btn .btn{
+  width:100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  text-align: center;
+  background: #f93a3c;
+}

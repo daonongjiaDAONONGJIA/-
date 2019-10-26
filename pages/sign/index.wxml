@@ -1,0 +1,125 @@
+<!--pages/sign/index.wxml-->
+<view class='user'>
+  <view class='user-con'>
+    <view class='avatar'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='info'>
+      <view class='tit'>我的积分</view>
+      <view class='num'>{{ task.score }}</view>
+    </view>
+  </view>
+  <view class='u-btn' bindtap='scoreShop'>
+    去兑换
+  </view>
+</view>
+<view class='sign'>
+  <view class='tit'><view>签到记录</view><view class='s-day'>已连续签到{{task.cycle_days}}天</view></view>
+  <view class='sign-list'>
+    <view class='sign-item' wx:for="{{ task.date }}" wx:key="{{index}}">
+      <view class='sign-con {{item.type==1?"active":""}}'>
+        <view class='num'>{{item.score}}</view>
+        <view>积分</view>
+      </view>
+      <view class='date'>{{item.date}}</view>
+    </view>
+  </view>
+  <button class='sign-btn' bindtap='signUp' wx:if="{{task.sgin_todays_type==0}}">
+    签到
+  </button>
+  <view class='sign-tip' wx:if="{{task.sgin_todays_type==1}}">
+    您今日已签到
+  </view>
+</view>
+<view class='sign'>
+  <view class='tit'>做任务 赚积分</view>
+  <view class='task-list'>
+    <view class='task-item'>
+      <view class='t-icon'>
+          <image src='../../images/ll-icon.png'></image>
+      </view>
+      <view class='task-con'>
+        <view class='t-info'>
+          <view class='t-tit'>
+            <view>浏览道农家<text>积分+{{task.browse.scores}}</text></view>
+            <view>{{task.browse.browse_num_now}}/{{task.browse.browse_num}}</view>
+          </view>
+          <view class='t-desc'>浏览{{task.browse.browse_num}}家，奖励{{task.browse.scores}}积分</view>
+        </view> 
+        <view class='t-btn t-btn1' bindtap='getTask' wx:if="{{task.browse.browse_type==0}}">
+          领取任务
+        </view>
+        <view class='t-btn' wx:if="{{task.browse.browse_type==1  &&  task.browse.browse_num_now<task.browse.browse_num}}" bindtap='viewGoods'>
+          立即浏览
+        </view>
+        <view class='t-btn' wx:if="{{task.browse.browse_type==1 && task.browse.browse_num_now>=task.browse.browse_num}}" bindtap='completeTask'>
+          领取积分
+        </view>
+        <view class='t-btn' wx:if="{{task.browse.browse_type==2 && task.browse.browse_num_now>=task.browse.browse_num}}">
+          已完成
+        </view>
+      </view>
+    </view>
+    <view class='task-item'>
+      <view class='t-icon'>
+          <image src='../../images/fx-icon.png'></image>
+      </view>
+      <view class='task-con'>
+        <view>
+          <view class='t-tit'>分享好友积分<text>积分+{{task.share.score}}</text></view>
+          <view class='t-desc'>分享内容，奖励{{task.share.score}}积分</view>
+        </view> 
+        <button class='t-btn' open-type="share">
+          立即分享
+        </button>
+      </view>
+    </view>
+    <view class='task-item'>
+      <view class='t-icon'>
+          <image src='../../images/zp-icon.png'></image>
+      </view>
+      <view class='task-con'>
+        <view>
+          <view class='t-tit'>积分抽奖</view>
+          <view class='t-desc'>{{rewardData.reward_score}}积分赢大礼</view>
+        </view> 
+        <view class='t-btn' bindtap='awardView'>
+          立即前往
+        </view>
+      </view>
+    </view>
+    <view class='task-item'>
+      <view class='t-icon'>
+          <image src='../../images/ti-icon.png'></image>
+      </view>
+      <view class='task-con problem-con'>
+        <view>
+          <view class='t-tit'>每日一题<text>积分+{{task.problem.scores}}</text></view>
+          <view class='t-desc'>答对题目，奖励{{task.problem.scores}}积分</view>
+        </view> 
+        <view class='problem'>
+          <view class='question'>{{ task.problem.problem }}</view>
+          <view class='answer'>
+            <view class='answer-item' wx:if="{{task.problem.problem_type==0}}" data-aid="{{ task.problem.answer[0].id }}" bindtap='answerProblem'>A.{{ task.problem.answer[0].answer }}</view>
+            <view class='answer-item {{(task.problem.answer_id==task.problem.answer[0].id&&task.problem.answer_id==task.problem.right_key_id)?"active":""}} {{(task.problem.answer_id==task.problem.answer[0].id&&task.problem.answer_id!=task.problem.right_key_id)?"erro":""}}' wx:if="{{task.problem.problem_type==1}}" data-aid="{{ task.problem.answer[0].id }}">A.{{ task.problem.answer[0].answer }}</view>
+            <view class='answer-item' wx:if="{{task.problem.problem_type==0}}" data-aid="{{ task.problem.answer[1].id }}" bindtap='answerProblem'>B.{{ task.problem.answer[1].answer }}</view>
+             <view class='answer-item {{(task.problem.answer_id==task.problem.answer[1].id&&task.problem.answer_id==task.problem.right_key_id)?"active":""}} {{(task.problem.answer_id==task.problem.answer[1].id&&task.problem.answer_id!=task.problem.right_key_id)?"erro":""}}' wx:if="{{task.problem.problem_type==1}}" data-aid="{{ task.problem.answer[1].id }}">B.{{ task.problem.answer[1].answer }}</view>
+          </view>
+          <view wx:if="{{task.problem.problem_type==1 && task.problem.answer_id!=task.problem.right_key_id}}" class='result'>
+            抱歉，您答错了，继续加油！
+          </view>
+          <view wx:if="{{task.problem.problem_type==1 &&task.problem.answer_id==task.problem.right_key_id}}" class='result'>
+            恭喜您获得的{{task.problem.scores}}积分！
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='mask' wx:if="{{unionid==''}}">
+  <view class='auth'>
+    <button class='auth-btn' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      获取权限
+    </button>
+  </view>
+</view> -->

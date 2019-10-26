@@ -11,19 +11,29 @@ Page({
    */
   data: {
     tabClasss: [],
-    status: ['ALL', 'waitpay', 'waitsent', 'waitreceive','finish'],
-    stautsDefault: 'ALL',
+    status: ['all', 'waitpay', 'waitsent', 'waitreceive', 'finish','pending'],
+    stautsDefault: 'all',
     page: 1, //默认加载第1页
     orders: [],
     domain: app.globalData.domain,
     mainurlimg: app.globalData.mainurlimg,
+    is_show: 0,
+    unionid: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.hideShareMenu();
+    this.setData({
+      tabClasss: ['text-select', 'text-normal', 'text-normal', 'text-normal', 'text-normal', 'text-normal']
+    })
+    var version = app.getVersion();
+    this.setData({
+      version: version
+    })
+    this.getOrderList(this.data.stautsDefault)
   },
 
   /**
@@ -37,16 +47,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      tabClasss: ['text-select', 'text-normal', 'text-normal', 'text-normal', 'text-normal']
-    })
-    this.getOrderList(this.data.stautsDefault,1)
+    
   },
-
   tabClick: function(e){
     var index = e.currentTarget.dataset.index
     var status = this.data.status
-    var classs = ['text-normal', 'text-normal', 'text-normal', 'text-normal', 'text-normal']
+    var classs = ['text-normal', 'text-normal', 'text-normal', 'text-normal', 'text-normal', 'text-normal']
     classs[index] = 'text-select'
     this.setData({
       tabClasss: classs,
@@ -58,23 +64,38 @@ Page({
     this.getOrderList(status[index], 1)
   },
   //默认加载全部订单数据
-  getOrderList: function(status, page) {
+  getOrderList: function(status) {
     var mainurl = app.globalData.mainurl;
-    var url = mainurl +'api/order/getOrderList'
+    var url = this.data.version +'api/order/getOrderList'
     var params = {
-      status: status,
-      page: page,
-      openid: app.globalData.openid,
-      token: app.globalData.userInfo.token
+      status: this.data.stautsDefault,
+      page: this.data.page,
+      openid: app.globalData.openid
     }
     util.wxRequest(url, params, data => {
       console.log(data)
       if (data.code == 200) {
         console.log(data)
-        wx.stopPullDownRefresh()
-        this.setData({ orders: data.data.data })
+        if (data.data.data.length==0) {
+          wx.showToast({
+            title: '暂无更多数据~',
+            icon: 'none'
+          })
+          // 隐藏加载框
+          wx.hideLoading();
+        } else {
+          var orders = this.data.orders;
+          for (var i = 0; i < data.data.data.length; i++) {
+            orders.push(data.data.data[i]);
+          }
+          // 设置数据
+          this.setData({
+            orders: orders
+          })
+          // 隐藏加载框
+          wx.hideLoading();
+        }
       } else {
-        app.globalData.login = false
         wx.showToast({
           title: data.msg,
           icon: 'none'
@@ -82,7 +103,6 @@ Page({
       }
     }, data => { }, data => { })
   },
-
   //取消订单
   cancel: function(e) {
     var mainurl = app.globalData.mainurl;
@@ -93,11 +113,10 @@ Page({
       content: '确定取消订单吗？',
       success: function (res) {
         if (res.confirm) {
-          var url = mainurl+'api/order/orderCancel'
+          var url = that.data.version + 'api/order/orderCancel'
           var params = {
             id: oid,
-            openid: app.globalData.openid,
-            token: app.globalData.userInfo.token
+            openid: app.globalData.openid
           }
           util.wxRequest(url, params, data => {
             if (data.code == 200) {
@@ -119,16 +138,75 @@ Page({
       }
     })
   },
+  //申请退款
+  getRefund:function(e){
+    var mainurl = app.globalData.mainurl;
+    var oid = e.currentTarget.dataset.id
+    var that = this
+    wx.showModal({
+      title: '提示',
+      content: '确定要申请退款吗？',
+      success: function (res) {
+        if (res.confirm) {
+          var url = that.data.version + 'api/order/returnGoods'
+          var params = {
+            order_id: oid,
+            openid: app.globalData.openid
+          }
+          util.wxRequest(url, params, data => {
+            if (data.code == 200) {
+              wx.showToast({
+                title: '申请退款成功',
+                icon: 'success'
+              })
+              that.setData({ orders: [], page: 1 })
+              that.getOrderList(that.data.stautsDefault, 1)
+            } else {
+              app.globalData.login = false
+              wx.showToast({
+                title: data.msg,
+                icon: 'none'
+              })
+            }
+          }, data => { }, data => { })
+        }
+      }
+    })
+  },
+  getComplete:function(e){
+    var that = this;
+    var oid = e.currentTarget.dataset.id;
+    var url = this.data.version + 'api/order/confirmOrder';
+    var params = {
+      id: oid,
+      openid: app.globalData.openid
+    }
+    util.wxRequest(url, params, data => {
+      if (data.code == 200) {
+        wx.showToast({
+          title: '定单已完成',
+          icon: 'success'
+        })
+        that.setData({ orders: [], page: 1 })
+        that.getOrderList(that.data.stautsDefault, 1)
+      } else {
+        app.globalData.login = false
+        wx.showToast({
+          title: data.msg,
+          icon: 'none'
+        })
+      }
+    }, data => { }, data => { })
+  },
   getOrder:function(e){
     var id = e.currentTarget.dataset.id
     var mainurl = app.globalData.mainurl;
     var openid = app.globalData.openid;
     var params = {
       openid: openid,
-      token: app.globalData.userInfo.token,
       orderId:id
     };
-    var url = mainurl + 'api/order/getWxpayData';
+    var url = this.data.version + 'api/order/getWxpayData';
     util.wxRequest(url, params, data => {
       console.log(data);
       this.setData({
@@ -171,9 +249,31 @@ Page({
   details: function(e) {
     //订单ID
     var id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/order/details/details?orderId=' + id
-    })
+    var type = e.currentTarget.dataset.type
+    //查看订单
+    if (type == 1) {
+      wx.navigateTo({
+        url: '/pages/order/details/details?orderId=' + id + '&page=order_list',
+      })
+    }
+    //套餐订单
+    if (type == 2) {
+      wx.navigateTo({
+        url: '/pages/order/package_detail/index?orderId=' + id + '&page=order_list',
+      })
+    }
+    //活动订单
+    if (type == 3) {
+      wx.navigateTo({
+        url: '/pages/order/activity_detail/index?orderId=' + id + '&page=order_list',
+      })
+    }
+    //活动订单
+    if (type == 4) {
+      wx.navigateTo({
+        url: '/pages/order/goods_detail/index?orderId=' + id + '&page=order_list',
+      })
+    }
   },
   //订单评论
   comment:function(e){
@@ -208,17 +308,32 @@ Page({
    * 页面上拉触底事件的处理函数--上拉加载
    */
   onReachBottom: function () {
-    // this.getOrderList(this.data.stautsDefault, ++this.data.page)
-    // wx.showToast({
-    //   title: '加载中',
-    //   icon: 'loading'
-    // })
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
+    var page = this.data.page + 1;
+    this.setData({
+      page:page
+    })
+    this.getOrderList()
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: '道农家',
+      path: '/pages/guide/guide',
+      // 设置转发的图片
+      imageUrl: '',
+      // 成功的回调
+      success: (res) => { },
+      // 失败的回调
+      fail: (res) => { },
+      // 无论成功与否的回调
+      complete: (res) => { }
+    }
   }
 })

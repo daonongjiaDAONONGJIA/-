@@ -1,0 +1,66 @@
+/* pages/my_discount/index.wxss */
+page{
+   padding-top: 30rpx;
+}
+.user-nav{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 30rpx;
+   background: #fff;
+   box-shadow: 0 0 30px #dedede;
+   border-radius: 20rpx;
+}
+.user-nav .nav-item{
+  flex-shrink: 0;
+  padding: 30rpx 20rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.user-nav .nav-item .nav-icon{
+  margin-right: 20rpx;
+}
+.user-nav .nav-item .nav-icon image{
+  width:110rpx;
+  height:110rpx;
+  margin-left: 30rpx;
+}
+.user-nav .nav-item .nav-info .tit{
+ font-size: 32rpx;
+ margin-bottom: 10rpx;
+ margin-left: 30rpx;
+}
+.user-nav .nav-item .nav-info .desc{
+ font-size: 30rpx;
+ margin-left: 30rpx;
+}
+.user-nav .nav-item:before{
+  content: "";
+  left:0;
+  bottom:0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+}
+.user-nav .nav-item:after{
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: #dedede;
+}
+.user-nav .nav-item:nth-of-type(2):after{
+  background: none
+}
+.user-nav .nav-item:nth-of-type(3):before{
+  
+}
+.user-nav .nav-item:nth-of-type(4):before{
+  
+}

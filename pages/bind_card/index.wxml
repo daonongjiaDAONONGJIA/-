@@ -1,0 +1,32 @@
+<!--pages/bind_card/index.wxml-->
+<form bindsubmit="addContact">
+<view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    持卡人姓名
+    </view>
+    <view class='item-input'>
+      <input type="text" name="cardholder" placeholder="请输入持卡人姓名"/>
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    开户行
+    </view>
+    <view class='item-input'>
+      <input type="text" name="bank" placeholder="请输入开户行" />
+    </view>
+  </view>
+  <view class='contact-item'>
+    <view class='item-tit'>
+    卡号
+    </view>
+    <view class='item-input'>
+      <input type="digit" name="bank_card" placeholder="请输入卡号" />
+    </view>
+  </view>
+  <view class='item-btn'>
+    <button type='submit' form-type="submit">保存</button>
+  </view>
+</view>
+</form>

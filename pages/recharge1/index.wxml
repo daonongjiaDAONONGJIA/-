@@ -1,0 +1,11 @@
+<!--pages/recharge/index.wxml-->
+<view class='recharge'>
+  <view class='tit'>兑换金额</view>
+  <view class='price'>
+    <view class='price-tit'>￥</view>
+    <view class='price-input'>
+      <input type='digit' bindinput='money' placeholder="最高可兑换{{limitMoney}}"></input>
+    </view>
+  </view>
+  <view class='btn' bindtap='exchangeMoney'>兑换</view>
+</view>

@@ -15,6 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu();
     WxParse.emojisInit('[]', "/wxParse/emojis/", {
       "00": "00.gif",
       "01": "01.gif",
@@ -99,6 +100,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '道农家',
+      path: '/pages/guide/guide',
+      // 设置转发的图片
+      imageUrl: '',
+      // 成功的回调
+      success: (res) => { },
+      // 失败的回调
+      fail: (res) => { },
+      // 无论成功与否的回调
+      complete: (res) => { }
+    }
   }
 })

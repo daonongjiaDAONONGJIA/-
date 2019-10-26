@@ -1,0 +1,117 @@
+/* pages/transfer_fsc/index.wxss */
+page{
+  background: #fff;
+}
+.user-info{
+  margin:30rpx 0;
+  padding: 30rpx;
+  box-shadow:0 0 30px #dedede;
+  font-size:28rpx; 
+  background: #fff;
+}
+.voucher{
+  padding: 0 30rpx;
+}
+.voucher-default{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+}
+.voucher-default .voucher-name{
+  margin-bottom: 10rpx;
+  font-size:30rpx;
+}
+.voucher-default .voucher-use{
+  padding: 8rpx 0;
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-change{
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #f93a3c
+}
+.voucher .btn{
+  margin-top: 30rpx;
+  background: #f93a3c;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #fff;
+}
+.modals{position:fixed; z-index: 999; top:0; left: 0; right:0; bottom: 0;}
+
+.modals-cancel{position:absolute; z-index:1000; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.5);}
+
+.bottom-dialog-body{
+  position:absolute; 
+  z-index:10001; 
+  bottom:0; 
+  left:0; 
+  right:0; 
+  padding:30rpx; 
+  background-color: #fff;
+}
+.bottom-pos{-webkit-transform:translateY(100%);transform:translateY(100%);}
+.voucher-list{
+  max-height: 600rpx;
+  padding-top: 30rpx;
+  overflow-y: scroll
+}
+.voucher-item{
+  display: flex;
+  margin-bottom: 30rpx;
+  align-items: center;
+}
+.voucher-item .voucher-name{
+  margin-bottom: 10rpx;
+  font-size:30rpx;
+}
+.voucher-item .voucher-use{
+  padding: 8rpx 0;
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-item .voucher-price{
+  position: relative;
+  flex-shrink: 0;
+  width: 40%;
+  text-align: center;
+  font-size:38rpx;
+  margin-right: 30rpx;
+}
+.voucher-item .voucher-price image{
+  width: 100%;
+  height: 100%
+}
+.voucher-item .voucher-price .price{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.voucher-none{
+  padding: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.voucher-info{
+  width: 100%;
+}
+.voucher-sel{
+  flex-shrink: 0;
+  text-align: center;
+   width: 60rpx;
+}
+.voucher-sel image{
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -1,0 +1,41 @@
+/* pages/score_order/index.wxss */
+.goods-list{
+  padding: 30rpx;
+  background: #fff;
+}
+.goods-item{
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.goods-item:last-of-type{
+  margin-bottom: 0;
+}
+.goods-item .img{
+  flex-shrink: 0;
+  margin-right: 30rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: #000;
+  overflow: hidden
+}
+.goods-item .img image{
+   width: 120rpx;
+  height: 120rpx;
+}
+.goods-item .info{
+  width: 100%;
+}
+.goods-item .info .con{
+  display: flex;
+  justify-content: space-between
+}
+.goods-item .info .name{
+  margin-bottom: 10rpx;
+  color: #3a3a3a
+}
+.goods-item .info .num{
+  color: #666;
+  font-size: 24rpx;
+}

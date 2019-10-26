@@ -1,0 +1,175 @@
+<!--pages/experience_index/experience_index.wxml-->
+<view class='search'>
+  <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='search' bindconfirm='getSearch'></input>
+  <image class="" src='../../images/search-sm.png' bindtap='getSearch'></image>
+</view>
+<view class='swiper-box'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee" bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" data-current="{{index}}" circular="true">
+    <!-- <swiper-item bindtap="getRoll">
+        <image src="http://m.shanxijsd.com/uploads/file/roll_banner.png?11" class="slide-image" mode='widthFix' bindload="imageLoad"/>
+    </swiper-item> -->
+    <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+      <swiper-item  data-type="{{item.type}}" bindtap='showGoods' data-id="{{item.goods_id}}" wx:if="{{item.type==1}}">
+        <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}' />
+      </swiper-item>
+      <swiper-item  data-type="{{item.type}}" bindtap='getIntro' data-id="{{item.id}}" wx:if="{{item.type==2 || item.type==3}}">
+        <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 热门服务开始 -->
+<view class="box">
+  <view class='container'>
+    <view class="cate">
+      <view class="item" bindtap='getSonIndex' data-id='1'>
+        <view class="cate-img">
+          <image src="../../images/n1.png"></image>
+        </view>
+        <view class="cate-title">民宿民居</view>
+      </view>
+      <view class="item" bindtap='getSonIndex' data-id='2'>
+        <view class="cate-img">
+          <image src="../../images/n2.png"></image>
+        </view>
+        <view class="cate-title">达人互动</view>
+      </view>
+      <view class="item" bindtap='getSonIndex' data-id='3'>
+        <view class="cate-img">
+          <image src="../../images/n3.png"></image>
+        </view>
+        <view class="cate-title">农品集市</view>
+      </view>
+      <view class="item" bindtap='getSonIndex' data-id='4'>
+        <view class="cate-img">
+          <image src="../../images/n4.png"></image>
+        </view>
+        <view class="cate-title">爆红特款</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--热门目的地-->
+<view class='index-section'>
+    <view class='tui-title'>热门目的地</view>
+    <scroll-view class='destination' scroll-x>
+        <view class='destination-item' wx:for="{{ areaList }}" wx:key="{{index}}" bindtap='goodsList' data-id='{{item.id}}'>
+            <image src='{{item.thumb}}'></image>
+            <view class='destination-name'>
+            {{item.cate_name}}
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<!-- 热门服务结束 -->
+<view class='index-section'>
+  <view class='tui-title'>
+    {{list_pos1.pos_name}}
+    <image src='../../images/read-more.png' data-type="{{list_pos1.pos_type}}" bindtap='getMore'></image>
+  </view>
+  <view>
+    <scroll-view class='goods-commend' scroll-x>
+      <view class='commend-item' wx:for="{{list1}}" wx:key="{{item.id}}" data-type="{{list_pos1.pos_type}}" bindtap='showGoods' data-id="{{item.id}}">
+        <view class='commend-img'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='commend-tit'>
+          {{item.subtitle}}
+        </view>
+        <view class='commend-price'>
+          <view class='price'>￥{{item.price}}</view>
+          <view class='roll-price' wx:if="{{item.roll==1}}">
+            <image src='../../images/roll-icon.png'></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='index-section'>
+  <view class='tui-title'>
+    {{list_pos2.pos_name}}
+    <image src='../../images/read-more.png' data-type="{{list_pos2.pos_type}}" bindtap='getMore'></image>
+  </view>
+  <view>
+    <scroll-view class='goods-commend' scroll-x>
+      <view class='commend-item' wx:for="{{list2}}" wx:key="{{item.id}}" data-type="{{list_pos2.pos_type}}" bindtap='showGoods' data-id="{{item.id}}">
+        <view class='commend-img'>
+          <image src='{{item.file_url}}'></image>
+        </view>
+        <view class='commend-tit'>
+          {{item.subtitle}}
+        </view>
+        <view class='commend-price'>
+          <view class='price'>￥{{item.price}}</view>
+          <view class='roll-price' wx:if="{{item.roll==1}}">
+            <image src='../../images/roll-icon.png'></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='index-section'>
+  <view class='tui-title'>
+    {{list_pos3.pos_name}}
+    <image src='../../images/read-more.png' data-type="{{list_pos3.pos_type}}" bindtap='getMore'></image>
+  </view>
+  <view>
+    <scroll-view class='goods-commend' scroll-x>
+      <view class='commend-item' wx:for="{{list3}}" wx:key="{{item.id}}" data-type="{{list_pos3.pos_type}}" bindtap='showGoods' data-id="{{item.id}}">
+        <view class='commend-img'>
+          <image src='{{item.file_url}}'></image>
+        </view>
+        <view class='commend-tit'>
+          {{item.subtitle}}
+        </view>
+        <view class='commend-price'>
+          <view class='price'>￥{{item.price}}</view>
+          <view class='roll-price' wx:if="{{item.roll==1}}">
+            <image src='../../images/roll-icon.png'></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='index-section'>
+  <view class='tui-title'>
+    {{hot.pos_name}}
+    <image src='../../images/read-more.png' data-type="4" bindtap='getMore'></image>
+  </view>
+  <view class='hot-goods' bindtap='showGoods' data-id='{{hot.id}}' data-type='4'>
+    <view class='goods-img'>
+      <image src='{{hot.thumb}}'  mode='widthFix'></image>
+    </view>
+    <view class='goods-info'>
+      <view class='name'>
+        {{hot.goods_name}}
+      </view>
+      <view class='date'>
+        <text>{{days}}</text>
+      </view>
+      <view class='hot-price'>
+        <view class='price'>￥{{hot.min_price}}</view>
+        <view class='roll-price' wx:if="{{hot.roll==1}}">
+            <image src='../../images/roll-icon.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="voucher" wx:if="{{is_voucher==1}}">
+  <view class="voucher-con">
+    <image src="http://m.shanxijsd.com/uploads/default/yhq-bg.png" mode='widthFix'></image>
+    <view class="con">
+      <view class="tit">您的{{voucher.cash_name}}已到账</view>
+      <view class="num">￥<text>{{voucher.cash_money}}</text></view>
+      <view class="desc">{{voucher.cash_explain_desc}}</view>
+      <view class="date">领取、有效期至{{voucher.cash_use_end}}</view>
+    </view>
+    <view class="btn" bindtap="closeVoucher">
+      <image src="http://m.shanxijsd.com/uploads/default/knonw.png" mode='widthFix'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/consignee/index.wxml--><!--pages/contact/contact.wxml-->
+<view>
+  <view class='contact-item' wx:for="{{ consigneeList }}" wx:key="{{index}}" data-id='{{item.id}}'>
+    <view class='contact-info'>
+      <view class='username'>
+        {{item.name}}
+      </view>
+      <view class='telphone'>
+      {{item.phone}}
+      </view>
+      <view class='idCard'>
+       {{item.address}}
+      </view>
+    </view>
+    <view class='contact-operate'>
+      <view class='operate-item' bindtap='operateConsignee' data-id="{{item.id}}" data-operate="default">
+        {{item.is_default==1?'默认':'设为默认'}}
+      </view>
+      <view  class='operate-item' bindtap='operateConsignee' data-id="{{item.id}}" data-operate="edit">
+        <image src='../../images/icon_edit.png'></image>编辑
+      </view>
+      <view  class='operate-item' bindtap='operateConsignee' data-id="{{item.id}}" data-operate="delete">
+        <image src='../../images/icon_delete.png'></image>删除
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='btn' bindtap='addConsignee'>添加收货地址</view>
+</view>
+

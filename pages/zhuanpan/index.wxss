@@ -1,0 +1,222 @@
+page {
+  width:100%;
+  background: url("http://m.shanxijsd.com/uploads/file/zp-bg.png?22") no-repeat #d22a09;
+  background-size: 100%;
+}
+.zp-container{
+   width:100%;
+}
+.zp-tit{
+  text-align: center
+}
+.zp-tit image{
+  width: 90%;
+}
+.main{
+}
+/* 转盘 */
+.canvas-container {
+  margin: 0 auto;
+  position: relative;
+  width: 316px;
+  height: 316px;
+  border-radius: 50%;
+}
+.canvas-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: inherit;
+  background-clip: padding-box;
+  background-color: #fff;
+  border:8px solid #ffbe04;
+}
+.canvas-element {
+  position: relative;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.canvas-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 300;
+}
+.canvas-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #e44025;
+  font-size: 30rpx;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+.canvas-item-text {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transform-origin: 50% 150px;
+  transform-origin: 50% 150px;
+}
+.canvas-item-text .name{
+  margin-bottom: 20rpx;
+}
+.canvas-item-text image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 分隔线 */
+.canvas-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 99;
+  overflow: hidden
+}
+.canvas-litem {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  width: 1px;
+  height: 150px;
+  background-color: rgba(228, 55, 14, 0.4);
+  overflow: hidden;
+  -webkit-transform-origin: 50% 150px;
+  transform-origin: 50% 150px;
+}
+
+/**
+* 抽奖按钮
+*/
+.canvas-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 110px;
+  top: 110px;
+  z-index: 400;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #f4e9cc;
+  background-color: #e44025;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+.canvas-btn .num{
+  font-size: 14px;
+}
+.canvas-btn::after {
+  position: absolute;
+  content:'';
+  left: 10px;
+  top: -46px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 30px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #e44025;
+}
+.canvas-btn.disabled {
+  pointer-events: none;
+  background: #b07a7b;
+  color: #ccc;
+}
+.canvas-btn.disabled::after {
+  border-bottom-color: #b07a7b;
+}
+.score{
+  margin-bottom: 30rpx;
+  text-align: center;
+  color: #ffbe04;
+  font-size: 30rpx;
+  font-weight: bold
+}
+.explain{
+  margin:30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+
+.mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth{
+  padding: 30rpx;
+  width: 80%;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.auth .auth-btn{
+  margin:0 10%;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #feb01a;
+  color: #fff;
+  font-size: 24rpx;
+}
+.tip{
+  margin: 30rpx 0;
+  text-align: center;
+  color: #ffbe04;
+  font-size: 30rpx;
+  font-weight: bold
+}
+.explain-con{
+  padding-top: 30rpx;
+  font-size:28rpx;
+  line-height: 2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.explain-con .wxParse-p{
+   padding-bottom: 30rpx;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden
+}
+.explain-con .wxParse-p image{
+  width: 100%;
+}
+.wxParse-inline {
+  line-height: 1.8
+}
+.explain-con image{
+  width: 100%;
+}

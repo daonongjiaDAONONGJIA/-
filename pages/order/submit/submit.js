@@ -65,7 +65,7 @@ Page({
     var params = {
       cartIds: this.data.cartIds,
       openid: app.globalData.openid,
-      token: app.globalData.userInfo.token
+      
     }
     util.wxRequest(url, params, data => {
       if (data.code == 200) {
@@ -87,7 +87,6 @@ Page({
     var url = app.globalData.mainurl + 'API/order/getYhj'
     var params = {
       openid: app.globalData.openid,
-      token: app.globalData.userInfo.token,
       totalMoney: this.data.totalMoney
     }
     util.wxRequest(url, params, data => {
@@ -173,7 +172,6 @@ Page({
       address: this.data.address,
       totalMoney: this.data.totalMoney,
       openid: app.globalData.openid,
-      token: app.globalData.userInfo.token,
       totime: this.data.date,
       yhjid: this.data.yhjid,
       ordertype:1

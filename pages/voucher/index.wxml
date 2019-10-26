@@ -1,0 +1,123 @@
+<!--pages/voucher/index.wxml-->
+<view class='voucher-list'>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發1元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥1</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="1" data-voucher="1">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發10元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥10</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="10" data-voucher="10">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發100元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥100</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="100" data-voucher="100">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發999元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥999</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="999" data-voucher="999">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發1010元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥1000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="1000" data-voucher="1010">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發1515元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥1500</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="1500" data-voucher="1515">抢购</view>
+    </view>
+  </view>
+   <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發2050元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥2000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="2000" data-voucher="2050">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發3150元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥3000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="3000" data-voucher="3150">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發4200元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥4000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="4000" data-voucher="4200">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發10300元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥10000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="10000" data-voucher="10300">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發20610元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥20000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="20000" data-voucher="20610">抢购</view>
+    </view>
+  </view>
+  <view class='voucher-item'>
+    <view class='voucher-info'>
+      <view class='voucher-name'>和顺發30920元代金券</view>
+      <view class='voucher-use'>单次可用一张</view>
+      <view class='voucher-price'>￥30000</view>
+    </view>
+    <view class='voucher-buy'>
+      <view class='btn' bindtap='getVoucher' data-price="30000" data-voucher="30920">抢购</view>
+    </view>
+  </view>
+</view>

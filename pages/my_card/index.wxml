@@ -1,0 +1,107 @@
+<!--pages/my_card/index.wxml-->
+<view class='user-info'>
+  <view class='userinfo-avatar'><open-data type="userAvatarUrl"></open-data></view>
+  <view class='userinfo-nickname'>
+    <view><open-data type="userNickName"></open-data></view>
+    <view wx:if="{{status.code==200 && status.data.level==2}}">有效期至{{status.data.endtime}}</view>
+    <view wx:if="{{status.code==400 && status.data.level==2}}">{{status.data.endtime}}会员卡已过期</view>
+  </view>
+</view>
+<view class='user-card' wx:if="{{status.code==200}}">
+  <image src='../../images/vip-card.png' class='card' mode='widthFix' wx:if="{{status.data.level==2}}"></image>
+  <image src='../../images/vip-card1.png' class='card' mode='widthFix' wx:if="{{status.data.level==1}}"></image>
+  <view class='card-info'>
+    <view>
+      <view class='card-name'>
+        金猪宝宝会员跨界通用消费积分卡/券
+      </view>
+      <view class='card-date' wx:if="{{status.code==200 && status.data.level==2}}">有效期至{{status.data.endtime}}</view>
+      <view  class='card-date' wx:if="{{status.code==400 && status.data.level==2}}">{{status.data.endtime}}会员卡已过期</view>
+    </view>
+    <view class='card-num-btn'>
+      <view class='card-num'>NO.{{status.data.card_sn}}</view>
+      <view class='card-btn' bindtap='getVip' wx:if="{{status.data.level==2}}">立即续费</view>
+      <view class='card-btn' bindtap='getVip' wx:if="{{status.data.level==1}}">立即升级金卡</view>
+    </view>
+  </view>
+</view>
+<!-- <view class='user-level' bindtap='getVip'>
+  <view><image src='../../images/VIP.png'></image></view><view>成为VIP，获取更多福利</view>
+</view> -->
+<view class='user-nav'>
+  <view class='nav-item' bindtap='getMoney'>
+    <view class='nav-icon'><image src='../../images/card2.png'></image></view>
+    <view class='nav-info'>
+      <view class='tit'>会员卡余额</view>
+      <view class='desc'>￥{{status.data.money}}</view>
+    </view>
+  </view>
+  <!-- <view class='nav-item' bindtap='bindCard'>
+    <view class='nav-icon'><image src='../../images/card2.png'></image></view>
+    <view class='nav-info'>
+      <view class='tit'>绑定银行卡</view>
+      <view class='desc'></view>
+    </view>
+  </view>
+  <view class='nav-item'>
+    <view class='nav-icon'>
+      <image src='../../images/card1.png'></image>
+    </view>
+    <view class='nav-info' bindtap="getScore">
+      <view class='tit'>会员积分</view>
+      <view class='desc'>{{status.data.score}}</view>
+    </view>
+  </view>
+  <view class='nav-item' bindtap='getPay'>
+    <view class='nav-icon'><image src='../../images/card3.png'></image></view>
+    <view  class='nav-info'>
+      <view class='tit'>线下付款</view>
+      <view class='desc'>便捷的支付</view>
+    </view>
+  </view>-->
+  <view class='nav-item' bindtap='getOrder'>
+    <view class='nav-icon'><image src='../../images/card4.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>交易记录</view>
+       <view class='desc'>查看对账单</view>
+    </view>
+  </view>
+  <view class='nav-item' bindtap='getReward'>
+    <view class='nav-icon'><image src='../../images/card2.png'></image></view>
+    <view class='nav-info'>
+      <view class='tit'>打赏码</view>
+      <view class='desc'>{{status.data.money_code}}个打赏码</view>
+    </view>
+  </view>
+  <!-- <view class='nav-item' bindtap='getRedPacket'>
+  <view class='nav-item'  bindtap='getPay'>
+    <view class='nav-icon'>
+      <image src='../../images/card6.png'></image>
+    </view>
+    <view class='nav-info'>
+      <view class='tit'>送荷包</view>
+      <view class='desc'>荷包</view>
+    </view>
+  </view>
+  <view class='nav-item' bindtap='getPay'>
+    <view class='nav-icon'><image src='../../images/card7.png'></image></view>
+    <view  class='nav-info'>
+      <view class='tit'>礼品</view>
+      <view class='desc'>便捷的支付</view>
+    </view>
+  </view>-->
+  <view class='nav-item' bindtap='getDiscount'>
+    <view class='nav-icon'><image src='../../images/card5.png'></image></view>
+    <view  class='nav-info'>
+       <view class='tit'>道德金</view>
+       <view class='desc'>专享优惠折扣</view>
+    </view>
+  </view>
+</view>
+<view class='mask' wx:if="{{is_show==1}}">
+  <view class='auth'>
+    <button class='auth-btn' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      获取权限
+    </button>
+  </view>
+</view>

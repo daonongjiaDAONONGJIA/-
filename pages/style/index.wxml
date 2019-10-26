@@ -1,0 +1,16 @@
+<!--pages/style/index.wxml-->
+<view wx:if="{{ styleList.length>0 }}">
+  <view class='style' wx:for='{{styleList}}' wx:key='{{item.id}}' >
+    <view class='tit'>
+      {{item.title}}
+    </view>
+    <view class='img'>
+      <view class='img-item' wx:for='{{item.thumb}}' wx:for-item="thumb" wx:key='{{thumb.id}}'>
+        <image src='{{thumb.thumb}}'  mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{ styleList.length==0 && page==1 }}" class='style-none'>
+  暂无道家风采
+</view>

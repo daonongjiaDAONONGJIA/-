@@ -14,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu();
     var id = options.id;
     this.setData({
       id:id
@@ -33,7 +34,6 @@ Page({
     var openid = app.globalData.openid;
     var params = {
       openid: openid,
-      token: app.globalData.userInfo.token,
       id: this.data.id
     };
     var url = mainurl + 'api/user/getLianxiren';
@@ -53,7 +53,6 @@ Page({
     var params = {
       id:this.data.id,
       openid: openid,
-      token: app.globalData.userInfo.token,
       name: e.detail.value.name,
       phone: e.detail.value.phone,
       idcard: e.detail.value.idcard
@@ -114,6 +113,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '道农家',
+      path: '/pages/guide/guide',
+      // 设置转发的图片
+      imageUrl: '',
+      // 成功的回调
+      success: (res) => { },
+      // 失败的回调
+      fail: (res) => { },
+      // 无论成功与否的回调
+      complete: (res) => { }
+    }
   }
 })

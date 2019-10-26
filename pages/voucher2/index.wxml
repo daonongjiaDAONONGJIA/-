@@ -1,0 +1,10 @@
+<!--pages/reward/index.wxml-->
+<view class='reward'>
+  <view class='tit'>领取金猪通用代金券</view>
+  <view class='reward-list'>
+    <input type='text' bindinput='getFsc' placeholder='请输入代金券密钥'></input>
+  </view>
+  <view class='reward-btn'>
+    <view class='btn' bindtap='exchangeFsc'>立即领取</view>
+  </view>
+</view>

@@ -1,0 +1,119 @@
+/* pages/experience_index_son2/index.wxss */
+.index-section{
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.index-section .title{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  padding: 0 30rpx;
+  box-sizing: border-box
+}
+.goods-commend {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: nowrap;
+}
+.commend-item{
+  margin: 30rpx 20rpx 30rpx 0;
+  width: 255rpx;
+  display: inline-block;
+}
+.commend-img{
+  width: 255rpx;
+  height: 255rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.commend-img image{
+   width: 100%;
+   height: 100%;
+}
+.commend-tit{
+  margin:14rpx 0;
+  font-size: 28rpx;
+  white-space: normal;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.commend-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+}
+.commend-price .price{
+  color:#f93a3c;
+}
+.commend-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.commend-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+
+.exper-item{
+  padding: 30rpx;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #dedede
+}
+.exper-img{
+  margin-right: 20rpx;
+  width: 200rpx;
+  height: 200rpx;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden
+}
+.exper-img image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.exper-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.exper-tit{
+  font-size:32rpx;
+  margin-bottom: 6rpx;
+}
+.exper-sub-tit{
+  font-size: 28rpx;
+   color: #666666;
+}
+.exper-yh text{
+  display: inline-block;
+  padding: 4rpx;
+  font-size: 24rpx;
+  color:#f93a3c;
+  border:1px solid #f93a3c;
+  border-radius: 5px;
+}
+.exper-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+}
+.exper-price .price{
+  color:#f93a3c;
+}
+.exper-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.exper-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}

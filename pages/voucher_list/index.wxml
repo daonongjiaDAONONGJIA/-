@@ -1,0 +1,23 @@
+<!--pages/voucher_list.wxml-->
+<view class='voucher-list'>
+    <view class='voucher-none' wx:if="{{ voucherList.length==0 }}">
+      <view>没有可用代金券</view>
+    </view>
+    <view class='voucher-item' wx:for="{{ voucherList }}" wx:key="{{index}}" wx:if="{{ voucherList.length>0 }}" bindtap="selVoucher" data-vid="{{item.id}}" data-price="{{item.amount_of}}">
+        <view class='voucher-price'>
+          <image src='../../images/card-bg.png' mode='widthFix'>
+          </image>
+          <view class='price'>
+            ￥{{item.amount_of}}
+          </view>
+        </view>
+        <view class='voucher-info'>
+          <view class='voucher-name'>{{item.time}}</view>
+          <view class='voucher-use'>单次可用一张</view>
+        </view>
+        <view class='voucher-sel'>
+          <image src='../../images/check2.png' wx:if="{{vid==item.id}}"></image>
+          <image src='../../images/check1.png' wx:if="{{vid!=item.id}}"></image>
+        </view>
+    </view>
+</view>

@@ -5,18 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [{ 'id': 1, 'img': 'https://m.shanxijsd.com/static/images/yd1.jpg' }],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.hideShareMenu();
+    setTimeout(function(){
+      wx.switchTab({
+        url: '/pages/experience_index/experience_index'
+      })
+    },3000);
   },
 
   /**
@@ -66,10 +67,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  getIndex:function(){
-    wx.switchTab({
-      url: '/pages/experience/experience',
-    })
   }
 })

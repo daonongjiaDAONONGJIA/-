@@ -1,0 +1,59 @@
+<!--pages/vip_open/vip_open.wxml-->
+<view class='card-info'>
+  <view class='tit'>
+    居善地金猪宝宝会员跨界通用消费积分卡
+  </view>
+  <view class='desc'>
+    有效期<text>购买后1年有效期</text>
+  </view>
+  <view class='desc'>
+    价格<text class='price'>￥200</text>
+  </view>
+</view>
+<view class='pay-info'>
+  <view class='tit'>
+    支付方式
+  </view>
+  <view class='pay-type'>
+    <view class='type-item' data-type='1' bindtap='getPayType'>
+      <view class='type-info'>
+        <view class='type-icon'>
+          <image src='../../images/wechat.png'></image>
+        </view>
+        <view>微信支付</view>
+      </view>
+      <view class='type-sel'>
+         <image src='../../images/check2.png' wx:if="{{type==1}}"></image>
+         <image src='../../images/check1.png' wx:else></image>
+      </view>
+    </view>
+    <view class='type-item' data-type='2'  bindtap='getPayType' wx:if="{{fsc_money>=300}}">
+      <view class='type-info'>
+        <view class='type-icon'>
+          <image src='../../images/quan.png'></image>
+        </view>
+        <view>福寿长代金券支付</view>
+      </view>
+      <view class='type-sel'>
+        <image src='../../images/check2.png' wx:if="{{type==2}}"></image>
+        <image src='../../images/check1.png' wx:else></image>
+      </view>
+    </view>
+    <view class='type-item' data-type='3'  bindtap='getPayType' wx:if="{{roll>100}}">
+      <view class='type-info'>
+        <view class='type-icon'>
+          <image src='../../images/quan.png'></image>
+        </view>
+        <view>金猪代金券支付</view>
+      </view>
+      <view class='type-sel'>
+        <image src='../../images/check2.png' wx:if="{{type==3}}"></image>
+        <image src='../../images/check1.png' wx:else></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='price'>订单金额：<text>￥200</text></view>
+  <view class='btn' bindtap='getVip'>去支付</view>
+</view>

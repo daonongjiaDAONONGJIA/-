@@ -1,0 +1,32 @@
+<!--pages/score_order_detail/index.wxml-->
+<view class='consignee'>
+  <view class='c-left'>
+    <view class='info'>
+      <view class='name'>{{orderInfo.name}}</view>
+      <view class='tel'>{{orderInfo.phone}}</view>
+    </view>
+    <view class='address'>
+      {{orderInfo.address}}
+    </view>
+  </view>
+</view>
+<view class='goods'>
+  <view class='info'>
+    <view class='img'>
+      <image src='{{orderInfo}}'></image>
+    </view>
+    <view class='con'>
+      <view class='name'>{{orderInfo.goods_name}}</view>
+      <view class='price'>{{orderInfo.price}}积分</view>
+    </view>
+  </view>
+  <view class='subtotal'>
+    合计：<text>{{orderInfo.price}}积分</text>
+  </view>
+</view>
+<view class='footer'>
+  <view>
+    总计：<text class='price'>{{orderInfo.price}}积分</text>
+  </view>
+</view>
+

@@ -1,0 +1,114 @@
+<!--pages/experience_detail1/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='swiper-box'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" data-current="{{index}}" circular="true">
+      <block wx:for="{{imgList}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad"/>    </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class='goods-info'>
+  <view class='goods-name'>
+    {{goodsInfo.type_name}}
+  </view>
+  <!-- <view class='goods-price' wx:if="{{goodsInfo.level==2}}">
+  ￥{{goodsInfo.member_price}} <text>￥{{goodsInfo.price}}</text>
+  </view> -->
+  <view class='goods-price'>
+  ￥{{goodsInfo.min_price}}
+  </view>
+  <view class='roll-price'>
+    金猪价<text>￥{{goodsInfo.roll_price}}</text>
+  </view>
+</view>
+<view class='goods-discount'>
+    <!-- <view class='discount-item'>
+      <view class='goods-integral'><text class='tit'>金卡</text>金卡VIP专享9折</view>
+      <view wx:if="{{cardInfo.level==1}}" bindtap='getMember' class='operate'>去开通</view>
+    </view> -->
+    <view class='discount-item'>
+      <view class='goods-integral'>
+      <text class='tit'>优惠</text><text class='mark'>金猪会员</text>持券享5折   
+      </view>
+      <view bindtap='getVoucher' class='operate'>
+        去领去兑
+        <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <!-- <view class='discount-item'>
+      <view class='goods-integral'><text class='tit'>用券</text>代金券，更多折扣</view>
+      <view bindtap='getVoucher' class='operate'>
+        去购买
+        <image src="../../images/next.png"></image>
+      </view>
+    </view> -->
+    <!-- <view class='discount-item'>
+      <view class='goods-integral'><text class='tit'>余额</text>可使用余额支付</view>
+      <view bindtap='getCard' class='operate'>
+        去充值
+        <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item' wx:if="{{goodsInfo.integral!=0}}">
+      <view class='goods-integral'>
+        <text class='tit'>积分</text>积分{{goodsInfo.integral}}抵￥{{goodsInfo.cheap}}
+      </view>
+    </view> -->
+</view>
+<view class='style'>
+  <view bindtap='getStyle' class='style-btn'>道家风采</view>
+</view>
+<!-- <view class='goods-intro'>
+  <view class='intro-item' wx:for="{{contentList}}" wx:key="item.id">
+    <view class='intro-tit'>
+      Q{{index+1}} {{item.title}}
+    </view>
+    <view class='intro-con'>
+      <view class='intro-imgs'>
+        <view class='img-item' bindtap='getPicBig' data-imgs="{{item.thumb}}"  wx:for="{{item.thumb}}" wx:for-item="thumb" wx:key="index">
+          <image src='{{thumb.thumb}}' mode='widthFix'></image>
+        </view>
+      </view>
+      <view>
+         {{item.content}}
+      </view>
+    </view>
+  </view>
+</view> -->
+<view class='goods-desc'>
+  <view class='desc'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<view class='goods-comment'>
+  <view class='tit'>
+    道友评论
+  </view>
+  <view class='comment-list' wx:if="{{goodsComment.length>0}}">
+    <view class='comment-item' wx:for="{{goodsComment}}" wx:key="item.id">
+      <view class='comment-avatar'>
+        <image src='{{item.head_src}}'></image>
+      </view>
+      <view class='comment-info'>
+        <view class='comment-user'>
+        {{item.nick_name}}
+        </view>
+        <view class='comment-desc'>
+        {{item.content}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='comment-none' wx:if="{{goodsComment.length==0}}">
+    暂无评论~
+  </view>
+</view>
+<view class='footer'>
+  <view class='goods-price'>
+  ￥{{goodsInfo.min_price}}/体验
+  </view>
+  <view class='goods-buy' bindtap='goodsBuy'>
+    立即预定
+  </view>
+</view>

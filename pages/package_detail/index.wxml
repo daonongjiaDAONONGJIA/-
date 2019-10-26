@@ -1,0 +1,199 @@
+<!--pages/experience_detail1/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='swiper-box'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" data-current="{{index}}">
+      <block wx:for="{{imgList}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <image src="{{item.file_url}}" class="slide-image" mode='widthFix' bindload="imageLoad"/>    </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class='goods-info'>
+  <view class="goods-tag">
+    <text class="tag-item" wx:for="{{goodsInfo.tabs}}" wx:key="{{key}}">{{item}}</text>
+  </view>
+  <view class='goods-name'>
+     {{goodsInfo.package_name}}
+  </view>
+  <view class='goods-desc1'>
+    {{goodsInfo.abstract}}
+  </view>
+</view>
+<view class='goods-discount'>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/jin.png" wx:if="{{goodsInfo.roll==1}}"></image>
+        <image src="../../images/jin_.png" wx:if="{{goodsInfo.roll==0}}"></image>
+        金猪代金券
+      </view>
+      <view class="link" bindtap="getVoucher" data-type="roll">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fu.png" wx:if="{{goods_fsc>0}}"></image>
+        <image src="../../images/fu_.png" wx:if="{{goods_fsc==0}}"></image>福寿长代金券
+      </view>
+      <view class="link" bindtap="getVoucher" data-type="fsc">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/he.png" wx:if="{{goodsInfo.hsf==1}}"></image>
+        <image src="../../images/he_.png" wx:if="{{goodsInfo.hsf==0}}"></image>和顺发代金券
+      </view>
+      <view class="link" bindtap="getVoucher" data-type="hsf">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <!--<view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fan.png"></image>购买返积分
+      </view>
+    </view>-->
+</view>
+<view class='goods-desc'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class='footer'>
+  <view class='goods-price'>
+  ￥{{goodsInfo.price}}
+  </view>
+  <view class='goods-buy' bindtap='confirmOrder' wx:if="{{goodsInfo.goods_state==1}}">
+    立即预定
+  </view>
+  <view class='goods-buy1' wx:if="{{goodsInfo.goods_state==0}}">
+    停售
+  </view>
+</view>
+<view class="modals modals-bottom-dialog" wx:if="{{value}}">
+  <view class="modals-cancel"  bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}" style='background:none;padding:0'>
+     <view class='buy-img'>
+        <view class='img'>
+          <image src='{{imgList[0].file_url}}'></image>
+        </view>
+        <view class='price'>
+          <view>￥{{price}}</view>
+          <view>已选{{type_name}}</view>
+        </view>
+     </view>
+     <view class="order-con">
+        <view class='buy-goods'>
+          <view class='goods-prop'>
+            <view class='prop-tit'>
+              选择
+            </view>
+            <view class='prop-list'>
+              <view  class='prop-item {{type_id==item.id?"active":""}}' wx:for="{{typeList}}" wx:key="item.id" data-price="{{item.price}}" data-typeid="{{item.id}}" data-type="{{item.days}}" data-typename="{{item.type_name}}" bindtap='selType'>
+                {{item.type_name}}
+              </view>
+            </view>
+          </view>
+          <view class="sel-dates">
+              <view class="sel-date">
+                <view>
+                  开始时间
+                </view>
+                <view class="num">
+                    <picker mode="date" value="{{startDate}}" start="{{start}}" end="" bindchange="bindDateChange" data-type='start'>
+                      <view class="picker">
+                        {{startDate}}
+                      </view>
+                    </picker>
+                </view>
+              </view>
+              <view class="days">
+                共<text>{{days}}</text>天
+              </view>
+          </view>
+          <view class='people-num'>
+              <view class='tit'>
+                份数
+              </view>
+              <view class='con'>
+                  <view class='change-btn reduce' bindtap='changeNum' data-cz="reduce">-</view>
+                  <view class='num'>{{number}}</view>
+                  <view  class='change-btn add' bindtap='changeNum' data-cz="add">+</view>
+              </view>
+          </view>
+          <view class='contact'>
+              <view class="tit">联系人</view>
+              <view class="info" wx:if="{{is_default==0}}">
+                  <view class="">添加联系人</view>
+                  <view class="c-btn" bindtap='selContact'>新增</view>
+              </view>
+              <view class="info" wx:if="{{is_default==1}}">
+                  <view class="">
+                    <view class='name'>
+                      {{contactDefault.name}}
+                    </view>
+                    <view class='tel'>
+                      联系电话：{{contactDefault.phone}}
+                    </view>
+                  </view>
+                  <view class="c-btn" bindtap='selContact'>修改</view>
+              </view>
+          </view>
+          <view class='discount'>
+              <view class='discount-item1' data-type="roll" bindtap='getDiscount'>
+                <view class='tit'>
+                  金猪通用代金券 共￥{{cardInfo.roll}}
+                </view>
+                <view class='con'>
+                  <text wx:if="{{goodsInfo.roll==0}}">不可用</text>
+                  <text wx:if="{{goodsInfo.roll==1 && roll==0}}">不可用</text>
+                  <text wx:if="{{goodsInfo.roll==1 && roll>0}}">可用金额￥{{cardInfo.roll}}</text>
+                  <image src='../../images/check_box.png' wx:if="{{use_roll==0 && goodsInfo.roll==1 && roll>0}}"></image>
+                  <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==0}}"></image>
+                  <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==1 && roll==0}}"></image>
+                  <image src="../../images/checkboxlist.png" wx:if="{{use_roll==1 && goodsInfo.roll==1 && roll>0}}"></image>
+                </view>
+              </view>
+              <view class='discount-item1' data-type="fsc" bindtap='getDiscount'>
+                <view class='tit'>
+                  福寿长代金券 共￥{{cardInfo.fsc_money}}
+                </view>
+                <view class='con'>
+                  <text wx:if="{{goods_fsc==0}}">不可用</text>
+                  <text wx:if="{{goods_fsc>0 && fsc_money==0}}">不可用</text>
+                  <text wx:if="{{goods_fsc>0 && fsc_money>0}}">可用金额￥{{goods_fsc>fsc_money?fsc_money:goods_fsc}}</text>
+                  <image src='../../images/check_box.png' wx:if="{{use_fsc==0 && goods_fsc>0 && fsc_money>0}}"></image>
+                  <image src='../../images/check-none.png' wx:if="{{goods_fsc==0}}"></image>
+                  <image src='../../images/check-none.png' wx:if="{{goods_fsc>0 && fsc_money==0}}"></image>
+                  <image src="../../images/checkboxlist.png" wx:if="{{use_fsc==1 && goods_fsc>0 && fsc_money>0}}"></image>
+                </view>
+              </view>
+              <view class='discount-item1' bindtap='useHsfVoucher' wx:if="{{voucherList.length>0}}">
+                <view class='tit'>
+                  和顺發代金券
+                </view>
+                <view class='con'>
+                  可用金额￥{{voucherNum}}<text wx:if="{{useHsf>0}}">，已抵用{{useHsf}}</text>
+                  <image src='../../images/more.png'></image>
+                </view>
+              </view>
+              <view class='discount-item1' wx:if="{{voucherList.length==0}}">
+                <view class='tit'>
+                  和顺發代金券
+                </view>
+                <view class='con'>
+                  <text>不可用</text>
+                  <image src='../../images/more.png'></image>
+                </view>
+              </view>
+          </view>
+        </view>
+     </view>
+     <view class='order-footer'>
+        <view>
+          总计：<text>￥{{totalPrice}}</text>
+        </view>
+        <view class='buy-btn' bindtap="submitOrder">
+          提交定单
+        </view>
+     </view>  
+  </view>
+</view>

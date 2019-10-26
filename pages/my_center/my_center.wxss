@@ -1,27 +1,70 @@
 /* pages/my_center/my_center.wxss */
-.userinfo{
-  padding: 30rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: #00bcd5;
+.user-default{
+  background: #58575d;
+  padding:30rpx;
   color: #fff;
 }
+.user-default .user-info{
+  display: flex;
+  align-items: center;
+}
 .userinfo-avatar{
-  margin-bottom: 20rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
+  overflow: hidden
+}
+.userinfo-avatar image{
+  width: 100rpx;
+  height: 100rpx;
 }
 .userinfo-nickname{
   font-size: 30rpx;
-  text-align: center;
 }
-.userinfo-telphone{
-  padding-top: 10rpx;
-  font-size: 28rpx;
+.userinfo-nickname image{
+   padding-top: 8rpx;
+   width: 40rpx;
+   height: 40rpx;
 }
+.user-card{
+  position: relative;
+  margin-top: 30rpx;
+  padding: 30rpx;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e3ce9d;
+}
+.user-card .tit{
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+}
+.user-card .desc{
+  font-size: 24rpx;
+}
+.user-card image{
+  width: 104rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+}
+.user-level{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  padding: 0 30rpx;
+  font-size:30rpx;
+  background: #fff;
+}
+.user-level image{
+  padding-top: 8rpx;
+  padding-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
 
 .user-nav{
   padding: 30rpx 0;

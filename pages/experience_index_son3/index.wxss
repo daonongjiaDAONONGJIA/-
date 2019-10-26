@@ -1,0 +1,123 @@
+/* pages/experience_index_son3/index.wxss */
+page{
+  background: #fff
+}
+.cate-nav{
+  margin-bottom: 8rpx;
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  white-space: nowrap;
+}
+.cate-nav .nav-item{
+  display: inline-block;
+  padding: 0 30rpx;
+}
+.cate-nav .nav-item.active{
+  border-bottom: 1px solid #000
+}
+.swiper-box{
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  overflow: hidden
+}
+.slide-image{
+  width: 100%;
+  height: auto;
+  /*border-radius: 20rpx;*/
+}
+.hot{
+  padding: 0 30rpx;
+}
+.hot .h-tit{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+}
+.hot-goods{
+  display: flex
+}
+.hot-goods .goods-img{
+  margin-right: 30rpx;
+  flex-shrink: 0;
+  width: 40%;
+}
+.hot-goods .goods-img image{
+  width: 100%
+}
+.hot-goods .goods-info{
+  width: 100%;
+  text-align: right;
+  font-size: 32rpx;
+}
+.hot-goods .goods-info .date{
+  margin-bottom: 20rpx;
+}
+.hot-goods .goods-info .date text{
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  background: #eee;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.hot-goods .goods-info .name{
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+}
+.hot-goods .goods-info .hot-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: flex-end;
+}
+.hot-goods .goods-info .hot-price .price{
+  color:#f93a3c;
+}
+.hot-goods .goods-info .hot-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.hot-goods .goods-info .hot-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.goods-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.goods-list .goods-item{
+  margin-bottom: 30rpx;
+  width: 47%;
+  flex-shrink: 0;
+  font-size: 32rpx;
+}
+.goods-list .goods-item image{
+  width: 100%;
+}
+.goods-list .goods-item .name{
+  height: 75rpx;
+  overflow: hidden;
+  margin: 18rpx 0;
+}
+.goods-list .goods-item .hot-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+}
+.goods-list .goods-item .hot-price .price{
+  color:#f93a3c;
+}
+.goods-list .goods-item .hot-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.goods-list .goods-item .hot-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}

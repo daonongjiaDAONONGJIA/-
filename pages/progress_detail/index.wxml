@@ -1,0 +1,171 @@
+<!--pages/progress_detail/index.wxml-->
+<view class='help-detail' wx:if="{{id==1}}">
+  <view class='help-detail-tit'>
+    道农家小程序简介
+  </view>
+  <view class='help-detail-con'>
+    <view class="help-p">
+      目前平台汇集了华北西北华中华东西南几个省，几个县的60多户农家。近期即将把华南西南东北等地区遴选发展。
+    </view>
+    <view class="help-p">
+      平台对所属体验项目，分四个功能，四个栏目。
+    </view>
+    <view class="help-p">
+      四个功能：
+    </view>
+    <view class="help-p">
+      1、民宿民居、祖国七大地区、所发展的众道家。
+    </view>
+    <view  class="help-p">
+     2、达人互动，具有非遗传承或地区影响力的体验师项目。
+    </view>
+    <view  class="help-p">
+      3、农品集市：各地特色产品。
+    </view>
+    <view  class="help-p">
+      4、爆红特款：平台特推体验产品。
+    </view>
+    <view class="help-p">
+      四个栏目：
+    </view>
+    <view class="help-p">
+      1、所有民宿名居：平台推荐的体验项目
+    </view>
+    <view class="help-p">
+      2、民宿名居组合：平台推荐的情侣，独行体验项目；平台推荐的家庭式，朋友结伴式体验项目。
+    </view>
+    <view class="help-p">
+      3、达人互动：体验师的精彩活动及精彩活动的分享与共享。
+    </view>
+    <view class="help-p">
+      4、有硬货：平台特色的东东。
+    </view>
+    <view class="help-p">
+    小程序→体验→点击上述任何页面→选择的欲体验的项目→预定/立即预定→点选预定日期→点选憩所→点选至少一位出行人→勾选金猪券→提交定单。
+    </view>
+    <view class="help-p">
+    道友：个人信息
+    </view>
+    <view class="help-p">
+    收货地址：指你在平台 “有硬货”栏目的产品预定，道家包邮邮至该地址。
+    </view>
+  </view>
+  <view class='help-detail-company'>
+  道农家平台
+  </view>
+</view>
+<view class='help-detail' wx:if="{{id==2}}">
+  <view class='help-detail-tit'>
+    下单流程步骤说明
+  </view>
+  <view class='help-detail-con'>
+    <view class="help-p1">
+      一、单餐
+    </view>
+    <!-- <view class="help-p1">
+      平台对所属体验项目，分四个功能，四个栏目。
+    </view> -->
+    <view class="help-p1">
+      1、点击进入微信小程序，查看平台提供的体验产品；
+    </view>
+    <view class="help-p1">
+      2、选择体验产品，进入页面，点击预定；
+    </view>
+    <view  class="help-p1">
+     3、立即预定（如没有金猪劵，点击去领去兑，享受金猪价五折优惠）；
+    </view>
+    <view  class="help-p1">
+      4、选择体验时间与出行人数；
+    </view>
+    <view  class="help-p1">
+     5、憩所;
+    </view>
+    <view class="help-p1">
+     ①选择憩所；
+    </view>
+    <view  class="help-p1">
+    ②选择是否增加餐费；
+    </view>
+    <view  class="help-p1">
+    ③增加联系人（联系人为下单人，并非出行人员）；
+    </view>
+    <view class="help-p1">
+      ④添加出行人员信息（至少添加一位出行人）；
+    </view>
+     <view class="help-p1">
+     ⑤勾选金猪通用代金券，享受五折优惠；
+    </view>
+    <view class="help-p1">
+    ⑥提交定单；
+    </view>
+    <view class="help-p1">
+    6、生成定单—待道家确认后定单生效（生成定单码，体验时需向道家出示，请务泄露）—体验完成。
+    </view>
+    <view class="help-p1">
+      二、套餐
+    </view>
+    <!-- <view class="help-p1">
+      平台对所属体验项目，分四个功能，四个栏目。
+    </view> -->
+    <view class="help-p1">
+      1、点击进入微信小程序，查看平台提供的体验产品；
+    </view>
+    <view class="help-p1">
+    2、选择套餐体验产品，进入页面，点击立即预定；
+    </view>
+    <view  class="help-p1">
+     3、选择体验类型，点击确定；
+    </view>
+    <view  class="help-p1">
+     4、选择体验时间、份数；
+    </view>
+    <view  class="help-p1">
+     5、憩所;
+    </view>
+    <view class="help-p1">
+    ①选择憩所数量（根据出行人数选择）；
+    </view>
+    <view  class="help-p1">
+    ②增加联系人（联系人为下单人，并非出行人员）；
+    </view>
+    <view  class="help-p1">
+    ③增加联系人（联系人为下单人，并非出行人员）；
+    </view>
+    <view class="help-p1">
+    ③添加出行人员信息（至少添加一位出行人）；
+    </view>
+     <view class="help-p1">
+     ⑤勾选金猪通用代金券，享受五折优惠；
+    </view>
+    <view class="help-p1">
+    ⑥提交定单；
+    </view>
+    <view class="help-p1">
+    6、生成定单—待道家确认后定单生效（生成定单码，体验时需向道家出示，请务泄露）—体验完成。
+    </view>
+    <view class="help-p1">
+    定单补充说明：
+    </view>
+    <view class="help-p1">
+    鉴于目前条件所制约，道农家知晓平台尚有许多不完善之处，但是！谁让我们爱自然，爱农家，爱玩呢，出于道农家想与大家尽早见面的殷切盼望中，于2019年6月中旬开始试开放运营。
+    </view>
+    <view class="help-p1">
+    关于试运营，道农家有话说:
+    </view>
+    <view class="help-p1">
+    1.退款方式为人工手动退款，原路径退款到微信余额，退款速度可能受到人工等影响略慢，敬请大家谅解。 
+    </view>
+    <view class="help-p1">
+    2.积分、打赏码、送荷包、福寿長代金券、和顺發代金券等将于之后陆续开放使用，敬请期待哟。 
+    </view>
+    <view class="help-p1">
+    3.下单或浏览页面时，出行人至少添加一位，作用于和联系人一并便于作为紧急联系人，以保障出行体验更放心更有序。
+    </view>
+    <view class="help-p1">
+    4.更多升级与玩法，敬请期待。
+    </view>
+  </view>
+  <view class='help-detail-company'>
+  道农家平台
+  </view>
+</view>

@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu();
     var page = options.page;
     console.log(page);
     if(page=='comment'){
@@ -25,6 +26,7 @@ Page({
     }else{
       this.setData({
         page: options.page,
+        type:options.type,
         order_id: options.order_id,
         goods_id: options.goods_id,
         info: '支付成功',
@@ -37,7 +39,7 @@ Page({
   backIndex:function(){
     console.log('首页');
     wx.switchTab({
-      url: '../experience/experience',
+      url: '../experience_index/experience_index',
     })
   },
   //查看评论
@@ -48,9 +50,30 @@ Page({
   },
   //查看订单
   orderView: function () {
-    wx.navigateTo({
-      url: '/pages/order/details/details?orderId=' + this.data.order_id,
-    })
+    //体验订单
+    if(this.data.type==1){
+      wx.navigateTo({
+        url: '/pages/order/details/details?orderId=' + this.data.order_id,
+      })
+    }
+    //套餐订单
+    if (this.data.type == 2) {
+      wx.navigateTo({
+        url: '/pages/order/package_detail/index?orderId=' + this.data.order_id,
+      })
+    }
+    //活动订单
+    if (this.data.type == 3) {
+      wx.navigateTo({
+        url: '/pages/order/activity_detail/index?orderId=' + this.data.order_id,
+      })
+    }
+    //活动订单
+    if (this.data.type == 4) {
+      wx.navigateTo({
+        url: '/pages/order/goods_detail/index?orderId=' + this.data.order_id,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -82,6 +105,13 @@ Page({
     console.log(pages);
     for (var i = 0; i < pages.length; i++) {
       if (pages[i].route == "pages/experience_detail/experience_detail") {
+        var delta = pages.length - i - 2;
+        console.log(delta)
+        wx.navigateBack({
+          delta: delta
+        })
+      }
+      if (pages[i].route == "pages/package_detail/index") {
         var delta = pages.length - i - 2;
         console.log(delta)
         wx.navigateBack({

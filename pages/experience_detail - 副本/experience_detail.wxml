@@ -1,0 +1,131 @@
+<!--pages/experience_detail/experience_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- 幻灯片 -->
+<view class='swiper-box'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[0]}}rpx;" circular="true">
+      <swiper-item class="swiper-item"  wx:if="{{goodsInfo.video!=''}}">
+        <video src="{{goodsInfo.video}}" objectFit='cover' controls></video>
+      </swiper-item>
+      <block wx:for="{{goodsImgs}}" wx:key="{{item.id}}">
+        <swiper-item class="swiper-item">
+          <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}'/>
+          <view class='img-bg'>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='swiper-btns' wx:if="{{goodsInfo.video!=''}}">
+      <view class='btn {{current==0?"active":""}}'>视频</view>
+      <view class='btn {{current>0?"active":""}}'>图片</view>
+    </view>
+    <view class='collect' bindtap='goodsCollect'>
+      <image src="{{status == -1 ? 'https://m.shanxijsd.com/static/images/collect.png' : 'https://m.shanxijsd.com/static/images/collected.png'}}"></image>
+    </view>
+</view>
+<!-- 幻灯片结束 -->
+<view class='goods-info'>
+  <view class='goods-name'>
+     {{goodsInfo.goods_name}}
+  </view>
+  <view class='goods-desc'>
+    {{goodsInfo.subtitle}}
+  </view>
+  <view class='goods-intro'>
+    <view class='intro-item intro-item1'>
+      <view class='address-info'>
+        <view class='tit'>地址</view><view>{{goodsInfo.address}}</view>
+      </view>
+      <view class='address-img' bindtap='getMap'>
+        <image src='../../images/dh.png'></image>
+      </view>
+    </view>
+    <view class='intro-item'>
+      <view class='tit'>时长</view><view>{{goodsInfo.length}}</view>
+    </view>
+  </view>
+</view>
+<view class='style'>
+  <view bindtap='getStyle' class='style-btn'>道家风采</view>
+</view>
+<view class='goods-type'>
+  <view class='tit'>体验项目</view>
+  <view class='type-list'>
+    <view class='type-item'  wx:for="{{typeList}}" wx:key="{{item.id}}">
+      <view class='type-info'>
+        <view class='type-name'>
+          {{item.type_name}}
+        </view>
+        <!-- <view class='type-price' wx:if="{{level==2}}">
+          ￥{{item.member_price}}
+        </view> -->
+        <view class='type-price'>
+          ￥{{item.price}}
+        </view>
+      </view>
+      <view class='type-buy'>
+        <view class='btn' bindtap='goodsType' data-id="{{item.id}}">预定</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='goods-guide'>
+  <view class='tit'>体验详情</view>
+  <view class='guide'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<view class='goods-comment'>
+  <view class='tit'>
+    邂逅妳
+  </view>
+  <view class='comment-list' wx:if="{{goodsComment.length>0}}">
+    <view class='comment-item' wx:for="{{goodsComment}}" wx:key="item.id">
+      <view class='comment-user'>
+        <view class='comment-avatar'>
+          <image src='{{item.head_src}}' mode='widthFix'></image>
+        </view>
+        <view class='comment-username'>
+          {{item.nick_name}}
+        </view>
+      </view>
+      <view class='comment-desc'>
+        {{item.content}}
+      </view>
+      <view class='comment-img'>
+        <view class='img-item' wx:if="{{item.thumb.length>0}}" wx:for="{{item.thumb}}" wx:key="{{key}}" wx:for-item="thumb">
+          <image src='https://m.shanxijsd.com/uploads/{{thumb.thumb}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='comment-none' wx:if="{{goodsComment.length==0}}">
+    暂无评论~
+  </view>
+</view>
+<view class='goods-recommend'>
+  <view class='tit'>
+    道友推荐
+  </view>
+  <scroll-view class='recomment-list' scroll-x>
+    <view class='recomment-item'  wx:for="{{ goodsRelated }}" wx:key="{{index}}" bindtap='getGoodsRelated' data-id='{{item.id}}'>
+      <image src='{{item.img}}'>
+      </image>
+      <view class='recomment-tit'>
+      {{item.goods_name}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='footer'>
+  <!-- <view class='goods-share'>
+    <button open-type="share">
+        <image src='../../images/share.png'></image>分享
+    </button>
+  </view> -->
+  <view bindtap='getComment'>
+    写点评
+  </view>
+  <view class='goods-collect' bindtap='goodsCollect'>
+    {{status == -1 ? '收藏' : '取消收藏'}}
+  </view>
+</view>

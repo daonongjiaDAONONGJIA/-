@@ -1,0 +1,36 @@
+<!--pages/voucher_intro/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='voucher-info'>
+  <view class='voucher-desc'>
+    <view class='voucher-name'>金猪通用代金券</view>
+    <view class='voucher-ad'>
+      金猪通用代金券
+    </view>
+  </view>
+  <view class='voucher-num'>
+    <view class='num'>代金券总额：￥{{number}}</view>
+    <view class='view' bindtap='getVoucher'>
+      购买记录
+    </view>
+  </view>
+</view>
+<view class='voucher-explain'>
+    <view class='tit'>{{voucherInfo.title}}</view>
+    <view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  <view>
+  <!-- 本劵即日起采用平台领取（凭汉字口令），在平台体验产品中使用，具体使用范围、使用额度、使用方法为平台在体验产品页面的标示，每次使用最高为200元代金券。截止发布总额为100万，截止使用最后期限为2019年5月31日。欢迎广大道友浏览相关规则和好玩的信息页面。 -->
+  </view>
+</view>
+<view class='footer'>
+  <view class='voucher-buy' bindtap='getVoucher2' wx:if="{{voucherInfo.btn>0}}">
+    领取代金券
+  </view>
+  <view class='voucher-buy voucher-buy1' wx:if="{{voucherInfo.btn==0}}">
+    领取代金券
+  </view>
+  <view class='voucher-buy' bindtap='getVoucher1' >
+    兑换代金券
+  </view>
+</view>

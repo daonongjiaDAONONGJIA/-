@@ -1,0 +1,58 @@
+/* pages/voucher_intro1/index.wxss */
+page{
+  padding-bottom: 100rpx;
+  background: #fff;
+}
+.voucher-info{
+  background:#f93a3c;
+  color: #fff;
+}
+.voucher-desc{
+  padding:40rpx 30rpx;
+  font-size: 30rpx;
+}
+.voucher-name{
+  font-size: 38rpx;
+  margin-bottom: 10rpx;
+}
+.voucher-num{
+  padding: 0 30rpx;
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  justify-content: space-between;
+  font-size: 28rpx;
+  background: rgba(255, 255, 255, 0.1)
+}
+.voucher-explain{
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.voucher-explain view{
+  margin-bottom: 20rpx;
+}
+.voucher-explain .tit{
+  padding: 20rpx 0;
+  font-size: 38rpx;
+}
+.footer{
+  padding: 20rpx 30rpx;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #ccc;
+  box-sizing: border-box
+}
+.voucher-buy{
+  padding:20rpx 34rpx;
+  font-size:30rpx;
+  background:#f93a3c;
+  color:#fff;
+  border-radius:50rpx;
+  text-align: center;
+}
+.voucher-buy1{
+  background:#fa7a7d;
+}

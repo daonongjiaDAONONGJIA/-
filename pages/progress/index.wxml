@@ -1,0 +1,12 @@
+<!--pages/progress/index.wxml-->
+<view>
+  <image src="https://m.shanxijsd.com/uploads/file/p1.jpg" mode='widthFix' data-url='https://m.shanxijsd.com/uploads/file/p1.jpg' bindtap='viewPic'/>
+</view>
+<view>
+  <image src="https://m.shanxijsd.com/uploads/file/p2.jpg" mode='widthFix' data-url='https://m.shanxijsd.com/uploads/file/p2.jpg' bindtap='viewPic'/>
+</view>
+
+<view>
+  <image src="https://m.shanxijsd.com/uploads/file/p3.jpg" mode='widthFix' data-url='https://m.shanxijsd.com/uploads/file/p3.jpg' bindtap='viewPic'/>
+</view>
+

@@ -1,0 +1,136 @@
+/* pages/experience_confirm/index.wxss */
+page{
+  padding-bottom: 140rpx;
+}
+.wrap{
+  background: #fff;
+}
+.date-show{ 
+  padding-top:30rpx;
+  font-family: PingFang-SC-Regular; 
+  font-size: 40rpx; 
+  color: #282828; 
+  text-align: center; 
+  display: flex;
+  justify-content: space-between;
+} 
+.date-show .date{
+  margin:0 30rpx;
+}
+.lt-arrow image,.rt-arrow image{ 
+  width: 58rpx; 
+  height: 58rpx; 
+} 
+.header{ 
+  font-size: 0; 
+  padding: 0 24rpx; 
+} 
+.header>view{ 
+  display: inline-block; 
+  width: 14.285%; 
+  color: #333; 
+  font-size: 30rpx; 
+  text-align: center; 
+  border-bottom: 1px solid #D0D0D0; 
+  padding: 30rpx 0; 
+} 
+.weekMark{ 
+  position: relative; 
+} 
+.weekMark view{ 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  border-bottom: 1px solid #07c764; 
+} 
+.date-box{ 
+  font-size: 0; 
+  padding: 10rpx 0; 
+} 
+.date-box>view{ 
+  position: relative; 
+  display: inline-block; 
+  width: 14.285%; 
+  color: #020202; 
+  font-size: 40rpx; 
+  text-align: center; 
+  vertical-align: middle; 
+  margin: 15rpx 0; 
+} 
+.date-head{ 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  font-size: 26rpx; 
+} 
+.selectDay .date-head{
+  color:#07c764
+} 
+.selDay .date-head{ 
+  width: 60rpx; 
+  border-radius: 50%; 
+  text-align: center; 
+  color: #fff; 
+  background-color: #aefbd3; 
+  margin: 0 auto; 
+}
+.selectedDay .date-head{ 
+  width: 60rpx; 
+  border-radius: 50%; 
+  text-align: center; 
+  color: #fff; 
+  background-color: #07c764; 
+  margin: 0 auto; 
+}
+.date-weight{ 
+  font-size: 22rpx; 
+  padding: 8rpx 0; 
+  color: #07c764
+} 
+.selectDay .date-weight,.selectedDay .date-weight{ 
+  color: #07c764; 
+} 
+
+.people-num{
+  padding: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  font-size: 30rpx;
+}
+.people-num .con{
+  display: flex;
+}
+.people-num .con .change-btn{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ddd;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 38rpx;
+}
+.people-num .con .num{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ddd;
+  text-align: center;
+  line-height: 60rpx;
+  border-left:none;
+  border-right: none;
+  color: #07c764; 
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #07c764;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+

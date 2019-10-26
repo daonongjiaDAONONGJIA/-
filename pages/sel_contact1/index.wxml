@@ -1,0 +1,24 @@
+<!--pages/contact/contact.wxml-->
+<view>
+  <view class='contact-item' wx:for="{{ contactList }}" wx:key="{{index}}" data-index='{{index}}'  data-id='{{item.id}}' bindtap='selContact'>
+    <view class='contact-check'>
+      <image src='../../images/check.png' wx:if="{{item.id!=sel_id}}"></image>
+      <image src='../../images/check2.png' wx:if="{{item.id==sel_id}}"></image>
+    </view>
+    <view class='contact-info'>
+      <view class='username'>
+        姓名：{{item.name}}
+      </view>
+      <view class='telphone'>
+        手机:{{item.phone}}
+      </view>
+      <view class='idCard'>
+        身份证号：{{item.idcard}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='btn' bindtap='confirmContact'>确定</view>
+  <view class='btn' bindtap='addContact'>添加出行人</view>
+</view>

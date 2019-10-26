@@ -1,0 +1,266 @@
+/* pages/experience_order/index.wxss */
+page{
+  padding-bottom: 120rpx;
+}
+.experice-info{
+  padding: 30rpx;
+  background: #fff;
+}
+.experice-info .name{
+  font-size: 32rpx;
+  margin-bottom: 14rpx;
+}
+.experice-info .desc{
+  font-size: 30rpx;
+  color: #666
+}
+.sel-date{
+  padding: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 30rpx;
+  background: #fff;
+}
+.sel-date .date-item{
+  padding-right: 30rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+.sel-date .date-item:first-of-type:after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top:0;
+  height:4rpx;
+  width: 30rpx;
+  background: #000
+}
+.sel-date .date{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.sel-date .tit{
+  color: #666
+}
+
+.house{
+  padding: 30rpx 30rpx 0 30rpx;
+  margin-top:20rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.house .tit{
+  font-size: 32rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+.house .house-list{
+  padding-top: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+.house .house-list .list-item{
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+  width: 30%;
+  border:1px solid #ddd;
+  text-align: center;
+}
+.house .house-list .list-item .name{
+  margin-bottom: 10rpx;
+}
+.house .house-list .list-item .num{
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.house .house-list .list-item .price{
+  color: #f93a3c
+}
+.house .house-list .list-item.active{
+  border:1px solid #f65c5e;
+  background:#f65c5e;
+  color: #fff;
+}
+.house .house-list .list-item.active .num{
+  color: #fff;
+}
+.house .house-list .list-item.active .price{
+  color: #fff;
+}
+.food{
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.food .tit{
+  padding-bottom: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ddd;
+}
+.food .con,.food .con1{
+  padding-top: 30rpx;
+}
+.food .con1{
+  display: flex;
+  justify-content: space-between
+}
+.food .con1 .add-food{
+  background: #eee;
+  padding: 10rpx 20rpx;
+}
+.food .food-num{
+  display: flex;
+  align-items: center;
+}
+.food .food-num .num-tit{
+  margin-right: 20rpx;
+}
+.food .food-num .change-btn{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ddd;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 38rpx;
+}
+.food .food-num .num{
+  width: 60rpx;
+  height: 60rpx;
+  border:1px solid #ddd;
+  text-align: center;
+  line-height: 60rpx;
+  border-left:none;
+  border-right: none;
+  color: #f93a3c; 
+}
+
+.contact{
+  margin-top:20rpx;
+  padding: 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.contact .tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ddd;
+}
+.contact .info{
+  padding-top: 30rpx;
+}
+.contact .name-tel{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.pedestrians{
+  margin-top:20rpx;
+  padding: 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.pedestrians .tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.contact-list .contact-item{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.contact-list .contact-item .contact-user{
+  display: flex;
+}
+.contact-list .contact-item .contact-user .username{
+  margin-right: 10px;
+}
+.contact-none{
+  padding-top: 30rpx;
+}
+.car-fee{
+  margin-top:20rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.car-fee .tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  font-size: 32rpx;  
+}
+.car-fee .con{
+  padding-bottom: 30rpx;
+  border-top: 1px solid #ddd;
+}
+
+.car-fee .tit image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.car-type{
+
+}
+.car-type .t-tit{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.car-type .type-list{
+  display: flex;
+}
+.car-type .type-item{
+  background:#eee;
+  padding:10rpx 20rpx;
+  margin-right: 14rpx;
+}
+.car-type .type-item.active{
+  background: #f93a3c;
+  color: #fff;
+}
+
+
+
+
+
+.footer{
+  box-sizing: border-box;
+  padding-left:30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  font-size: 30rpx;
+}
+.footer .price text{
+  color: #f93a3c;
+}
+.footer .buy-btn{
+  width: 30%; 
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #f93a3c;
+  color: #fff;
+}
+

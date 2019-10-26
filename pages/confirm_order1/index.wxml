@@ -1,0 +1,315 @@
+<!--pages/confirm_order1/index.wxml-->
+<view class='wrap'> 
+  <view> 
+    <view class='date-show'> 
+      <!-- <view class='lt-arrow' bindtap='lastYear'> 
+        <image src='../../images/return.png' mode='aspectFit'></image> 
+      </view>  -->
+      <view class='lt-arrow' bindtap='lastMonth'> 
+        <image src='../../images/return.png' mode='aspectFit'></image> 
+      </view> 
+      <view class='date'>{{year}}年{{month}}月</view>
+      <view class='rt-arrow' bindtap='nextMonth'> 
+        <image src='../../images/next.png' mode='aspectFit'></image> 
+      </view> 
+      <!-- <view class='rt-arrow' bindtap='nextYear'> 
+        <image src='../../images/next.png' mode='aspectFit'></image> 
+      </view> -->
+    </view> 
+  </view> 
+  <view class='header'> 
+    <view wx:for='{{date}}' wx:key="{{index}}" class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}<view></view></view> 
+  </view> 
+  <view class='date-box'> 
+    <view wx:for='{{dateArr}}'  wx:key="{{item.dateNum}}">  
+      <view wx:if="{{item.selected == true}}" class='{{item.selected == true ? "selectDay" : ""}} {{item.isSelected == true ? "selectedDay" : ""}}' data-index="{{index}}" data-date='{{item.isToday}}' bindtap='selectDay'>
+        <view class='date-head'> 
+          <view>{{item.dateNum}}</view> 
+        </view> 
+        <view class='date-weight' wx:if="{{level==1}}">
+        ￥{{item.price}}
+        </view>
+        <view class='date-weight' wx:if="{{level==2}}">
+        ￥{{item.member_price}}
+        </view> 
+      </view>
+      <view wx:if="{{item.selected == false}}">
+        <view class='date-head'> 
+          <view>{{item.dateNum}}</view> 
+        </view> 
+      </view>
+    </view> 
+  </view> 
+</view> 
+<view class='order-section'>
+  <view class='s-tit'>出行人数</view>
+  <view class='s-con'>
+    <view class='change-num'>
+        <view class='change-btn reduce {{number==1?"none":""}}' bindtap='changeNum' data-cz="reduce">-</view><view class='change-num1'>{{number}}</view><view  class='change-btn add' bindtap='changeNum' data-cz="add">+</view>
+    </view>
+  </view>
+ 
+</view>
+<view class='order-section'>
+  <view class='s-tit'>
+    <view>出行信息</view>
+    <view bindtap='addContact'>添加出人</view>
+  </view>
+  <view class='s-con'>
+    <view class='house-list' wx:if="{{contactList.length==0}}">
+      请选择出行人信息。
+    </view>
+    <view class='contact-list' wx:if="{{contactList.length>0}}">
+      <view class='contact-item' wx:for='{{contactList}}' wx:key="{{item.id}}">
+        <view class='contact-user'>
+          <view class='username'>
+            {{item.name}}
+          </view>
+          <view class='telphone'>
+            {{item.phone}}
+          </view>
+        </view>
+        <view class='contact-cz' bindtap='delContact' data-id="{{item.id}}">
+          删除
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='order-section'>
+  <view class='s-tit'>憩所</view>
+  <view class='s-con'>
+    <view class='house-list' wx:if="{{house.length>0}}">
+      <block wx:for='{{house}}' wx:key="{{item.id}}">
+        <view class='house-item {{item.selected==true?"active":""}}' data-index="{{index}}" data-id="{{item.id}}" bindtap='selHouse'>
+          <view class='house-name'>{{item.house_name}}</view>
+          <view class='house-desc'>{{item.type_name}}</view>
+          <view class='house-desc'>￥{{item.money}}</view>
+        </view>
+      </block>
+    </view>
+    <view class='house-list' wx:if="{{house.length==0}}">
+      {{selectedDate.length>0?"您选择的日期没有对应的可选房型。":"请选择您的出行时间，日历中的红色字体标注的是可供选择的出行日期。"}}
+    </view>
+  </view>
+</view>
+<view class='order-section'>
+  <view class='s-tit'>餐费</view>
+  <view class='s-con'>
+    <view class='insure'>
+      <view class='insure-price'>
+        ￥{{goodsInfo.foot}}*{{number}}
+      </view>
+      <view class='sel-xm' bindtap='selXm' data-xm='food'>
+        <image src="../../images/check_box.png" wx:if="{{is_food==false}}"></image>
+        <image src="../../images/checkboxlist.png" wx:if="{{is_food==true}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='order-section'>
+  <view class='s-tit'>保险费</view>
+  <view class='s-con'>
+    <view class='insure'>
+      <view class='insure-price'>
+        ￥{{goodsInfo.insure}}*{{number}}
+      </view>
+      <view class='sel-xm'  bindtap='selXm' data-xm='insure'>
+        <image src="../../images/check_box.png" wx:if="{{is_insure==false}}"></image>
+        <image src="../../images/checkboxlist.png" wx:if="{{is_insure==true}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='order-section'>
+  <view class='s-tit'>
+    <view>接站服务</view>
+    <view bindtap='getJs'>
+        <image src="../../images/check_box.png" wx:if="{{is_js==0}}" style='width:40rpx;height:40rpx'></image>
+        <image src="../../images/checkboxlist.png" wx:if="{{is_js==1}}" style='width:40rpx;height:40rpx'></image>
+    </view>
+  </view>
+</view>
+<view class='order-section {{is_js==0?"hidden":""}}'>
+  <view class='s-tit'>
+    接站服务
+  </view>
+  <view class='s-con'>
+    <view class='fare'>
+      <view class='fare-con'>
+        <view class='tit'>选择车型</view>
+        <view class='js-type'>
+          <view class='type-item {{carTypep==1?"active":""}}' data-ctype='1' data-type='pick' bindtap='getCar'>
+            五座车
+          </view>
+          <view class='type-item {{carTypep==2?"active":""}}' data-ctype='2' data-type='pick' bindtap='getCar'>
+            七座车
+          </view>
+        </view>
+      </view>
+      <view class='fare-con'>
+        <view class='tit'>选择接车地点</view>
+        <view class='address-list'>
+          <view class='address-item {{pick_id==item.id?"active":""}}' data-type='pick' data-aid='{{item.id}}' data-address='{{item.address}}' bindtap='getAddress' wx:for='{{goodsInfo.pick}}' wx:key="{{item.id}}">
+            {{item.address}}
+          </view>
+        </view>
+      </view>
+      <view class="car-money" wx:if="{{pickMoney!=0}}">￥{{pickMoney}}</view>
+    </view>      
+  </view>
+</view>
+<view class='order-section {{is_js==0?"hidden":""}}'>
+  <view class='s-tit'>
+    送站服务
+  </view>
+  <view class='s-con'>
+    <view class='fare'>
+      <view class='fare-con'>
+        <view class='tit'>选择车型</view>
+        <view class='js-type'>
+          <view class='type-item {{carTypes==1?"active":""}}' data-ctype='1' data-type='send'  bindtap='getCar'>
+            五座车
+          </view>
+          <view class='type-item {{carTypes==2?"active":""}}' data-ctype='2' data-type='send' bindtap='getCar'>
+            七座车
+          </view>
+        </view>
+      </view>
+      <view class='fare-con'>
+        <view class='tit'>选择送车地点</view>
+        <view class='address-list'>
+            <view class='address-item {{send_id==item.id?"active":""}}' data-type='send' data-aid='{{item.id}}'  data-address='{{item.address}}' bindtap='getAddress' wx:for='{{goodsInfo.send}}' wx:key="{{item.id}}">
+              {{item.address}}
+            </view>
+          </view>
+        </view>
+      <view class="car-money" wx:if="{{sendMoney!=0}}">￥{{sendMoney}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{isDefault==0}}" class='order-section'>
+  <view class='s-tit'>联系人信息</view>
+  <view class='user-info'>
+      <view class='info'>
+        <view class='user-tit'>
+          姓名
+          </view>
+          <view>
+            <input type='text' bindinput="nameInput" placeholder='请填写姓名' value='{{name}}'/>
+          </view>
+      </view>
+  </view>
+  <view class='user-info'>
+      <view  class='info'>
+        <view  class='user-tit'>
+        手机号
+        </view>
+        <view>
+          <input type='text' bindinput="phoneInput" placeholder='请填写手机号' value='{{phone}}'/>
+        </view>
+      </view>
+  </view>
+  <view class='user-info'>
+      <view  class='info'>
+        <view  class='user-tit'>
+        身份证号
+        </view>
+        <view>
+          <input type='text' bindinput="idcardInput" placeholder='请填写身份证号' value='{{idcard}}'/>
+        </view>
+      </view>
+  </view>
+</view>
+<view wx:if="{{isDefault==1}}"  class='order-section'>
+  <view class='s-tit'>联系人信息</view>
+  <view class='user-info'>
+      <view class='info'>
+        <view class='user-tit'>
+          姓名
+        </view>
+        <view>
+          {{name}}
+        </view>
+      </view>
+      <view class='changeContact' bindtap='changeContact'>
+        <image src="../../images/w.png"></image>
+      </view>
+  </view>
+  <view class='user-info'>
+      <view  class='info'>
+        <view  class='user-tit'>
+        手机号
+        </view>
+        <view>
+          {{phone}}
+        </view>
+      </view>
+  </view>
+  <view class='user-info'>
+      <view  class='info'>
+        <view  class='user-tit'>
+        身份证号
+        </view>
+        <view>
+          {{idcard}}
+        </view>
+      </view>
+  </view>
+</view>
+<view class='order-section'>
+  <view class='s-tit'>优惠信息</view>
+  <view class='house-list' wx:if="{{integral.type==0}}">
+    积分 共{{integral.score}}积分，满{{integral.integral}}可用。
+  </view>
+  <view class='house-list' wx:if="{{integral.type>0}}">
+    <image src='../../images/check_box.png' wx:if="{{isUseIntegral==false}}" bindtap='switchChange'></image>
+    <image src='../../images/checkboxlist.png' wx:if="{{isUseIntegral==true}}"  bindtap='switchChange'></image>
+     积分 共{{integral.score}}积分，可用{{integral.integral}}，抵{{integral.cheap}}。
+  </view>
+  <view class='house-list' wx:if="{{integral.card_money>0}}">
+    <image src='../../images/check_box.png' wx:if="{{isUseCard==false}}"  bindtap='switchChange1'></image>
+    <image src='../../images/checkboxlist.png' wx:if="{{isUseCard==true}}"  bindtap='switchChange1'></image>
+    余额 共{{integral.card_money}}余额。
+  </view>
+  <view class='house-list yh-info' bindtap='showModal' wx:if="vcode==200">
+    <view>和顺發代金券</view>
+    <view class='sel-yh'><text wx:if="{{useAmountOf>0}}">优惠￥{{useAmountOf}}元</text><image src='../../images/more.png'></image></view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='price-star'>
+    总价：<text class='price'>￥{{actuallyPrice}}</text>
+  </view>
+  <view class='view-date'>
+   <button size="default" type="warn" class="" bindtap='confirmOrderPrice'>提交定单</button>
+  </view>
+</view>
+<view class="modals modals-bottom-dialog" wx:if="{{value}}">
+  <view class="modals-cancel"  bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='order-date-tit'>和顺發代金券{{voucherList.lenght}}</view>
+    <view class='voucher-list'>
+      <view class='voucher-none' wx:if="{{ voucherNum==0 }}">
+        <view>没有可用代金券</view>
+      </view>
+       <view class='voucher-item' wx:for="{{ voucherList }}" wx:key="{{index}}" wx:if="{{ voucherNum>0 }}" bindtap="selVoucher" data-vid="{{item.id}}" data-price="{{item.amount_of}}">
+          <view class='voucher-price'>
+            <image src='../../images/card-bg.png' mode='widthFix'>
+            </image>
+            <view class='price'>
+              ￥{{item.amount_of}}
+            </view>
+          </view>
+          <view class='voucher-info'>
+            <view class='voucher-name'>{{item.time}}</view>
+            <view class='voucher-use'>单次可用一张</view>
+          </view>
+          <view class='voucher-sel'>
+            <image src='../../images/check2.png' wx:if="{{vid==item.id}}"></image>
+            <image src='../../images/check1.png' wx:if="{{vid!=item.id}}"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

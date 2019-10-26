@@ -1,0 +1,111 @@
+<!--pages/goods_detail/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='swiper-box'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee" bindchange="bindchange" style="height:{{imgheights[current]}}rpx;" data-current="{{index}}" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.file_url}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}'/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='goods-info'>
+  <view class='name'>{{goodsInfo.goods_name}}</view>
+  <view class='price'>
+    ￥{{goodsInfo.price}}
+  </view>
+</view>
+<view class='goods-discount' wx:if="{{goodsInfo.vouchers==1}}">
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/jin.png" wx:if="{{goodsInfo.roll==1}}"></image>
+        <image src="../../images/jin_.png" wx:if="{{goodsInfo.roll==0}}"></image>
+        金猪代金券
+      </view>
+      <view class="link" bindtap="getVoucher" data-type="roll">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fu.png" wx:if="{{fsc>0}}"></image>
+        <image src="../../images/fu_.png" wx:if="{{fsc==0}}"></image>福寿长代金券
+      </view>
+      <view class="link" bindtap="getVoucher"  data-type="fsc">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/he.png" wx:if="{{goodsInfo.hsf==1}}"></image>
+        <image src="../../images/he_.png" wx:if="{{goodsInfo.hsf==0}}"></image>和顺发代金券
+      </view>
+      <view class="link" bindtap="getVoucher"  data-type="hsf">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <!--<view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fan.png"></image>购买返积分
+      </view>
+    </view>-->
+</view>
+<view class='goods-desc'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class='footer'>
+  <view class='back' bindtap='goodsCollect'>
+    <view>
+      <image src="{{status == -1 ? '../../images/cc-heart-o.png' : 'https://m.shanxijsd.com/static/images/collected.png'}}"></image>
+    </view>
+    <view>
+      {{status == -1 ? '收藏' : '取消收藏'}}
+    </view>
+  </view>
+  <view wx:if="{{goodsInfo.state==1}}" bindtap="confirmOrder" class="buy">
+    立即购买
+  </view>
+  <view wx:if="{{goodsInfo.state==0}}"  class="voucher-buy1">
+    停售
+  </view>
+</view>
+<view class="modals modals-bottom-dialog" wx:if="{{value}}">
+  <view class="modals-cancel"  bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}" style='background:none;padding:0'>
+     <view class='buy-img'>
+          <view class='img'>
+            <image src='{{imgUrls[0].file_url}}'></image>
+          </view>
+          <view class='sel-info'>
+            <view class='info'>￥{{price}}</view>
+            <view class='info'>已选{{type_name}}</view>
+            <view class='info'>库存{{stock}}</view>
+          </view>
+    </view>
+    <view class='buy-goods'>
+      <view class='goods-prop'>
+        <view class='prop-tit'>
+          选择
+        </view>
+        <view class='prop-list'>
+          <view  class='prop-item {{type_id==item.id?"active":""}}' wx:for="{{typeList}}" wx:key="item.id" data-price="{{item.price}}" data-typeid="{{item.id}}" data-typename="{{item.type_name}}" data-stock="{{item.stock}}" bindtap='selType'>
+            {{item.type_name}}
+          </view>
+        </view>
+      </view>
+      <view class='goods-prop'>
+        <view class='prop-tit'>
+          数量
+        </view>
+        <view class='goods-num'>
+          <view class='change-btn reduce' bindtap='changeNum' data-cz="reduce">-</view>
+          <view class='num'>{{number}}</view>
+          <view  class='change-btn add' bindtap='changeNum' data-cz="add">+</view>
+        </view>
+      </view>
+      <view class='buy-confirm' bindtap='buyGoods'>
+        确定
+      </view>
+    </view>  
+  </view>
+</view>

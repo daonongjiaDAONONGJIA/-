@@ -1,0 +1,19 @@
+<!--pages/my_member/index.wxml-->
+<view class='member'>
+  <view>
+    <image src='../../images/money.png'></image>
+  </view>
+  <view class='tit'>
+   我的余额
+  </view>
+  <view class='number'>
+  ￥{{cardInfo.money}}
+  </view>
+  <view class='btn1' bindtap='getMoney'>
+    充值
+  </view>
+  <!-- <view class='btn2' bindtap='getCash'>
+    提现
+  </view> -->
+  <!-- <view class='record' bindtap='getRecord'>提现记录</view> -->
+</view>

@@ -1,0 +1,72 @@
+/* pages/contact/contact.wxss */
+.contact-item{
+  padding: 0 30rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  background: #fff;
+  font-size:30rpx;
+  color: #666;
+  justify-content: center;
+  align-items: center;
+}
+.contact-check{
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+.contact-check image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.contact-info{
+  padding:20rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom:1px solid #f7f7f7
+}
+.contact-info .username,.contact-info .telphone{
+  flex-shrink: 0;
+  width: 50%;
+  margin-bottom: 20rpx;
+}
+.contact-info .idCard{
+  width: 100%;
+  flex-shrink: 0;
+}
+.contact-operate{
+  display: flex;
+}
+.contact-operate .operate-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  flex:1 0;
+  text-align: center;
+  line-height: 80rpx;
+  color: #818282
+}
+.contact-operate .operate-item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.footer .btn{
+  width: 100%;
+  background: #07c764;
+  color: #fff;
+  height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}

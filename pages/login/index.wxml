@@ -1,0 +1,23 @@
+<!--pages/login/index.wxml-->
+<view class="login">
+  <view class="">
+    <image src="http://m.shanxijsd.com/uploads/default/logo.png"></image>
+  </view>
+  <view wx:if="{{userInfo.unionid==null}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getAuthorize" type="user">微信授权</button>
+  </view>
+  <view wx:if="{{userInfo.unionid!=null && userInfo.phone==null}}">
+    <button bindtap="phoneAuth">微信授权</button>
+  </view>
+</view>
+<view class="phone" wx:if="{{is_phone==1}}">
+  <view class="phone-content">
+    <view class="tit">微信授权</view>
+    <view><image src="../../images/success.png"/></view>
+    <view class="tit1">授权绑定你的手机号</view>
+    <view class="change">
+      <button open-type='getPhoneNumber' bindgetphonenumber="getAuthorize">允许</button>
+      <button bindtap="closePhone">拒绝</button>
+    </view>
+  </view>
+</view>

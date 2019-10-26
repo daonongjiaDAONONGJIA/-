@@ -1,0 +1,169 @@
+/* pages/experience_index/experience_index.wxss */
+page{
+  background: #fff;
+}
+.banner image{
+  width: 100%
+}
+.search
+{
+  margin:-80rpx auto 30rpx auto;
+  width: 90%;
+  position: relative;
+  background: #fff;
+  padding:24rpx 30rpx;
+  box-sizing: border-box;
+  border: 1px solid #edeeef;
+  border-radius: 20rpx;
+  box-shadow: rgb(0, 175, 130) 0px 6rpx 36rpx -24rpx;
+}
+
+/* 搜索框提示文字样式 */
+.search input
+{
+  margin-bottom: 30rpx;
+  width: 100%;
+  height: 80rpx;
+  border-bottom:1px solid #eeeeee;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.search .s-btn{
+  height: 80rpx;
+  background: #07c764;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.swiper-box{
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  overflow: hidden
+}
+.slide-image{
+  width: 100%;
+  height: auto;
+  /*border-radius: 20rpx;*/
+}
+.tui-title{
+   font-size: 15px;
+}
+.tui-title text{
+  float: right;
+  font-size: 24rpx;
+  color: #999;
+}
+swiper-item{
+  position: relative
+}
+.swiper-info{
+  padding: 0 50rpx;
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  width:100%;
+  color: #fff;
+  font-weight: bolder
+}
+.dots{ 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 20rpx; 
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  flex:1 0;
+  margin: 0 8rpx;  
+  height: 6rpx; 
+  background:rgba(255, 255, 255, 0.6); 
+  border-radius: 6rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  background:rgba(255, 255, 255, 1);
+}
+
+
+.exper-item{
+  padding: 30rpx;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #dedede
+}
+.exper-img{
+  margin-right: 20rpx;
+  width: 200rpx;
+  flex-shrink: 0;
+}
+.exper-img image{
+  width: 100%;
+  border-radius: 10px;
+}
+.exper-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.exper-tit{
+  font-size:32rpx;
+  margin-bottom: 6rpx;
+}
+.exper-sub-tit{
+  height: 78rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+   color: #666666;
+}
+.exper-yh text{
+  display: inline-block;
+  padding: 4rpx;
+  font-size: 24rpx;
+  color:#f93a3c;
+  border:1px solid #f93a3c;
+  border-radius: 5px;
+}
+.exper-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+}
+.exper-price .price{
+  margin-right: 20rpx;
+  color:#f93a3c;
+}
+.exper-price .roll-price{
+  display: flex;
+  align-items: center;
+}
+.exper-price image{
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.exper-tabs{
+  margin-bottom: 30rpx;
+}
+.exper-tabs .tag-item{
+  margin-right: 16rpx;
+  background: #f8f8f8;
+  padding: 8rpx 12rpx;
+  font-size: 24rpx;
+  color: #000;
+}
+.exper-tabs .tag-item:nth-of-type(1){
+  color:#fb9c02;
+  background: #fff3d3;
+}
+.exper-tabs .tag-item:nth-of-type(2){
+  color:#685ee1;
+  background: #f1effd;
+}

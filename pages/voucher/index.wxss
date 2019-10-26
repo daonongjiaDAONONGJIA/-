@@ -1,0 +1,35 @@
+/* pages/voucher/index.wxss */
+page{
+  background: #fff;
+}
+.voucher-item{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 1px solid #dedede
+}
+.voucher-item .voucher-name{
+  margin-bottom: 10rpx;
+  font-size:30rpx;
+}
+.voucher-item .voucher-use{
+  padding: 8rpx 0;
+  color: #666;
+  font-size: 28rpx;
+}
+.voucher-item .voucher-price{
+  font-size:28rpx;
+  color: #f93a3c;
+}
+.voucher-item .voucher-buy{
+  display: flex;
+  align-items: center;
+}
+.voucher-item .voucher-buy .btn{
+  padding: 8rpx 34rpx;
+  font-size: 30rpx;
+  background: #f93a3c;
+  color: #fff;
+  border-radius: 30rpx;
+}

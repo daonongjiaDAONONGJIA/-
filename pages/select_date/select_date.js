@@ -16,15 +16,19 @@ Page({
     goods_id:''
   },
   onLoad: function (options) {
+    wx.hideShareMenu();
     var that = this;
     var goods_id = options.goods_id;
+    var type = options.type;
     var mainurl = app.globalData.mainurl;
     var openid = app.globalData.openid;
     this.setData({
-      goods_id: goods_id
+      goods_id: goods_id,
+      goodsType:type
     })
     var params = {
-      id: goods_id
+      id: goods_id,
+      pid: type
     };
     var url = mainurl + 'api/goods/getDate';
     util.wxRequest(url, params, data => {
@@ -195,7 +199,8 @@ Page({
   },
   selDate:function(){
     if (this.data.selectedDate.length>0){
-      app.globalData.orderData.date = this.data.selectedDate
+      app.globalData.orderData.date = this.data.selectedDate,
+      app.globalData.orderData.type = this.data.goodsType;
       wx.navigateTo({
         url: '/pages/confirm_order/confirm_order?goods_id=' + this.data.goods_id
       })

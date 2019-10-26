@@ -1,0 +1,10 @@
+<!--pages/bind_unionid/index.wxml-->
+<template name="bindUnionid" data="{{is_show}}"> 
+<view class='mask' wx:if="{{is_show==0}}">
+  <view class='auth'>
+    <button class='auth-btn' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      获取权限
+    </button>
+  </view>
+</view>
+</template>

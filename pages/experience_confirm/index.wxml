@@ -1,0 +1,49 @@
+<!--pages/experience_confirm/index.wxml-->
+<view class='wrap'> 
+  <view> 
+    <view class='date-show'> 
+      <view class='lt-arrow' bindtap='lastMonth'> 
+        <image src='../../images/return.png' mode='aspectFit'></image> 
+      </view> 
+      <view class='date'>{{year}}年{{month}}月{{startWeek}} {{dayNums}}</view>
+      <view class='rt-arrow' bindtap='nextMonth'> 
+        <image src='../../images/next.png' mode='aspectFit'></image> 
+      </view> 
+    </view> 
+  </view> 
+  <view class='header'> 
+    <view wx:for='{{date}}' wx:key="{{index}}" class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}<view></view></view> 
+  </view> 
+  <view class='date-box'> 
+    <view wx:for='{{dateArr}}'  wx:key="{{item.dateNum}}">  
+      <view class="{{item.is_sel==true?'selDay':''}} {{item.date==startDate?'selectedDay':''}} {{item.date==endDate?'selectedDay':''}}" data-index="{{index}}" data-date='{{item.date}}' bindtap='selectDay' wx:if="{{item.dateNum!='' && selStartDate<=item.date}}">
+        <view class='date-head'> 
+          <view>{{item.dateNum}}</view> 
+        </view> 
+      </view>
+      <view class="" wx:if="{{item.dateNum!='' && selStartDate>item.date}}" data-date='{{item.date}}'>
+        <view class='date-head'> 
+          <view style='color:#666'>{{item.dateNum}}</view> 
+        </view> 
+      </view>
+      <view wx:if="{{item.dateNum=='' && selStartDate==''}}">
+        <view class='date-head'> 
+          <view>{{item.dateNum}}</view> 
+        </view> 
+      </view>
+    </view> 
+  </view> 
+</view>
+<view class='people-num'>
+  <view class='tit'>
+    人数
+  </view>
+  <view class='con'>
+      <view class='change-btn reduce' bindtap='changeNum' data-cz="reduce">-</view>
+      <view class='num'>{{number}}</view>
+      <view  class='change-btn add' bindtap='changeNum' data-cz="add">+</view>
+  </view>
+</view>
+<view class='footer' bindtap='getOrder'>
+  下一步
+</view>

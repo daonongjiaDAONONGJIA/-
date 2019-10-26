@@ -1,17 +1,54 @@
 /* pages/my_collect/my_collect.wxss */
-.exper-item{
+/* pages/experience/experience.wxss */
+page{
+  padding: 0 30rpx;
   background: #fff;
+  box-sizing: border-box;
+}
+.exper-item{
+  padding: 30rpx 0;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #dedede
 }
 .exper-img{
-  width: 100%;
+  margin-right: 20rpx;
+  width: 200rpx;
+  flex-shrink: 0;
 }
 .exper-img image{
   width: 100%;
+  border-radius: 10px;
+}
+.exper-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .exper-tit{
-  height: 80rpx;
-  line-height: 80rpx;
-  padding:0 30rpx;
   font-size:32rpx;
-  color: #666666
+  margin-bottom: 6rpx;
+}
+.exper-sub-tit{
+  height: 78rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+   color: #666666;
+}
+.exper-yh text{
+  display: inline-block;
+  padding: 4rpx;
+  font-size: 24rpx;
+  color:#f93a3c;
+  border:1px solid #f93a3c;
+  border-radius: 5px;
+}
+.exper-price{
+  margin-top:8rpx;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: space-between
+}
+.exper-price .price{
+  color:#f93a3c;
 }

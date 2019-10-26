@@ -1,0 +1,10 @@
+<!--pages/recharge/index.wxml-->
+<view class='recharge'>
+  <view class='tit'>对方账户</view>
+  <view class='price'>
+    <view class='price-input'>
+      <input type='number' bindinput='card_sn' placeholder='对方卡号'></input>
+    </view>
+  </view>
+  <view class='btn' bindtap='getCardInfo'>赠送</view>
+</view>

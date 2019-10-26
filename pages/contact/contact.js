@@ -13,6 +13,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu();
+    var version = app.getVersion();
+    this.setData({
+      version: version
+    })
     wx.showToast({
       icon: 'loading',
       title: '数据加载中~'
@@ -21,11 +26,10 @@ Page({
   },
   // 获取收藏列表
   contactList: function () {
-    var mainurl = app.globalData.mainurl;
+    var mainurl = this.data.version;
     var openid = app.globalData.openid;
     var params = {
       openid: openid,
-      token: app.globalData.userInfo.token,
       page: this.data.page
     };
     var url = mainurl + 'api/user/getContact';
@@ -40,12 +44,13 @@ Page({
   // 添加联系人
   addContact:function(){
     wx.navigateTo({
-      url: '/pages/add_contact/add_contact'
+      url: '/pages/add_contact/add_contact?type=list'
     })
   },
   //设置默认 删除 联系人
   operateContact:function(e){
     console.log(e);
+    var that = this;
     var operate = e.currentTarget.dataset.operate;
     var id = e.currentTarget.dataset.id;
     if (operate=="default"){
@@ -61,7 +66,7 @@ Page({
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定');
-            this.deleteContact(id)
+            that.deleteContact(id)
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -75,11 +80,10 @@ Page({
     })
   },
   defaultContact: function (id) {
-    var mainurl = app.globalData.mainurl;
+    var mainurl = this.data.version;
     var openid = app.globalData.openid;
     var params = {
       openid: openid,
-      token: app.globalData.userInfo.token,
       id: id
     };
     var url = mainurl + 'api/user/setContact';
@@ -89,11 +93,10 @@ Page({
     }, data => { }, data => { });
   },
   deleteContact:function(id){
-    var mainurl = app.globalData.mainurl;
+    var mainurl = this.data.version;
     var openid = app.globalData.openid;
     var params = {
       openid: openid,
-      token: app.globalData.userInfo.token,
       id: id
     };
     var url = mainurl + 'api/user/delContact';
@@ -113,7 +116,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.showToast({
+      icon: 'loading',
+      title: '数据加载中~'
+    })
+    this.contactList();
   },
 
   /**
@@ -148,6 +155,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '道农家',
+      path: '/pages/guide/guide',
+      // 设置转发的图片
+      imageUrl: '',
+      // 成功的回调
+      success: (res) => { },
+      // 失败的回调
+      fail: (res) => { },
+      // 无论成功与否的回调
+      complete: (res) => { }
+    }
   }
 })

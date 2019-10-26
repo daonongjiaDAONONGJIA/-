@@ -1,0 +1,26 @@
+<!--pages/my_voucher/index.wxml-->
+<view class='voucher-list'>
+  <view class='voucher-none' wx:if="{{ page==1&&voucherList.length==0 }}">
+    <view>您还没有金猪通用代金券。</view>
+    <view  bindtap='getVoucher2'>去领取</view>
+  </view>
+  <view class='voucher-item' wx:for="{{ voucherList }}" wx:key="{{index}}" wx:if="{{ voucherList.length>0 }}">
+    <view class='voucher-info'>
+      <view class='voucher-name-price'>
+        <view class='voucher-name'>金猪通用代金券</view>
+        <view class='voucher-price'>￥{{item.money}}</view>
+      </view>
+      <!-- <view class='voucher-use'>单次可用一张</view> -->
+      <view class='voucher-use'>兑换日期{{item.sumbit_time}}</view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='voucher-buy' bindtap='getVoucher2'>
+    领取代金券
+  </view>
+  <view class='voucher-buy' bindtap='getVoucher1'>
+    兑换代金券
+  </view>
+</view>
+

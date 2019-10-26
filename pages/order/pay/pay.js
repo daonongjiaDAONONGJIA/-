@@ -22,8 +22,7 @@ Page({
     var url = 'Cart/getWxpayData'
     var params = {
       oid: this.data.order.id, //订单ID
-      openid: app.globalData.openid,
-      token: app.globalData.userInfo.token
+      openid: app.globalData.openid
     }
     util.wxRequest(url, params, data => {
       if (data.code == 200) {

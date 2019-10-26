@@ -1,0 +1,233 @@
+/* pages/sign/index.wxss */
+page{
+  background: #f6f9fe
+}
+.user{
+  margin:30rpx;
+  padding:20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  box-shadow:0 0 20px #d9ecfd;
+}
+.user .user-con{
+   display: flex;
+   align-items: center;
+}
+.user .avatar{
+  margin-right: 30rpx;
+  flex-shrink: 0;
+  width: 150rpx;
+  height: 150rpx;
+  background: #ccc;
+  border-radius: 50%;
+  overflow: hidden
+}
+.user .avatar image{
+  width: 100%;
+  height: 100%;
+}
+.user .info .tit{
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+}
+.user .info .num{
+  font-size:44rpx;
+}
+.user .u-btn{
+  width: 100rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #fff;
+  background: #feb01a;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+.sign{
+  margin:0 30rpx 30rpx 30rpx;
+  padding:20rpx 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  box-shadow:0 0 20px #d9ecfd;
+}
+.sign .tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+}
+.sign .s-day{
+  font-size: 28rpx;
+}
+.sign-list{
+  display: flex;
+  justify-content: space-between
+}
+.sign-list .sign-item .date{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.sign-list .sign-con{
+  flex-shrink: 0;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background: #feb01a;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  border:6rpx solid #fed15a;
+}
+.sign-list .sign-item .num{
+  font-size: 30rpx;
+}
+.sign-list .sign-con.active{
+  background: #c3e9ec;
+  border:6rpx solid #c3e9ec;
+}
+
+.sign-btn{
+  margin:20rpx auto 0 auto;
+  width: 28%;
+  height: 56rpx;
+  line-height:56rpx;
+  background:linear-gradient(to right,#24bbc6,#55dfbd) ;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  text-align: center;
+}
+.sign-tip{
+  line-height:80rpx;
+  color: #feb01a;
+  text-align: center;
+  font-size: 28rpx;
+}
+.task-item{
+  margin-bottom: 20rpx;
+  display: flex;
+  font-size: 24rpx;
+}
+.task-item .task-con{
+  padding-bottom: 20rpx;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dedede;
+}
+.task-item .t-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+  background: #fef9df;
+  border:1px solid #fef1df;
+  border-radius: 10rpx;
+}
+.task-item .t-icon image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.task-item .t-tit{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.task-item .t-tit text{
+  padding-left: 20rpx;
+  color: #ffa000;
+}
+.task-item .t-desc{
+  font-size: 26rpx;
+  margin-top: 8rpx;
+  color: #999
+}
+.task-item .task-con .t-info{
+  width: 100%;
+  padding-right: 10rpx;
+}
+.task-item .t-btn{
+  margin:0;
+  padding: 0;
+  flex-shrink: 0;
+  width: 120rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  color: #fff;
+  background: #feb01a;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+.task-item .t-btn1{
+  background:linear-gradient(to right,#24bbc6,#55dfbd) ;
+  color: #fff;
+}
+.problem-con{
+  flex-direction: column
+}
+.problem{
+  margin-top:30rpx;
+  padding: 30rpx;
+  background: #fef9df;
+  color: #ffa000;
+  border-radius: 20rpx;
+  font-size: 26rpx;
+}
+.answer .answer-item{
+  margin-top:30rpx;
+  padding: 0 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+  border:1px solid #ffa000;
+}
+.answer .answer-item.active{
+  background: #ffa000;
+  color: #fff;
+}
+.answer .answer-item.erro{
+  background: #fd5924;
+  color: #fff;
+  border:1px solid #fd5924;
+}
+.result{
+  padding-top: 30rpx;
+}
+.mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth{
+  padding: 30rpx;
+  width: 80%;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.auth .auth-btn{
+  margin:0 10%;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #feb01a;
+  color: #fff;
+  font-size: 24rpx;
+}

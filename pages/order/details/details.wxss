@@ -1,152 +1,230 @@
 /* pages/order/details/details.wxss */
 page{
-  padding-bottom:140rpx;
-  font-size: 30rpx;
+  padding-bottom: 120rpx;
 }
-.order-pay{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 40rpx;
+.experice-info{
   padding: 30rpx;
+  background: #fff;
+}
+.experice-info .name{
+  font-size: 32rpx;
+  margin-bottom: 14rpx;
+}
+.experice-info .desc{
+  font-size: 30rpx;
+  color: #666
+}
+.code{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  background: #fff;
+}
+.sel-date{
+  padding: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 30rpx;
+  background: #fff;
+}
+.sel-date .date-item{
+  padding-right: 30rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+.sel-date .date-item:first-of-type:after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top:0;
+  height:4rpx;
+  width: 30rpx;
+  background: #000
+}
+.sel-date .date{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.sel-date .tit{
+  color: #666
+}
+
+.house{
+  padding: 0 30rpx 0 30rpx;
   margin-top:20rpx;
   background: #fff;
+  font-size: 30rpx;
 }
-.order-pay view{
-  height: 60rpx;
-  line-height: 60rpx;
+.house .tit{
+  height:80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ddd;
 }
-.order-total{
-  margin-bottom: 20rpx;
-  padding: 0 30rpx;
-  height: 100rpx;
+.house .house-list{
+  padding-top: 30rpx;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.house .house-list .list-item{
+  margin-right: 5%;
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+  width: 28%;
+  border:1px solid #ddd;
+  text-align: center;
+}
+.house .house-list .list-item:nth-of-type(3n){
+  margin-right: 0
+}
+.house .house-list .list-item .name{
+  margin-bottom: 10rpx;
+}
+.house .house-list .list-item .num{
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.house .house-list .list-item .price{
+  color: #f93a3c
+}
+.house .house-list .list-item.active{
+  border:1px solid #f65c5e;
+  background:#f65c5e;
+  color: #fff;
+}
+.house .house-list .list-item.active .num{
+  color: #fff;
+}
+.house .house-list .list-item.active .price{
+  color: #fff;
+}
+.fee{
+  margin-top: 20rpx;
+  padding:0 30rpx 30rpx 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.fee .tit{
+  height:80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ddd;
+}
+.fee .fee-item{
+  display: flex;
+  margin-top: 20rpx;
+  color: #666;
+}
+.fee .fee-item .f-tit{
+  width: 140rpx;
+}
+
+.discount{
+  padding: 30rpx;
+  margin-top: 20rpx;
   background: #fff;
 }
-.order-total text{
-  color: #f65c5e
+.discount-item{
+  margin-bottom: 14rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
 }
-.order-info{
-  padding:30rpx;
+.discount-item:last-of-type{
+  margin-bottom: 0;
+}
+.discount-item .tit{
   display: flex;
   align-items: center;
-  background: #fff;
-  font-size:30rpx;
-  border-bottom:1px solid #f7f7f7
+  justify-content: center
 }
-.goods-name{
-  padding-bottom: 12rpx;
-}
-.goods-img{
-  width: 160rpx;
-  height: 160rpx;
-  margin-right: 20rpx;
-}
-.goods-img image{
-  width: 160rpx;
-  height: 160rpx;
-}
-.goods-price{
+.discount-item .con{
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
   flex-shrink: 0;
 }
-goods-price .price{
-  padding-bottom: 12rpx;
+.discount-item image{
+  width: 40rpx;
+  height: 40rpx;
 }
-.goods-buy-info,.goods-price .price{
-  color: #f65c5e
+
+.contact{
+  margin-top:20rpx;
+  padding:0 30rpx 30rpx 30rpx;
+  background: #fff;
+  font-size: 30rpx;
 }
-.order-date{
-  padding: 30rpx;
+.contact .tit{
+  height:80rpx;
+  line-height:80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ddd;
+}
+.contact .info{
+  padding: 30rpx 0;
+  border-bottom: 1px dashed #ddd;
+}
+.contact .name-tel{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between
+}
+.contact .info:last-of-type{
+  border:none;
+}
+
+.footer{
+  box-sizing: border-box;
+  padding:0 30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  border-bottom:1px solid #f7f7f7
-}
-.order-date .date{
-  display: flex;
-}
-.order-date .date .tit{
-  padding-right: 20rpx;
-}
-.order-num{
-  padding: 30rpx;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-bottom:1px solid #f7f7f7
-}
-.order-num .add-num{
-  padding-left:20rpx;
-}
-.order-num .add-num .add-btn,.order-num .add-num .add-num1{
-  width: 80rpx;
-  height: 80rpx;
-  text-align: center;
-  line-height: 80rpx;
-}
-.order-num .add-num .add-btn{
-  font-size:40rpx;
-}
-.order-num .add-num .add-btn.add{
-  background: #f65c5e;
-  color: #fff;
-}
-.order-num .add-num .add-btn.reduce{
-  background: #f7f7f7;
-  color: #ccd1d5
-}
-.user-info{
-  display: flex;
-  align-items: center;
-  padding: 30rpx;
-  border:1px solid #f7f7f7;
-  background: #fff;
-}
-.user-info .tit{
-  width: 130rpx;
-}
-
-.order-code{
-  margin-bottom: 30rpx;
-  padding:30rpx;
-  background: #fff;
-}
-.order-code .code{
-  padding-top: 20rpx;
-  font-size:50rpx;
-  color: #f65c5e;
-  text-align: center;
-}
-
-
-.footer{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20rpx 30rpx;
-  position: fixed;
-  bottom:0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border-top:1px solid #f7f7f7;
-  box-sizing: border-box
-}
-.footer .order-btn{
-  margin-left:30rpx;
-  height: 60rpx;
-  padding: 0 30rpx;
-  border-radius: 30rpx;
-  text-align: center;
-  line-height: 60rpx;
-  border:1px solid #666;
   font-size: 30rpx;
 }
-.footer .order-btn.btn-warn{
-  border:1px solid #f65c5e;
+.footer .price{
+  color: #f93a3c;
+}
+.footer .buy-btn{
+  width: 70%; 
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+}
+.btn-pay {
+  margin-bottom: 5rpx;
+  height: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 27rpx;
+  line-height: 50rpx;
+  color: #fff;
   background: #f65c5e;
-  color:#fff;
+  align-self: flex-end;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+}
+.btn-cancel {
+  margin-bottom: 5rpx;
+  height: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 27rpx;
+  line-height:50rpx;
+  color: gray;
+  border-color: gray;
+  border-width: 1rpx;
+  border-style: solid;
+  background: #fff;
+  align-self: flex-end;
+  border-radius: 30rpx;
 }

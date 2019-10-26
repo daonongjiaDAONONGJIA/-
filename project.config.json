@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,13 +12,15 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.3",
+	"libVersion": "2.7.1",
 	"appid": "wxdca4c47af4034f2b",
-	"projectname": "%E5%B1%85%E5%96%84%E5%9C%B0",
+	"projectname": "%E9%81%93%E5%86%9C%E5%AE%B6",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,13 +30,60 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/guide/guide",
+					"pathName": "pages/guide/guide",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/experience_index/experience_index",
+					"pathName": "pages/experience_index/experience_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guide/guide",
+					"pathName": "pages/guide/guide",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guide/guide",
+					"pathName": "pages/guide/guide",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guide/guide",
+					"pathName": "pages/guide/guide",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/experience_index/experience_index",
+					"pathName": "pages/experience_index/experience_index",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

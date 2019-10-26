@@ -1,0 +1,145 @@
+/* pages/my_card/index.wxss */
+.user-info{
+  display: flex;
+  background: #58575d;
+  padding:30rpx;
+  color: #fff;
+}
+.userinfo-avatar{
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname{
+  font-size: 30rpx;
+}
+.user-card{
+  position: relative;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  color: #fff;
+}
+.user-card .card-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index:3;
+  box-sizing: border-box;
+}
+.user-card::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 60%;
+  background: #58575d;
+  z-index: 1
+}
+.user-card image{
+  position: relative;
+  width: 100%;
+  color: #fff;
+  z-index:2
+}
+
+.card-name{
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+.card-date{
+  font-size: 24rpx;
+}
+.card-num-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  font-size: 30rpx;
+}
+.card-btn{
+   width:40%;
+   padding: 14rpx 0;
+   border-radius: 38rpx;
+   background:rgba(255, 255, 255, 0.1);
+   font-size: 28rpx;
+   text-align: center;
+}
+.user-level{
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size:30rpx;
+}
+.user-level image{
+  padding-top: 8rpx;
+  padding-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.user-nav{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 30rpx;
+   background: #fff;
+   box-shadow: 0 0 30px #dedede;
+   border-radius: 20rpx;
+}
+.user-nav .nav-item{
+  flex-shrink: 0;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  position: relative;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.user-nav .nav-item .nav-icon{
+  margin-right: 20rpx;
+}
+.user-nav .nav-item .nav-icon image{
+  width:110rpx;
+  height:110rpx;
+}
+.user-nav .nav-item .nav-info .tit{
+ font-size: 27rpx;
+ margin-bottom: 10rpx;
+}
+.user-nav .nav-item .nav-info .desc{
+ font-size: 24rpx;
+}
+.user-nav .nav-item:before{
+  content: "";
+  left:0;
+  bottom:0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+}
+.user-nav .nav-item:after{
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: #dedede;
+}
+.user-nav .nav-item:nth-of-type(2):after{
+  background: none
+}
+.user-nav .nav-item:nth-of-type(3):before{
+  
+}
+.user-nav .nav-item:nth-of-type(4):before{
+  
+}

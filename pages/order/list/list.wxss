@@ -2,10 +2,18 @@
 page {
   background: #fafafa
 }
-
+.order-none{
+  height: 300rpx;
+  line-height: 300rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+}
 .order-item {
-  margin-bottom: 10px;
+  margin:0 30rpx 10px 30rpx;
+  padding: 0 30rpx;
   background: #fff;
+  border-radius: 20rpx;
 }
 
 .order-item:last-child {
@@ -13,12 +21,11 @@ page {
 }
 
 .order-footer {
-  padding:20rpx;
+  padding:20rpx 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  border-bottom: 1px solid #f2f2f2;
-  height: 70rpx;
+  border-top: 1px solid #f2f2f2;
   align-items: center;
   font-size: 30rpx;
 }
@@ -30,7 +37,7 @@ page {
 /*每行单元格*/
 
 .carts-item {
-  padding: 0 30rpx;
+  padding: 30rpx 0;
   display: flex;
   flex-direction: row;
   align-items: center
@@ -43,6 +50,7 @@ page {
   width: 198rpx;
   height: 120rpx;
   margin-right: 20rpx;
+  overflow: hidden
 }
 .carts-image image{
   width: 198rpx;
@@ -59,21 +67,20 @@ page {
   justify-content: flex-start;
 }
 .order-btn{
-  padding: 24rpx 0;
+  padding:20rpx 0;
+  border-top: 1px solid #f2f2f2;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 20rpx;
-  height: 60rpx;
   align-items: center;
 }
 .btn-pay {
   margin-bottom: 5rpx;
-  height: 60rpx;
+  height: 50rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
   font-size: 27rpx;
-  line-height: 60rpx;
+  line-height: 50rpx;
   color: #fff;
   background: #f65c5e;
   align-self: flex-end;
@@ -83,11 +90,11 @@ page {
 
 .btn-cancel {
   margin-bottom: 5rpx;
-  height: 60rpx;
+  height: 50rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
   font-size: 27rpx;
-  line-height: 60rpx;
+  line-height:50rpx;
   color: gray;
   border-color: gray;
   border-width: 1rpx;
@@ -115,18 +122,25 @@ page {
   color: #f65c5e
 }
 .view-title {
-  padding: 0 30rpx;
   height: 80rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 30rpx;
+  border-bottom: 1px solid #f2f2f2;
 }
-.view-title text {
+.view-title .order-name{
+  flex-shrink: 0;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
   color: #999999;
 }
 .order-status{
+  width: 20%;
   color: #f65c5e;
+  text-align: right;
 }
 
 .class-tab {

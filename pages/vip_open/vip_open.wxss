@@ -1,0 +1,85 @@
+/* pages/vip_open/vip_open.wxss */
+.card-info{
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  background: #fff;
+}
+.card-info .tit{
+  padding-bottom: 16rpx;
+  font-size: 36rpx;
+}
+.card-info .desc{
+  font-size: 30rpx;
+  color: #666;
+  padding-bottom: 10rpx;
+}
+.card-info .desc text{
+  padding-left: 30rpx;
+}
+.card-info .desc text.price{
+  color: #f93a3c;
+}
+.footer{
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.footer .price{
+  background: #fff;
+  width: 100%;
+  padding-left:30rpx;
+  box-sizing: border-box;
+  font-size:30rpx;
+}
+.footer .price text{
+  color:#f93a3c;
+  font-size: 36rpx;
+}
+.footer .btn{
+  flex-shrink: 0;
+  width: 30%;
+  text-align: center;
+  background: #f93a3c;
+  color: #fff;
+}
+.pay-info{
+  padding:0 30rpx;
+  background: #fff;
+}
+.pay-info .tit{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #dedede;
+}
+.pay-type{
+}
+.pay-type .type-item{
+  padding: 20rpx 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-bottom: 1px solid #dedede;
+}
+.pay-type .type-item .type-info{
+  display: flex;
+  align-items: center
+}
+.pay-type .type-item .type-icon{
+  margin-right: 20rpx;
+}
+.pay-type .type-icon image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.pay-type .type-sel image{
+  width: 40rpx;
+  height: 40rpx;
+}

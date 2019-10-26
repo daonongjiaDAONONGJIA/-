@@ -1,0 +1,16 @@
+<!--pages/withdraw_list/index.wxml-->
+<view class='record-list'>
+  <view class='record-item' wx:for="{{ recordList }}" wx:key="{{index}}">
+    <view class='bank-money'>
+      <view class='bank'>
+        {{item.bank}}
+      </view>
+      <view class='money'>
+        ￥{{item.money}}
+      </view>
+    </view>
+    <view class='date'>
+      {{item.time}}
+    </view>
+  </view>
+</view>

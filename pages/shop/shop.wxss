@@ -1,0 +1,81 @@
+/* pages/shop/shop.wxss */
+.index-section{
+}
+.shop{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.shop-info{
+  padding: 30rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.shop-info .info{
+  display: flex;
+  align-items: center;
+}
+.shop-info .shop-logo{
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.shop-info .shop-desc{
+  padding-top: 10rpx;
+  font-size:28rpx;
+}
+.shop-info .shop-logo image{
+  width: 217rpx;
+  height: 150rpx;
+}
+.shop-info .shop-btn{
+  margin-left: 20rpx;
+  flex-shrink: 0;
+  background: #ffea01;
+  font-size:30rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+}
+.goods-commend {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: nowrap;
+}
+.commend-item{
+  margin: 30rpx 30rpx 30rpx 0;
+  width: 300rpx;
+  display: inline-block;
+  overflow: hidden
+}
+.commend-banner{
+  width: 100%;
+}
+.commend-banner image{
+  width: 100%
+}
+.commend-img{
+  width: 300rpx;
+  height: 210rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.commend-img image{
+   width: 100%;
+   height: 100%;
+}
+.commend-tit{
+  padding:14rpx 0;
+  font-size: 30rpx;
+  white-space: normal;
+  line-height: 1.6
+}
+.commend-price{
+  font-size: 30rpx;
+  color: #a7a8a9
+}
+.commend-price text{
+  padding-right: 10rpx;
+  color: #ff7366;
+  font-size:36rpx;
+}

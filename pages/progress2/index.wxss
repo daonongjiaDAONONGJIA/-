@@ -1,0 +1,7 @@
+/* pages/progress/index.wxss */
+page{
+  background: #fff
+}
+image{
+  width: 100%;
+}

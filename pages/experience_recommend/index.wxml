@@ -1,0 +1,24 @@
+<!--pages/experience/experience.wxml-->
+<view>
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.goods_id}}'>
+    <view class='exper-img'>
+      <image src='{{ item.thumb }}' mode="widthFix"></image>
+    </view>
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.goods_name }}
+      </view>
+      <view class='exper-sub-tit'>
+      {{ item.subtitle }}
+      </view>
+      <view class='exper-yh'>
+        <text>金卡专享九折</text>
+      </view>
+      <view class='exper-price'>
+        <view class='price'>￥{{item.min_price}}起</view>
+        <!-- <view class=''>已售{{ item.sale_num }}</view> -->
+      </view>
+    </view>
+    
+  </view>
+</view>

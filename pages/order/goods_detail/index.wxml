@@ -1,0 +1,85 @@
+<!--pages/order/goods_detail/index.wxml-->
+<!--pages/goods_confirm/index.wxml-->
+<view class='consignee'>
+  <view class='c-left'>
+    <view class='info'>
+      <view class='name'>{{order_shop_goods.name}}</view>
+      <view class='tel'>{{order_shop_goods.phone}}</view>
+    </view>
+    <view class='address'>
+      {{order_shop_goods.address}}
+    </view>
+  </view>
+</view>
+<view class='goods'>
+  <view class='info'>
+    <view class='img'>
+      <image src='{{thumb}}'></image>
+    </view>
+    <view class='con'>
+      <view class='name'>{{order.goods_name}}</view>
+      <view class='prop'>已选：{{order_shop_goods.type_name}}</view>
+      <view class='num'>数量：{{order_shop_goods.number}}</view>
+      <view class='price'>￥{{order.shop_price}}</view>
+    </view>
+  </view>
+  <view class='subtotal'>
+    合计：<text>￥{{order.total_money}}</text>
+  </view>
+</view>
+<view class='discount' wx:if="{{parseFloat(order.roll)>0 || parseFloat(order.card_money)>0 || parseFloat(order.score_price)>0 || parseFloat(order.fsc_money)>0}}">
+  <view class='discount-item' wx:if="{{parseFloat(order.roll)>0}}">
+    <view class='tit'>
+      金猪通用代金券 使用￥{{order.roll}}
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{parseFloat(order.card_money)>0}}">
+    <view class='tit'>
+      余额 使用￥{{order.card_money}}
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{parseFloat(order.score_price)>0}}">
+    <view class='tit'>
+      积分 使用{{order.score}}分,抵￥{{order.score_price}}元
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{parseFloat(order.fsc_money)>0}}">
+    <view class='tit'>
+      福寿长代金券 使用￥{{order.fsc_money}}
+    </view>
+  </view>
+  <view class='discount-item' wx:if="{{order.vid!=0}}">
+    <view class='tit'>
+      和顺發代金券 使用￥{{order.vouchers_money}}
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view>
+    总计：<text class='price'>￥{{order.total_money}}</text>
+  </view>
+  <view class='buy-btn'>
+    <block class='order-btn' wx:if='{{order.order_status == 0}}'>
+      <text bindtap='cancel' data-id='{{order.id}}' class='btn-cancel'>取消定单</text>
+      <text bindtap='getOrder' data-id='{{order.id}}' class='btn-pay'>立即付款</text>
+    </block>
+    <block wx:elif='{{order.order_status == 1}}' class='order-footer'>
+      
+    </block>
+    <block class='order-btn' wx:if='{{order.order_status == 2}}'>
+      <text bindtap='getRefund' data-id='{{order.id}}' class='btn-pay'>退款</text>
+      <text bindtap='getComplete' data-id='{{order.id}}' class='btn-pay'>完成定单</text>
+    </block>
+    <block wx:elif='{{order.order_status == 3}}' class='order-footer'>
+    </block>
+    <block class='order-btn' wx:if='{{order.order_status == 4}}'>
+      <text bindtap='getRefund' data-id='{{order.id}}' class='btn-pay'>退款</text>
+    </block>
+    <block wx:elif='{{order.order_status == 5}}' class='order-footer'>
+      <text>退款中</text>
+    </block>
+    <block wx:elif='{{order.order_status == 6}}' class='order-footer'>
+      <text class='btn-cancel'>退款成功</text>
+    </block>
+  </view>
+</view>

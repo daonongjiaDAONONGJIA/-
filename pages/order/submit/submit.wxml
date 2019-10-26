@@ -65,7 +65,6 @@
     <button bindtap="comfirmCash">确定</button>
     <button bindtap="hideCash">取消</button>
     </view>
-    
 </view>
   <view class='view-price'>
     <view class='view-price1'>
@@ -73,7 +72,5 @@
       <text class='text-red'>￥{{totalMoney}}元</text>
     </view>
   </view>
-
   <text bindtap='submit' class='text-save'>提交订单</text>
-
 </view>

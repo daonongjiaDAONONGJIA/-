@@ -1,0 +1,5 @@
+<!--pages/progress/index.wxml-->
+<view>
+  <image src="https://m.shanxijsd.com/uploads/file/lc1.png?11" mode='widthFix' data-url='https://m.shanxijsd.com/uploads/file/lc1.png?11' bindtap='viewPic'/>
+</view>
+

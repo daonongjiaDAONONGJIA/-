@@ -1,12 +1,39 @@
 <!--pages/my_collect/my_collect.wxml-->
-<view>
-  <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
+<view wx:if="{{ goodsList.length>0 }}">
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:if="{{item.state==0}}">
     <view class='exper-img'>
-      <image src='{{item.img}}' mode="widthFix"></image>
+      <image src='{{ item.thumb }}' mode="widthFix"></image>
     </view>
-    <view class='exper-tit'>
-    {{item.goods_name}} 
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.goods_name }}
+      </view>
+      <!-- <view class='exper-sub-tit'>
+      {{ item.subtitle }}
+      </view> -->
+      <view class='exper-price'>
+        <view class='price'>{{item.price}}</view>
+      </view>
     </view>
   </view>
+  <view class='exper-item' wx:for="{{ goodsList }}" wx:if="{{item.state==1}}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.goods_id}}'  data-type='{{item.type}}'>
+    <view class='exper-img'>
+      <image src='{{ item.thumb }}' mode="widthFix"></image>
+    </view>
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.goods_name }}
+      </view>
+      <!-- <view class='exper-sub-tit'>
+      {{ item.subtitle }}
+      </view> -->
+      <view class='exper-price'>
+        <view class='price'>￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{ goodsList.length==0 && page==1 }}" class='goods-none'>
+  暂无收藏
 </view>
 

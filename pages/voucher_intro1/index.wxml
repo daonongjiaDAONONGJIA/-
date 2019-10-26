@@ -1,0 +1,30 @@
+<!--pages/voucher_intro/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='voucher-info'>
+  <view class='voucher-desc'>
+    <view class='voucher-name'>福寿长代金券</view>
+    <view class='voucher-ad'>
+      福寿长代金券
+    </view>
+  </view>
+  <view class='voucher-num'>
+    <view class='num'>代金券总额：￥{{number}}</view>
+    <!-- <view class='view' bindtap='getVoucher'>
+      查看我的代金券
+    </view> -->
+  </view>
+</view>
+<view class='voucher-explain'>
+    <view class='tit'>{{voucherInfo.title}}</view>
+    <view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+</view>
+<view class='footer'>
+  <view class='voucher-buy' bindtap='getVoucher1' wx:if="{{voucherInfo.btn>0}}">
+    领取福寿长代金券
+  </view>
+  <view class='voucher-buy voucher-buy1' wx:if="{{voucherInfo.btn==0}}">
+    领取福寿长代金券
+  </view>
+</view>

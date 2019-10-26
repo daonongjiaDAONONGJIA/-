@@ -1,26 +1,23 @@
-<!--pages/experience/experience.wxml-->
+<view class='search'>
+  <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='search' bindconfirm='getSearch'></input>
+  <image class="" src='../../images/search-sm.png' bindtap='getSearch'></image>
+</view>
 <view>
   <view class='exper-item' wx:for="{{ goodsList }}" wx:key="{{index}}" bindtap='showGoods' data-id='{{item.id}}'>
     <view class='exper-img'>
-      <image src='{{ item.img }}' mode="widthFix"></image>
+      <image src='{{ item.thumb }}' mode="widthFix"></image>
     </view>
-    <view class='exper-o'>
-      <view class='like-comment'>
-        <view class='like'>
-          <image src='https://m.shanxijsd.com/static/images/heart.jpg'></image>
-          <text>{{item.shouchang}}</text>
-        </view>
-         <view class='comment'>
-            <image src='https://m.shanxijsd.com/static/images/comment.jpg'></image>
-            <text>{{item.pinlun}}</text>
-        </view>
+    <view class='exper-info'>
+      <view class='exper-tit'>
+      {{ item.goods_name }}
       </view>
-      <view>
-      <image src='https://m.shanxijsd.com/static/images/share.jpg'></image>
+      <view class='exper-tabs'>
+        <text class="tag-item" wx:for="{{item.tabs}}" wx:for-item="tab" wx:key="{{key}}">{{tab}}</text>
       </view>
-    </view>
-    <view class='exper-tit'>
-    {{ item.goods_name }} {{ item.subtitle }}
+      <view class='exper-price'>
+        <view class='price'>￥{{item.price}}</view>
+        <view class='roll-price' wx:if="{{item.roll==1}}"><image src='../../images/roll-icon.png'></image></view>
+      </view>
     </view>
   </view>
 </view>

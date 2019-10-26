@@ -1,0 +1,11 @@
+<!--pages/intro_detail/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="tit">
+{{intro.r_name}}
+</view>
+<view class="desc" wx:if="{{intro.type==2}}">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class="desc" wx:if="{{intro.type==3}}">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

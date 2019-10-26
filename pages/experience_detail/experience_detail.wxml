@@ -2,107 +2,374 @@
 <import src="../../wxParse/wxParse.wxml"/>
 <!-- 幻灯片 -->
 <view class='swiper-box'>
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[current]}}rpx;">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#eee"	bindchange="bindchange" style="height:{{imgheights[0]}}rpx;" circular="true">
+      <swiper-item class="swiper-item"  wx:if="{{goodsInfo.video!=''}}">
+        <video src="{{goodsInfo.video}}" objectFit='cover' poster="{{goodsInfo.video_images}}" controls></video>
+        <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}'/>
+      </swiper-item>
       <block wx:for="{{goodsImgs}}" wx:key="{{item.id}}">
-        <swiper-item>
+        <swiper-item class="swiper-item">
           <image src="{{item.thumb}}" class="slide-image" mode='widthFix' bindload="imageLoad" data-id='{{index}}'/>
+          <view class='img-bg'>
+          </view>
         </swiper-item>
       </block>
     </swiper>
-    <view class='goods-name'>
-        {{goodsInfo.goods_name}}
-    </view>
-    <view class="dots"> 
-      <block wx:for="{{goodsImgs}}" wx:key="{{item.id}}"> 
-        <view class="dot{{index == current ? ' active' : ''}}"></view> 
-      </block> 
-    </view>
-    <view class='goods-info'>
-        <view class='goods-address'>
-          <image src='https://m.shanxijsd.com/static/images/address.png'></image>{{goodsInfo.address}}
-        </view>
-        <view class='goods-length'>
-          <image src='https://m.shanxijsd.com/static/images/date.png'></image>{{goodsInfo.length}}
-        </view>
+    <view class='swiper-btns' wx:if="{{goodsInfo.video!=''}}">
+      <view class='btn {{current==0?"active":""}}'>视频</view>
+      <view class='btn {{current>0?"active":""}}'>图片</view>
     </view>
     <view class='collect' bindtap='goodsCollect'>
       <image src="{{status == -1 ? 'https://m.shanxijsd.com/static/images/collect.png' : 'https://m.shanxijsd.com/static/images/collected.png'}}"></image>
     </view>
 </view>
 <!-- 幻灯片结束 -->
-<view class='experience-intro'>
-  <view class='intro-item' wx:for="{{goodsAtricle}}" wx:key="item.id">
-    <view class='intro-tit' bindtap='showIntro' data-id="{{index}}"><view>~{{item.title}}~</view><view class='intro-more'>查看更多</view></view>
-    <view class='intro-con pd-tb-20 {{selected==index?"intro-show":"intro-hidden"}}'>
-      <template is="wxParse" data="{{wxParseData:htmlAry[index].nodes}}" />
+<view class='goods-info'>
+  <view class="goods-tag">
+    <text class="tag-item" wx:for="{{goodsInfo.tabs}}" wx:key="{{key}}">{{item}}</text>
+  </view>
+  <view class='goods-name'>
+     {{goodsInfo.goods_name}}
+  </view>
+  <view class='goods-desc'>
+    {{goodsInfo.abstract}}
+  </view>
+</view>
+<view class='goods-discount'>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/jin.png" wx:if="{{goodsInfo.roll==1}}"></image>
+        <image src="../../images/jin_.png" wx:if="{{goodsInfo.roll==0}}"></image>
+        金猪代金券
+      </view>
+      <view class="link" bindtap="getVoucher"  data-type="roll">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fu.png" wx:if="{{goods_fsc>0}}"></image>
+        <image src="../../images/fu_.png" wx:if="{{goods_fsc==0}}"></image>福寿长代金券
+      </view>
+      <view class="link" bindtap="getVoucher"  data-type="fsc">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/he.png" wx:if="{{goodsInfo.hsf==1}}"></image>
+        <image src="../../images/he_.png" wx:if="{{goodsInfo.hsf==0}}"></image>和顺发代金券
+      </view>
+      <view class="link" bindtap="getVoucher"  data-type="hsf">
+        去领去兑 <image src="../../images/next.png"></image>
+      </view>
+    </view>
+    <!--<view class='discount-item'>
+      <view class='tit'>
+        <image src="../../images/fan.png"></image>购买返积分
+      </view>
+    </view>-->
+</view>
+<view class='shop-style'>
+  <view class="tit">道家风采</view>
+  <view class="style">
+    <view class="shop-info">
+      <view class="shop-logo">
+        <image src="{{head_src}}"></image>
+      </view>
+      <view>
+        <view>{{memberInfo.shanghu_name}}</view>
+        <view class="shop-tag">{{memberInfo.address}}</view>
+      </view>
+    </view>
+    <view class='style-btn' bindtap='getStyle'>查看</view>
+  </view>
+</view>
+<view class="shop-map">
+  <view class="tit">道家位置</view>
+  <view class="map">
+    <map
+      id="map"
+      longitude="{{markers[0].longitude}}"
+      latitude="{{markers[0].latitude}}"
+      scale="14"
+      bindcontroltap="controltap"
+      markers="{{markers}}"
+      bindmarkertap="markertap"
+      bindregionchange="regionchange"
+      show-location
+      style="width: 100%; height: 100%;"
+    ></map>
+    <view class="map-con" bindtap='viewMap'>
+      <view class="info">
+        <view class="name">{{goodsInfo.goods_name}}</view>
+        <view class="desc">{{goodsInfo.address}}</view>
+      </view>
+      <view class="m-btn">
+        查看地图 >
+      </view>
     </view>
   </view>
-   <view class='intro-item'>
-    <view class='intro-tit'>
-      <view>~体验者说~</view><view class='intro-more' bindtap='comments'>查看更多></view>
+</view>
+<view class='goods-guide'>
+  <view class='tit'>体验详情</view>
+  <view class='guide'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<view class='goods-comment'>
+  <view class='tit'>
+    邂逅妳
+  </view>
+  <view  class='comment-add' bindtap="getComment">
+    <view class="comment-avatar">
+      <image src="../../images/type-icon2.png"></image>
     </view>
-    <view class='intro-con'>
-      <view class='comment-list'>
-        <view class='comment-item' wx:for="{{goodsComment}}" wx:key="item.id">
-          <view class='comment-avatar'>
-            <image src='{{item.head_src}}'></image>
-          </view>
-          <view class='comment-info'>
-            <view class='comment-user'>
-            {{item.nick_name}}
-            </view>
-            <view class='comment-desc'>
-            {{item.content}}
-            </view>
-          </view>
+    <view class="comment-text">
+      快来写下你的评论吧
+    </view>
+  </view>
+  <view wx:if="{{goodsComment.length>0}}">
+    <view class='comment-item' wx:for="{{goodsComment}}" wx:key="item.id">
+      <view class='comment-user'>
+        <view class='comment-avatar'>
+          <image src='{{item.head_src}}' mode='widthFix'></image>
+        </view>
+        <view class='comment-username'>
+          {{item.nick_name}}
+        </view>
+      </view>
+      <view class='comment-desc'>
+        {{item.content}}
+      </view>
+      <view class='comment-img'>
+        <view class='img-item' wx:if="{{item.thumb.length>0}}" wx:for="{{item.thumb}}" wx:key="{{key}}" wx:for-item="thumb">
+          <image src='https://m.shanxijsd.com/uploads/{{thumb.thumb}}' mode='widthFix'></image>
         </view>
       </view>
     </view>
   </view>
-  <view class='intro-item'>
-    <view class='intro-tit'>
-      <view>~其他推荐~</view><view class='intro-more'>查看更多></view>
-    </view>
-    <view class='intro-con'>
-      <scroll-view class='recomment-list' scroll-x>
-         <view class='recomment-item'>
-          <image src='https://m.shanxijsd.com/static/images/3.png'>
-          </image>
-          <view class='recomment-tit'>
-          在西安与朋友
-          </view>
-         </view>
-         <view class='recomment-item'>
-          <image src='https://m.shanxijsd.com/static/images/3.png'>
-          </image>
-          <view class='recomment-tit'>
-           在西安与朋友
-          </view>
-         </view>
-         <view class='recomment-item'>
-           <image src='https://m.shanxijsd.com/static/images/3.png'>
-           </image>
-           <view class='recomment-tit'>
-           在西安与朋友
-           </view>
-         </view>
-      </scroll-view>
-    </view>
+  <view class='comment-none' wx:if="{{goodsComment.length==0}}">
+    暂无评论~
   </view>
 </view>
-<view class='footer'>
-  <view class='price-star'>
-    <view class='price'>
-    ￥{{goodsInfo.shop_price}}/每人
+<view class='goods-recommend'>
+  <view class='tit'>
+    道友推荐
+  </view>
+  <scroll-view class='recomment-list' scroll-x>
+    <view class='recomment-item'  wx:for="{{ goodsRelated }}" wx:key="{{index}}" bindtap='getGoodsRelated' data-id='{{item.id}}'>
+      <image src='{{item.img}}'>
+      </image>
+      <view class='recomment-tit'>
+      {{item.goods_name}}
+      </view>
     </view>
-    <!-- <view class='star'>
-      <image src='https://m.shanxijsd.com/static/images/xingxing.png'></image>
-      <image src='https://m.shanxijsd.com/static/images/xingxing.png'></image>
-      <image src='https://m.shanxijsd.com/static/images/xingxing.png'></image>
-      <image src='https://m.shanxijsd.com/static/images/xingxing.png'></image>
-    </view> -->
+  </scroll-view>
+</view>
+<view class='footer'>
+  <view class='goods-price'>
+  ￥{{goodsInfo.price}}/体验
   </view>
-  <view class='view-date'>
-   <button size="default" type="warn" class="" bindtap='viewDate'>查看日期</button>
+  <view class='goods-buy' bindtap='confirmOrder' wx:if="{{goodsInfo.goods_state==1}}">
+    立即预定
   </view>
+  <view class='goods-buy1' wx:if="{{goodsInfo.goods_state==0}}">
+    停售
+  </view>
+</view>
+<view class="modals modals-bottom-dialog" wx:if="{{value}}">
+  <view class="modals-cancel"  bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <view class="order-con">
+        <view class="sel-dates">
+          <view class="sel-date">
+            <view>
+              开始时间
+            </view>
+            <view class="num">
+                <picker mode="date" value="{{startDate}}" start="{{startDate}}" end="" bindchange="bindDateChange" data-type='start'>
+                  <view class="picker">
+                    {{startDate}}
+                  </view>
+                </picker>
+            </view>
+          </view>
+          <view class="sel-date">
+            <view>
+              结束时间
+            </view>
+            <view class="num">
+                <picker mode="date" value="{{endDate}}" start="{{startDate}}" end="" bindchange="bindDateChange" data-type='end'>
+                  <view class="picker">
+                    {{endDate}}
+                  </view>
+                </picker>
+            </view>
+          </view>
+          <view class="days">
+            共<text>{{days}}</text>天
+          </view>
+        </view>
+        <view class='people-num'>
+          <view class='tit'>
+            份数
+          </view>
+          <view class='con'>
+              <view class='change-btn reduce' bindtap='changeNum' data-cz="reduce">-</view>
+              <view class='num'>{{number}}</view>
+              <view  class='change-btn add' bindtap='changeNum' data-cz="add">+</view>
+          </view>
+        </view>
+        <view class='contact'>
+          <view class="tit">联系人</view>
+          <view class="info" wx:if="{{is_default==0}}">
+              <view class="">添加联系人</view>
+              <view class="c-btn" bindtap='selContact'>新增</view>
+          </view>
+          <view class="info" wx:if="{{is_default==1}}">
+              <view class="">
+                <view class='name'>
+                  {{contactDefault.name}}
+                </view>
+                <view class='tel'>
+                  联系电话：{{contactDefault.phone}}
+                </view>
+              </view>
+              <view class="c-btn" bindtap='selContact'>修改</view>
+          </view>
+        </view>
+        <view class='car-fee' wx:if="{{goodsInfo.pick.length>0}}">
+          <view class='tit'>
+            <view>接站服务</view>
+            <view bindtap='getCarService' data-type="pick">
+              <image src='../../images/check_box.png' wx:if="{{is_pick==false}}"></image>
+              <image src="../../images/checkboxlist.png" wx:if="{{is_pick==true}}"></image>
+            </view>
+          </view>
+          <view class='con' wx:if="{{is_pick==true}}">
+            <view class='car-type'>
+                <view class='t-tit'>
+                  选择车型
+                </view>
+                <view class='type-list'>
+                  <view class='type-item {{pick_type==1?"active":""}}' data-num='1' data-type='pick'  bindtap='getCarType'>
+                    五座车
+                  </view>
+                  <view class='type-item {{pick_type==2?"active":""}}' data-num='2' data-type='pick'  bindtap='getCarType'>
+                    七座车
+                  </view>
+                </view>
+            </view>
+          <view class='car-type'>
+              <view class='t-tit'>
+                接站地点
+              </view>
+              <view class='type-list'>
+                <view class='type-item {{pick_id==item.id?"active":""}}' data-type='pick' data-aid='{{item.id}}' data-address='{{item.address}}' bindtap='getAddress' wx:for='{{goodsInfo.pick}}' wx:key="{{item.id}}">
+                  {{item.address}}
+                </view>
+              </view>
+          </view>
+          <view class='car-type' wx:if="{{pickDistance>0}}">
+              距离{{pickDistance/1000}}km，价格￥{{pickMoney}}
+            </view>
+          </view>
+        </view>
+        <view class='car-fee' wx:if="{{goodsInfo.send.length>0}}">
+          <view class='tit'>
+            <view>送站服务</view>
+            <view bindtap='getCarService' data-type="send">
+              <image src='../../images/check_box.png' wx:if="{{is_send==false}}"></image>
+              <image src="../../images/checkboxlist.png" wx:if="{{is_send==true}}"></image>
+            </view>
+          </view>
+          <view class='con' wx:if="{{is_send==true}}">
+            <view class='car-type'>
+                <view class='t-tit'>
+                  选择车型
+                </view>
+                <view class='type-list'>
+                  <view class='type-item {{send_type==1?"active":""}}' data-num='1' data-type='send'  bindtap='getCarType'>
+                    五座车
+                  </view>
+                  <view class='type-item {{send_type==2?"active":""}}' data-num='2' data-type='send'  bindtap='getCarType'>
+                    七座车
+                  </view>
+                </view>
+            </view>
+            <view class='car-type'>
+                <view class='t-tit'>
+                  送站地点
+                </view>
+                <view class='type-list'>
+                  <view class='type-item {{send_id==item.id?"active":""}}' data-type='send' data-aid='{{item.id}}'  data-address='{{item.address}}' bindtap='getAddress' wx:for='{{goodsInfo.send}}' wx:key="{{item.id}}">
+                    {{item.address}}
+                  </view>
+                </view>
+            </view>
+            <view class='car-type' wx:if="{{sendDistance>0}}">
+                距离{{sendDistance/1000}}km，价格￥{{sendMoney}}
+            </view>
+          </view>
+        </view>
+        <view class='discount'>
+          <view class='discount-item1' data-type="roll" bindtap='getDiscount'>
+            <view class='tit'>
+              金猪通用代金券 共￥{{cardInfo.roll}}
+            </view>
+            <view class='con'>
+              <text wx:if="{{goodsInfo.roll==0}}">不可用</text>
+              <text wx:if="{{goodsInfo.roll==1 && roll==0}}">不可用</text>
+              <text wx:if="{{goodsInfo.roll==1 && roll>0}}">可用金额￥{{cardInfo.roll}}</text>
+              <image src='../../images/check_box.png' wx:if="{{use_roll==0 && goodsInfo.roll==1 && roll>0}}"></image>
+              <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==0}}"></image>
+              <image src='../../images/check-none.png' wx:if="{{goodsInfo.roll==1 && roll==0}}"></image>
+              <image src="../../images/checkboxlist.png" wx:if="{{use_roll==1 && goodsInfo.roll==1 && roll>0}}"></image>
+            </view>
+          </view>
+          <view class='discount-item1' data-type="fsc" bindtap='getDiscount'>
+            <view class='tit'>
+              福寿长代金券 共￥{{cardInfo.fsc_money}}
+            </view>
+            <view class='con'>
+              <text wx:if="{{goods_fsc==0}}">不可用</text>
+              <text wx:if="{{goods_fsc>0 && fsc_money==0}}">不可用</text>
+              <text wx:if="{{goods_fsc>0 && fsc_money>0}}">可用金额￥{{goods_fsc>fsc_money?fsc_money:goods_fsc}}</text>
+              <image src='../../images/check_box.png' wx:if="{{use_fsc==0 && goods_fsc>0 && fsc_money>0}}"></image>
+              <image src='../../images/check-none.png' wx:if="{{goods_fsc==0}}"></image>
+              <image src='../../images/check-none.png' wx:if="{{goods_fsc>0 && fsc_money==0}}"></image>
+              <image src="../../images/checkboxlist.png" wx:if="{{use_fsc==1 && goods_fsc>0 && fsc_money>0}}"></image>
+            </view>
+          </view>
+          <view class='discount-item1' bindtap='useHsf' wx:if="{{voucherList.length>0}}">
+            <view class='tit'>
+              和顺發代金券
+            </view>
+            <view class='con'>
+              可用金额￥{{voucherNum}}<text wx:if="{{useHsf>0}}">，已抵用{{useHsf}}</text>
+              <image src='../../images/more.png'></image>
+            </view>
+          </view>
+          <view class='discount-item1' wx:if="{{voucherList.length==0}}">
+            <view class='tit'>
+              和顺發代金券
+            </view>
+            <view class='con'>
+              <text>不可用</text>
+              <image src='../../images/more.png'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='order-footer'>
+        <view>
+          总计：<text>￥{{totalPrice}}</text>
+        </view>
+        <view class='buy-btn' bindtap="submitOrder">
+          提交定单
+        </view>
+      </view>
+  </view>
+  
 </view>

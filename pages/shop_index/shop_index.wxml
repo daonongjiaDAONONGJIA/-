@@ -1,0 +1,50 @@
+<!--pages/shop_index/shop_index.wxml-->
+<view class='shop-info'>
+  <view class='shop-logo'>
+    <image src='../../images/logo.jpg'></image>
+  </view>
+  <view class='info'>
+    <view class='shop-name'>
+    三只松鼠
+    </view>
+    <view class='shop-desc'>
+      本店提供新鲜的坚果，各种农副业产品，欢迎品鉴！
+    </view>
+  </view>
+</view>
+ <view class="P_order_P">
+    <scroll-view class="orderPage-sideBar" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
+      <block wx:for="{{menu}}" wx:key="">
+        <view class="menuList">
+          <view class="{{index==orderType?'selected':''}}" data-index="{{index}}" bindtap="turnMenu">{{item.name}}</view>
+        </view>
+      </block>
+    </scroll-view>  
+
+   <scroll-view class="orderPage-sideBar2" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
+      <block wx:for="{{arr3}}" wx:key="">
+        <view class="menuList menuList2" bindtap="toFoodDetail">
+          <image src="{{item.img}}"></image>
+          <view class="P_message">
+            <view>{{item.name}}</view>
+            <view class="P_small">{{item.message}}</view>
+            <view class="P_small" catchtap="donothing">{{item.message2}}</view>
+            <view class="P_bottom" catchtap="donothing">
+              <view>
+                <text class="price">¥{{item.price}} </text>
+                <text class="line_t">¥{{item.price}}</text> 
+              </view>
+              <view catchtap="noTo">
+                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce2" wx:if="{{item.message3===''}}"></text>
+                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce" wx:if="{{item.message3!==''}}"></text>
+                <text> {{item.num}} </text>
+                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add2"  wx:if="{{item.message3===''}}"></text>
+                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add"  wx:if="{{item.message3!==''}}"></text>
+              </view>
+            </view> 
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+  </view>

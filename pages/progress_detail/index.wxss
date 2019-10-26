@@ -1,0 +1,32 @@
+/* pages/progress_detail/index.wxss */
+page{
+  background: #fff;
+  padding-bottom: 30rpx;
+}
+.help-detail-tit{
+  margin:30rpx;
+  padding-left: 15rpx;
+  height: 29px;
+  border-left:4px solid #f65c5c;
+}
+.help-detail-con{
+  padding:0 30rpx;
+  font-size:28rpx;
+}
+.help-detail-con .help-p{
+  text-indent: 2em;
+  padding:6rpx 0;
+  line-height: 1.6;
+  font-size: 32rpx;
+}
+.help-detail-con .help-p1{
+  padding:6rpx 0;
+  line-height: 1.6;
+  font-size: 32rpx;
+}
+.help-detail-company{
+  padding:0 30rpx;
+  padding-top: 30rpx;
+  text-align: right;
+  font-size:28rpx;
+}

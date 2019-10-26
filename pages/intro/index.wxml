@@ -1,0 +1,14 @@
+<!--pages/intro/index.wxml-->
+<view class='user-nav-list'>
+  <navigator url="/pages/progress/index" class='nav-item' hover-class="nav-hover">
+    图示
+  </navigator>
+  <navigator url="/pages/progress1/index" class='nav-item' hover-class="nav-hover">
+    说明
+  </navigator>
+  <navigator url="/pages/progress2/index" class='nav-item' hover-class="nav-hover">
+    图标栏目解释
+  </navigator>
+</view>
+
+

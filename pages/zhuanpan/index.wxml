@@ -1,0 +1,45 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="zp-container">
+	<view class="zp-tit">
+		<image src='../../images/zp-tit.png' mode='widthFix'></image>
+	</view>
+	<view class="main">
+    <view class='score'>我的积分：{{cardInfo.score}}</view>
+		<view class="canvas-container">
+			<view  animation="{{animationData}}" class="canvas-content" >
+				<view class="canvas-line">
+					<view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+				</view>
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+				  		<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">
+                <view class='name'>{{item.award}}</view>
+                <view><image src='../../images/jifen.png'></image></view>
+              </view>
+					</view>
+				</view>
+			</view>
+      
+			<view bindtap="playReward" class="canvas-btn {{btnDisabled}}">
+        <view class='num'>{{rewardData.reward_score}}积分</view>
+        <view>抽</view>
+      </view>		
+		</view>
+	</view>
+  <view wx:if="{{rewardData.reward_type==1}}" class='tip'>
+    您今天已经参与过了,明日再来吧！
+  </view>
+  <view class='explain'>
+    <view>活动规则</view>
+    <view class="explain-con">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>
+<view class='mask' wx:if="{{unionid==''}}">
+  <view class='auth'>
+    <button class='auth-btn' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      获取权限
+    </button>
+  </view>
+</view>
